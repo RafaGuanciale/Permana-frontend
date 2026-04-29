@@ -1,0 +1,132 @@
+.profile__info {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  display: grid;
+  width: 325px;
+  grid-template-areas:
+    "avatar avatar avatar"
+    "title title title"
+    "description description description"
+    "profileBtns profileBtns profileBtns";
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 25px;
+  background-color: #c9b79c;
+  border-radius: 30px;
+  padding: 10px;
+  align-content: start;
+}
+.profile__avatar {
+  max-width: 100%;
+  border-radius: 30px;
+  object-fit: cover;
+  grid-area: avatar;
+  margin: 0 auto;
+  justify-self: stretch;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+.profile__name {
+  grid-area: title;
+  font-family: "Montserrat", sans-serif;
+  font-size: 32px;
+  line-height: 100%;
+  font-weight: bold;
+  letter-spacing: 0.1em;
+  color: #342a21;
+  padding-left: 10px;
+}
+.profile__description {
+  grid-area: description;
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  line-height: 100%;
+  font-weight: 200;
+  color: #342a21;
+  padding: 0 10px;
+}
+
+.profile__buttons {
+  grid-area: profileBtns;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.profile__btn {
+  width: 110px;
+}
+.profile__btn--edit {
+  color: #342a21;
+  background-color: antiquewhite;
+  padding: 6px 10px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+}
+.profile__btn--edit:hover {
+  background-color: rgba(199, 200, 179, 0.8);
+  filter: brightness(0.95);
+}
+.profile__btn--leave {
+  color: #342a21;
+  background-color: antiquewhite;
+  padding: 6px 10px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  border: none;
+  cursor: pointer;
+}
+.profile__btn--leave:hover {
+  background-color: rgba(199, 200, 179, 0.8);
+  filter: brightness(0.95);
+}
+
+.profile__settings {
+  background-color: antiquewhite;
+  color: #342a21;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+  flex-direction: row-reverse;
+}
+.profile__settings:hover {
+  background-color: rgba(199, 200, 179, 0.8);
+  filter: brightness(0.95);
+}
+.profile__icon {
+ height: 24px;
+ object-fit: contain;
+}
+
+.profile__close {
+  width: 25px;
+  height: 25px;
+  background: transparent url("../images/close.svg") center no-repeat;
+  background-size: 35px 35px;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.profile__close:hover {
+  opacity: 0.6;
+}
+
+.profile-photo{
+  border-radius: 50%;
+}

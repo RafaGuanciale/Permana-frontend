@@ -1,0 +1,32 @@
+@import url("./vendor/normalize.css");
+@import url("./styles/page.css");
+@import url("./styles/header.css");
+@import url("./styles/section.css");
+@import url("./styles/cards.css");
+@import url("./styles/categories.css");
+@import url("./styles/inspired.css");
+@import url("./styles/footer.css");
+@import url("./styles/collection.css");
+@import url("./styles/form.css");
+@import url("./styles/iframe.css");
+@import url("./styles/home.css");
+@import url("./styles/popup.css");
+@import url("./styles/profile.css");
+@import url("./styles/cardModal.css");
+@import url("./styles/login.css");
+@import url("./styles/edit.css");
+@import url("./styles/categoriesPopup.css");
+@import url("./styles/about.css");
+@import url("./styles/author.css");
+@import url("./styles/identity.css");
+@import url("./styles/recomendation.css");
+@import url("./styles/blog.css");
+@import url("./styles/dashboard.css");
+@import url("./styles/hero.css");
+/* @import url("./styles/dashCollection.css"); */
+@import url("./styles/dashIdentity.css");
+@import url("./styles/dashRecomendation.css");
+@import url("./styles/dashSugestion.css");
+@import url("./styles/dashCategories.css");
+@import url("./styles/dashWishlist.css");
+

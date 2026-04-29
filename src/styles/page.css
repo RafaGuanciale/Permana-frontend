@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--color-green);
+  position: relative;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.body__no-scroll {
+  overflow: hidden;
+}
+
+#root {
+  margin: auto;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  position: relative;
+}
+
+:root {
+  --color-champagne: #F1E0C5;
+  --color-green: #71816D;
+  --color-bistre: #342A21;
+  --color-khaki: #C9B79C;
+  --color-blush: #DA667B;
+  --color-off-white: #FAFAF8;
+}
