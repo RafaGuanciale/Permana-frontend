@@ -27,25 +27,27 @@ function DashboardPage() {
         </div>
       </div>
       <div className="dashboard__wrapper--top">
-        <div className="collection__content">
-          <div className="collection__header">
-            <div className="collection__header__text">
-              <p className="collection__header__section-name">Minha Coleção</p>
-              <p className="collection__header__resume">
+        <div className="dashCollection__content">
+          <div className="dashCollection__header">
+            <div className="dashCollection__header__text">
+              <p className="dashCollection__header__section-name">
+                Minha Coleção
+              </p>
+              <p className="dashCollection__header__resume">
                 5 fragrâncias na sua coleção
               </p>
             </div>
-            <button className="collection__header__add">
+            <button className="dashCollection__header__add">
               + Adicionar fragrância
             </button>
           </div>
-          <div className="collection__carousel">
+          <div className="dashCollection__carousel">
             <img
               src={arrowLeft}
-              alt=""
-              className="collection__carousel__arrow--left"
+              alt="arrow left"
+              className="dashCollection__carousel__arrow--left"
             />
-            <div className="collection__grid">
+            <div className="dashCollection__grid">
               {initialCards.map((card) => (
                 <CollectionCard
                   key={card.id}
@@ -54,22 +56,22 @@ function DashboardPage() {
                   image={card.link}
                 />
               ))}
-              <div className="collection__card__new">
-                <div className="collection__new__info">
-                  <p className="collection__new__icon">+</p>
-                  <p className="collection__new__label">Adicionar</p>
+              <div className="dashCollection__card__new">
+                <div className="dashCollection__new__info">
+                  <p className="dashCollection__new__icon">+</p>
+                  <p className="dashCollection__new__label">Adicionar</p>
                 </div>
               </div>
             </div>
             <img
               src={arrowRight}
-              alt=""
-              className="collection__carousel__arrow--right"
+              alt="arrow right"
+              className="dashCollection__carousel__arrow--right"
             />
           </div>
 
-          <div className="collection__footer">
-            <Link className="collection__footer__view" to="#">
+          <div className="dashCollection__footer">
+            <Link className="dashCollection__footer__view" to="#">
               Ver coleção completa →
             </Link>
           </div>
@@ -110,10 +112,65 @@ function DashboardPage() {
           </div>
         </div>
       </div>
-      <div className="dashboard__wrapper--middle">
-        <div className="sugestion__content"></div>
-        <div className="categories__content"></div>
-        <div className="wishlist__content"></div>
+      <div className="dashboard__wrapper--bottom">
+        <div className="dashSugestion__content">
+          <div className="dashSugestion__header">
+            <p className="dashSugestion__header__section-name">
+              Perfume do dia
+            </p>
+            <p className="dashSugestion__header__title">
+              Sugestão para o seu dia
+            </p>
+          </div>
+          <div className="dashSugestion__footer">
+            <Link className="dashSugestion__footer__view" to="#">
+              Ver detalhes →
+            </Link>
+          </div>
+        </div>
+        <div className="dashCategories__content">
+          <div className="dashCategories__header">
+            <p className="dashCategories__header__section-name">
+              Categorias & Ocasiões
+            </p>
+            <p className="dashCategories__header__title">Explore por ocasião</p>
+          </div>
+          <div className="dashCategories__footer">
+            <Link className="dashCategories__footer__view" to="#">
+              Ver todas as categorias →
+            </Link>
+          </div>
+        </div>
+        <div className="dashWishlist__content">
+          <div className="dashWishlist__header">
+            <p className="dashWishlist__header__section-name">Wishlist</p>
+            <p className="dashWishlist__header__title">
+              3 fragrâncias na sua lista
+            </p>
+          </div>
+          <div className="dashWishlist__footer">
+            <Link className="dashWishlist__footer__view" to="#">
+              Ver wishlist completa →
+            </Link>
+          </div>
+        </div>
+      </div>
+      <div className="dashboard__wrapper--blog">
+        <div className="dashBlog__content">
+          <div className="dashBlog__header">
+            <div className="dashBlog__header__text">
+              <p className="dashBlog__header__section-name">
+                Editorial Aromatik
+              </p>
+              <p className="dashBlog__header__title">
+                Conteúdos selecionados para inspirar sua jornada
+              </p>
+            </div>
+            <Link className="dashBlog__header__cta" to="#">
+              Ver todos os artigos →
+            </Link>
+          </div>
+        </div>
       </div>
     </div>
   );

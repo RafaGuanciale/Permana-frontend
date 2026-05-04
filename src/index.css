@@ -23,10 +23,10 @@
 @import url("./styles/blog.css");
 @import url("./styles/dashboard.css");
 @import url("./styles/hero.css");
-/* @import url("./styles/dashCollection.css"); */
+@import url("./styles/dashCollection.css");
 @import url("./styles/dashIdentity.css");
 @import url("./styles/dashRecomendation.css");
 @import url("./styles/dashSugestion.css");
 @import url("./styles/dashCategories.css");
 @import url("./styles/dashWishlist.css");
-
+@import url("./styles/dashBlog.css");

@@ -24,4 +24,6 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 12px;
+  max-width: 1440px;
+  margin: 0 auto;
 }

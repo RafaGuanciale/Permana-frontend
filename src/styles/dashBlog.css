@@ -1,0 +1,57 @@
+.dashBlog__content {
+  background-color: #342a21; 
+  width: 100%;
+  max-width: 1440px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto 12px;
+  padding: 14px 15px;
+  box-sizing: border-box;
+}
+
+/* Header da section */
+.dashBlog__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+.dashBlog__header__section-name {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  color: #c9b79c;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.dashBlog__header__title {
+  font-size: 12px;
+  font-weight: 400;
+  color: #f1e0c5;
+  margin-bottom: 5px;
+}
+.dashBlog__header__cta {
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 400;
+  color: #f1e0c5;
+  margin-bottom: 5px;
+}
+
+
+/* Footer da section */
+.dashWishlist__footer {
+margin-top: auto;
+margin-bottom: 5px;
+}
+.dashBlog__footer__view {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #71816d;
+  transition: color 0.2s;
+}
+.dashBlog__footer__view:hover {
+  color: #342a21;
+}
