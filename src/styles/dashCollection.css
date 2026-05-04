@@ -47,6 +47,7 @@
   background: #4a3a2e;
 }
 
+/* Carousel dos cards */
 .dashCollection__carousel {
   display: flex;
   gap: 5px;
@@ -66,7 +67,6 @@
   margin-left: 10px;
   margin-right: auto;
 }
-
 .dashCollection__grid {
   display: flex;
   gap: 8px;
@@ -77,18 +77,28 @@
   justify-content: center;
   margin: 0;
 }
+
+/* Cards */
 .dashCollection__card {
   width: 220px;
   border-radius: 8px;
-  border: 0.5px solid #f1e0c5;
-  background: #71816d;
+  border: 0.5px solid #F1E0C5;
+  background: #71816D;
   overflow: hidden;
   min-width: 0;
-  transition: box-shadow 0.2s;
+  position: relative;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
 }
 .dashCollection__card:hover {
-  box-shadow: 0.2 8px rgba(52, 42, 33, 0.12);
+  box-shadow: 0 2px 8px rgba(52, 42, 33, 0.12);
   cursor: pointer;
+  transform: translateY(-2px);
+  transition:
+    box-shadow 0.2s,
+    transform 0.2s;
+}
+.dashCollection__card:hover .dashCollection__card__delete-button {
+  opacity: 1;
 }
 .dashCollection__card__image {
   height: 200px;
@@ -96,6 +106,22 @@
   object-fit: cover;
   object-position: center;
   background-color: #e8ddd0;
+}
+.dashCollection__card__delete-button {
+  width: 18px;
+  height: 18px;
+  background: transparent url("../../src/images/icons/delete-icon.svg") center
+    no-repeat;
+  background-size: 18px 18px;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+  padding: 0;
+  margin: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
 }
 .dashCollection__card__info {
   padding: 10px 6px;
@@ -122,6 +148,7 @@
   margin-top: 4px;
 }
 
+/* Slot add Card */
 .dashCollection__card__new {
   width: 110px;
   border: 1px dashed rgba(113, 129, 109, 0.4);

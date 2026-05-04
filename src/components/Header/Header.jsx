@@ -86,13 +86,15 @@ function Header() {
           </button>
         </div>
       </div>
-      {activePopup && (
-        <Popup
-          popupClass={
-            activePopup === "login" ? "popup__login" : "popup__profile"
-          }
-        >
-          {activePopup === "login" ? <LoginPopup /> : <ProfilePopup />}
+      {activePopup === "login" && (
+        <Popup popupClass="popup__login">
+          <LoginPopup />
+        </Popup>
+      )}
+
+      {activePopup === "profile" && (
+        <Popup popupClass="popup__profile">
+          <ProfilePopup />
         </Popup>
       )}
     </header>

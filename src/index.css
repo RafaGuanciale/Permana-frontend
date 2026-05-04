@@ -6,7 +6,6 @@
 @import url("./styles/categories.css");
 @import url("./styles/inspired.css");
 @import url("./styles/footer.css");
-@import url("./styles/collection.css");
 @import url("./styles/form.css");
 @import url("./styles/iframe.css");
 @import url("./styles/home.css");
@@ -18,8 +17,6 @@
 @import url("./styles/categoriesPopup.css");
 @import url("./styles/about.css");
 @import url("./styles/author.css");
-@import url("./styles/identity.css");
-@import url("./styles/recomendation.css");
 @import url("./styles/blog.css");
 @import url("./styles/dashboard.css");
 @import url("./styles/hero.css");
@@ -30,3 +27,6 @@
 @import url("./styles/dashCategories.css");
 @import url("./styles/dashWishlist.css");
 @import url("./styles/dashBlog.css");
+/* @import url("./styles/collection.css"); */
+/* @import url("./styles/identity.css");
+@import url("./styles/recomendation.css"); */

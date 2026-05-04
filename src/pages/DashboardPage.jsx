@@ -1,12 +1,19 @@
-import heroImage from "../images/hero/patrick-mueller.jpg";
-import bleuNoir from "../images/perfumes/narcisorodriguez_bleu_noir_parfum.jpg";
+import heroImage from "../images/hero/hero__bg-image7.png";
+import acquaDG from "../images/perfumes/acqua_di_gio-sugestion3.png";
 import arrowLeft from "../images/icons/arrow-left.PNG";
 import arrowRight from "../images/icons/arrow-right.PNG";
+import cloud from "../images/icons/cloud_brown.png";
 import { Link } from "react-router-dom";
 import { initialCards } from "../utils/consts";
 import CollectionCard from "../components/Cards/CollectionCards";
+import { PopupContext } from "../contexts/PopupContext";
+import Popup from "../components/Popups/Popup";
+import CardsPopup from "../components/Popups/CardsPopup";
+import { useContext } from "react";
 
 function DashboardPage() {
+  const { activePopup } = useContext(PopupContext);
+
   return (
     <div className="dashboard__content">
       <div className="hero__content">
@@ -54,6 +61,7 @@ function DashboardPage() {
                   name={card.name}
                   brand={card.brand}
                   image={card.link}
+                  card={card}
                 />
               ))}
               <div className="dashCollection__card__new">
@@ -113,14 +121,27 @@ function DashboardPage() {
         </div>
       </div>
       <div className="dashboard__wrapper--bottom">
-        <div className="dashSugestion__content">
-          <div className="dashSugestion__header">
-            <p className="dashSugestion__header__section-name">
-              Perfume do dia
-            </p>
-            <p className="dashSugestion__header__title">
-              Sugestão para o seu dia
-            </p>
+        <div className="dashSugestion__container">
+          <div className="dashSugestion__text">
+            <p className="dashSugestion__text__section-name">Perfume do dia</p>
+            <p className="dashSugestion__text__title">Sugestão para hoje</p>
+            <p className="dashSugestion__text__name">Acqua Di Gio EDT</p>
+            <div className="dashSugestion__text__tags">
+              <p className="dashSugestion__text__tag">Fresco</p>
+              <p className="dashSugestion__text__tag">· Aquático</p>
+              <p className="dashSugestion__text__tag">· Versátil</p>
+            </div>
+            <div className="dashSugestion__weather">
+              <img src={cloud} alt="icone núvem" />
+              <p className="dashSugestion__weather__text">22°C • Nublado</p>
+            </div>
+          </div>
+          <div className="dashSugestion__content">
+            <img
+              className="dashSugestion__content__image"
+              src={acquaDG}
+              alt="perfume do dia"
+            />
           </div>
           <div className="dashSugestion__footer">
             <Link className="dashSugestion__footer__view" to="#">
@@ -172,6 +193,11 @@ function DashboardPage() {
           </div>
         </div>
       </div>
+      {activePopup === "card" && (
+        <Popup popupClass="popup__cards">
+          <CardsPopup />
+        </Popup>
+      )}
     </div>
   );
 }
