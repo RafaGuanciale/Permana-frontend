@@ -125,15 +125,17 @@ function DashboardPage() {
           <div className="dashSugestion__text">
             <p className="dashSugestion__text__section-name">Perfume do dia</p>
             <p className="dashSugestion__text__title">Sugestão para hoje</p>
-            <p className="dashSugestion__text__name">Acqua Di Gio EDT</p>
-            <div className="dashSugestion__text__tags">
-              <p className="dashSugestion__text__tag">Fresco</p>
-              <p className="dashSugestion__text__tag">· Aquático</p>
-              <p className="dashSugestion__text__tag">· Versátil</p>
-            </div>
-            <div className="dashSugestion__weather">
-              <img src={cloud} alt="icone núvem" />
-              <p className="dashSugestion__weather__text">22°C • Nublado</p>
+            <div className="dashSugestion__text__container">
+              <p className="dashSugestion__text__name">Acqua Di Gio EDT</p>
+              <div className="dashSugestion__text__tags">
+                <p className="dashSugestion__text__tag">Fresco</p>
+                <p className="dashSugestion__text__tag">· Aquático</p>
+                <p className="dashSugestion__text__tag">· Versátil</p>
+              </div>
+              <div className="dashSugestion__weather">
+                <img src={cloud} alt="icone núvem" />
+                <p className="dashSugestion__weather__text">22°C • Nublado</p>
+              </div>
             </div>
           </div>
           <div className="dashSugestion__content">
