@@ -1,7 +1,17 @@
 import heroImage from "../images/hero/hero__bg-image7.png";
 import acquaDG from "../images/perfumes/acqua_di_gio-sugestion3.png";
+import theOne from "../images/perfumes/theOne.jpg";
+import imagination from "../images/perfumes/imagination.jpeg";
+import allureHome from "../images/perfumes/allure_homme_edition_blunch.jpg";
 import arrowLeft from "../images/icons/arrow-left.PNG";
 import arrowRight from "../images/icons/arrow-right.PNG";
+import fresh from "../images/icons/fresh.png";
+import aquatic from "../images/icons/aquatic.png";
+import floral from "../images/icons/floral.png";
+import work from "../images/categorias//dashCategories/dashCategories__work.jpg";
+import date from "../images/categorias/dashCategories/dashCategories__date.jpg";
+import casual from "../images/categorias/dashCategories/dashCategories__casual.jpg";
+import party from "../images/categorias/dashCategories/dashCategories__party.jpg";
 import cloud from "../images/icons/cloud_brown.png";
 import { Link } from "react-router-dom";
 import { initialCards } from "../utils/consts";
@@ -86,17 +96,239 @@ function DashboardPage() {
         </div>
       </div>
       <div className="dashboard__wrapper--middle">
-        <div className="identity__content">
-          <div className="identity__header">
-            <p className="identity__header__section-name">
+        <div className="dashIdentity__content">
+          <div className="dashIdentity__header">
+            <p className="dashIdentity__header__section-name">
               Identidade Olfativa
             </p>
-            <p className="identity__header__profile">
+            <p className="dashIdentity__header__profile">
               Perfil amadeirado aromático
             </p>
+            <p className="dashIdentity__header__info">desbalanceada</p>
           </div>
-          <div className="identity__footer">
-            <Link className="identity__footer__view" to="#">
+          <div className="dashIdentity__container">
+            <div className="dashIdentity__balance__bars">
+              <div className="dashIdentity__bar-denses">
+                <div className="dashIdentity__bar__text">
+                  <p className="dashIdentity__bar__title">Amadeirado</p>
+                  <p className="dashIdentity__bar__percent-label">85%</p>
+                </div>
+                <div className="dashIdentity__bar-bars">
+                  <div className="dashIdentity__bar"></div>
+                  <div className="dashIdentity__bar__denses-percent"></div>
+                </div>
+              </div>
+              <div className="dashIdentity__bar-aromatic">
+                <div className="dashIdentity__bar__text">
+                  <p className="dashIdentity__bar__title">aromático</p>
+                  <p className="dashIdentity__bar__percent-label">72%</p>
+                </div>
+                <div className="dashIdentity__bar-bars">
+                  <div className="dashIdentity__bar"></div>
+                  <div className="dashIdentity__bar__aromatic-percent"></div>
+                </div>
+              </div>
+              <div className="dashIdentity__bar-fresh">
+                <div className="dashIdentity__bar__text">
+                  <p className="dashIdentity__bar__title">Frescas</p>
+                  <p className="dashIdentity__bar__percent-label">61%</p>
+                </div>
+                <div className="dashIdentity__bar-bars">
+                  <div className="dashIdentity__bar"></div>
+                  <div className="dashIdentity__bar__fresh-percent"></div>
+                </div>
+              </div>
+              <div className="dashIdentity__bar-aquatic">
+                <div className="dashIdentity__bar__text">
+                  <p className="dashIdentity__bar__title">Aquático</p>
+                  <p className="dashIdentity__bar__percent-label">28%</p>
+                </div>
+                <div className="dashIdentity__bar-bars">
+                  <div className="dashIdentity__bar"></div>
+                  <div className="dashIdentity__bar__aquatic-percent"></div>
+                </div>
+              </div>
+              <div className="dashIdentity__bar-citric">
+                <div className="dashIdentity__bar__text">
+                  <p className="dashIdentity__bar__title">Cítrico</p>
+                  <p className="dashIdentity__bar__percent-label">22%</p>
+                </div>
+                <div className="dashIdentity__bar-bars">
+                  <div className="dashIdentity__bar"></div>
+                  <div className="dashIdentity__bar__citric-percent"></div>
+                </div>
+              </div>
+              <div className="dashIdentity__bar-oriental">
+                <div className="dashIdentity__bar__text">
+                  <p className="dashIdentity__bar__title">Oriental</p>
+                  <p className="dashIdentity__bar__percent-label">47%</p>
+                </div>
+                <div className="dashIdentity__bar-bars">
+                  <div className="dashIdentity__bar"></div>
+                  <div className="dashIdentity__bar__oriental-percent"></div>
+                </div>
+              </div>
+            </div>
+            <div className="dashIdentity__chart">
+              <svg
+                viewBox="0 0 320 320"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <text
+                  x="160"
+                  y="20"
+                  textAnchor="middle"
+                  fill="#D8C9B1"
+                  fontSize="13"
+                  fontFamily="Montserrat"
+                >
+                  Amadeirado
+                </text>
+                <text
+                  x="265"
+                  y="75"
+                  textAnchor="middle"
+                  fill="#D8C9B1"
+                  fontSize="13"
+                  fontFamily="Montserrat"
+                >
+                  Aromático
+                </text>
+                <text
+                  x="265"
+                  y="245"
+                  textAnchor="middle"
+                  fill="#D8C9B1"
+                  fontSize="13"
+                  fontFamily="Montserrat"
+                >
+                  Fresco
+                </text>
+                <text
+                  x="160"
+                  y="300"
+                  textAnchor="middle"
+                  fill="#D8C9B1"
+                  fontSize="13"
+                  fontFamily="Montserrat"
+                >
+                  Aquático
+                </text>
+                <text
+                  x="55"
+                  y="245"
+                  textAnchor="middle"
+                  fill="#D8C9B1"
+                  fontSize="13"
+                  fontFamily="Montserrat"
+                >
+                  Cítrico
+                </text>
+                <text
+                  x="55"
+                  y="75"
+                  textAnchor="middle"
+                  fill="#D8C9B1"
+                  fontSize="13"
+                  fontFamily="Montserrat"
+                >
+                  Oriental
+                </text>
+
+                <polygon
+                  points="160,50 245,95 245,225 160,270 75,225 75,95"
+                  stroke="#D8C9B1"
+                  strokeOpacity="0.18"
+                  fill="none"
+                />
+                <polygon
+                  points="160,72 223,106 223,214 160,248 97,214 97,106"
+                  stroke="#D8C9B1"
+                  strokeOpacity="0.14"
+                  fill="none"
+                />
+                <polygon
+                  points="160,94 201,117 201,203 160,226 119,203 119,117"
+                  stroke="#D8C9B1"
+                  strokeOpacity="0.12"
+                  fill="none"
+                />
+                <polygon
+                  points="160,116 179,128 179,192 160,204 141,192 141,128"
+                  stroke="#D8C9B1"
+                  strokeOpacity="0.10"
+                  fill="none"
+                />
+
+                <line
+                  x1="160"
+                  y1="160"
+                  x2="160"
+                  y2="50"
+                  stroke="#D8C9B1"
+                  strokeOpacity="0.18"
+                />
+                <line
+                  x1="160"
+                  y1="160"
+                  x2="245"
+                  y2="95"
+                  stroke="#D8C9B1"
+                  strokeOpacity="0.18"
+                />
+                <line
+                  x1="160"
+                  y1="160"
+                  x2="245"
+                  y2="225"
+                  stroke="#D8C9B1"
+                  strokeOpacity="0.18"
+                />
+                <line
+                  x1="160"
+                  y1="160"
+                  x2="160"
+                  y2="270"
+                  stroke="#D8C9B1"
+                  strokeOpacity="0.18"
+                />
+                <line
+                  x1="160"
+                  y1="160"
+                  x2="75"
+                  y2="225"
+                  stroke="#D8C9B1"
+                  strokeOpacity="0.18"
+                />
+                <line
+                  x1="160"
+                  y1="160"
+                  x2="75"
+                  y2="95"
+                  stroke="#D8C9B1"
+                  strokeOpacity="0.18"
+                />
+
+                <polygon
+                  points="160,66 218,116 212,206 160,238 141,208 116,126"
+                  fill="#A8B7A4"
+                  fillOpacity="0.22"
+                  stroke="#D8C9B1"
+                  strokeWidth="2"
+                />
+
+                <circle cx="160" cy="66" r="4" fill="#DA667B" />
+                <circle cx="218" cy="116" r="4" fill="#A8B7A4" />
+                <circle cx="212" cy="206" r="4" fill="#D8C9B1" />
+                <circle cx="160" cy="238" r="4" fill="#CDBB9D" />
+                <circle cx="141" cy="208" r="4" fill="#CFAF6D" />
+                <circle cx="116" cy="126" r="4" fill="#B59D87" />
+              </svg>
+            </div>
+          </div>
+          <div className="dashIdentity__footer">
+            <Link className="dashIdentity__footer__view" to="#">
               Ver análise completa →
             </Link>
           </div>
@@ -112,6 +344,60 @@ function DashboardPage() {
             <p className="recomendation__header__label">
               Perfis que vão equilibrar e evoluir sua coleção
             </p>
+          </div>
+          <div className="recomendation__container">
+            <div className="recomendation__box">
+              <div className="recomendation__category">
+                <img
+                  className="recomendation__category__image"
+                  src={fresh}
+                  alt="icone fresco"
+                />
+                <div className="recomendation__category__texts">
+                  <h3 className="recomendation__title">Frescos</h3>
+                  <p className="recomendation__description">
+                    Notas cítricas e leves para trazer brilho e frescor ao seu
+                    perfil.
+                  </p>
+                </div>
+                <Link className="recomendation__category__cta" to="#">
+                  Ver sugestões →
+                </Link>
+              </div>
+              <div className="recomendation__category">
+                <img
+                  className="recomendation__category__image"
+                  src={aquatic}
+                  alt="icone fresco"
+                />
+                <div className="recomendation__category__texts">
+                  <h3 className="recomendation__title">Aquáticos</h3>
+                  <p className="recomendation__description">
+                    Acordes limpos e fluidos para um perfil mais fresco e
+                    arejado.
+                  </p>
+                </div>
+                <Link className="recomendation__category__cta" to="#">
+                  Ver sugestões →
+                </Link>
+              </div>
+              <div className="recomendation__category">
+                <img
+                  className="recomendation__category__image"
+                  src={floral}
+                  alt="icone fresco"
+                />
+                <div className="recomendation__category__texts">
+                  <h3 className="recomendation__title">Florais</h3>
+                  <p className="recomendation__description">
+                    Facetas florais sutis para mais elegância e suavidade.
+                  </p>
+                </div>
+                <Link className="recomendation__category__cta" to="#">
+                  Ver sugestões →
+                </Link>
+              </div>
+            </div>
           </div>
           <div className="recomendation__footer">
             <Link className="recomendation__footer__view" to="#">
@@ -158,6 +444,44 @@ function DashboardPage() {
             </p>
             <p className="dashCategories__header__title">Explore por ocasião</p>
           </div>
+          <div className="dashCategories__container">
+            <div className="dashCategories__categories__box">
+              <p className="dashCategories__categories__label">trabalho</p>
+              <img
+                className="dashCategories__categories__image"
+                src={work}
+                alt="categoria trabalho"
+              />
+              <div className="dashCategories__categories__image-overlay"></div>
+            </div>
+            <div className="dashCategories__categories__box">
+              <p className="dashCategories__categories__label">Encontros</p>
+              <img
+                className="dashCategories__categories__image"
+                src={date}
+                alt="categoria trabalho"
+              />
+              <div className="dashCategories__categories__image-overlay"></div>
+            </div>
+            <div className="dashCategories__categories__box">
+              <p className="dashCategories__categories__label">Casual</p>
+              <img
+                className="dashCategories__categories__image"
+                src={casual}
+                alt="categoria trabalho"
+              />
+              <div className="dashCategories__categories__image-overlay"></div>
+            </div>
+            <div className="dashCategories__categories__box">
+              <p className="dashCategories__categories__label">Festas</p>
+              <img
+                className="dashCategories__categories__image"
+                src={party}
+                alt="categoria trabalho"
+              />
+              <div className="dashCategories__categories__image-overlay"></div>
+            </div>
+          </div>
           <div className="dashCategories__footer">
             <Link className="dashCategories__footer__view" to="#">
               Ver todas as categorias →
@@ -170,6 +494,48 @@ function DashboardPage() {
             <p className="dashWishlist__header__title">
               3 fragrâncias na sua lista
             </p>
+          </div>
+          <div className="dashWishlist__container">
+            <div className="dashWishlist__box">
+              <div className="dashWishlist__wish">
+                <img
+                  className="dashWishlist__wish__image"
+                  src={allureHome}
+                  alt="imagem perfume"
+                />
+                <div className="dashWishlist__wish__texts">
+                  <h3 className="dashWishlist__name">
+                    Allure Homme Edition Blunch
+                  </h3>
+                  <p className="dashWishlist__brand">Chanel</p>
+                </div>
+                <a className="dashWishlist__view-more"></a>
+              </div>
+              <div className="dashWishlist__wish">
+                <img
+                  className="dashWishlist__wish__image"
+                  src={imagination}
+                  alt="imagem perfume"
+                />
+                <div className="dashWishlist__wish__texts">
+                  <h3 className="dashWishlist__name">Imagination</h3>
+                  <p className="dashWishlist__brand">Louis Vuitton</p>
+                </div>
+                <a className="dashWishlist__view-more"></a>
+              </div>
+              <div className="dashWishlist__wish">
+                <img
+                  className="dashWishlist__wish__image"
+                  src={theOne}
+                  alt="imagem perfume"
+                />
+                <div className="dashWishlist__wish__texts">
+                  <h3 className="dashWishlist__name">The One EDP</h3>
+                  <p className="dashWishlist__brand">Dolce & Gabbana</p>
+                </div>
+                <a className="dashWishlist__view-more"></a>
+              </div>
+            </div>
           </div>
           <div className="dashWishlist__footer">
             <Link className="dashWishlist__footer__view" to="#">
@@ -192,6 +558,47 @@ function DashboardPage() {
             <Link className="dashBlog__header__cta" to="#">
               Ver todos os artigos →
             </Link>
+          </div>
+          <div className="dashBlog__container">
+            <div className="dashBlog__post">
+              <div className="dashBlog__texts">
+                <p className="dashBlog__post__tag-analise">análise</p>
+                <h2 className="dashBlog__post__title">
+                  Cebolinha Jequiti: por que viralizou?
+                </h2>
+                <h3 className="dashBlog__post__subtitle">
+                  O perfume de R$50 que esgotou o Brasil.
+                </h3>
+                <p className="dashBlog__post__time">5 min de leitura</p>
+              </div>
+              <div className="dashBlog__image"></div>
+            </div>
+            <div className="dashBlog__post">
+              <div className="dashBlog__texts">
+                <p className="dashBlog__post__tag-guide">guia</p>
+                <h2 className="dashBlog__post__title">
+                  Como escolher o próximo perfume da coleção
+                </h2>
+                <h3 className="dashBlog__post__subtitle">
+                  Um guia para entender as lacunas e evoluir seu perfil olfativo.
+                </h3>
+                <p className="dashBlog__post__time">7 min de leitura</p>
+              </div>
+              <div className="dashBlog__image"></div>
+            </div>
+            <div className="dashBlog__post">
+              <div className="dashBlog__texts">
+                <p className="dashBlog__post__tag-tendencies">tendências</p>
+                <h2 className="dashBlog__post__title">
+                  As famílias olfativas que mais crescem em 2026
+                </h2>
+                <h3 className="dashBlog__post__subtitle">
+                  Do aquático moderno ao gourmand sofisticado: o que está em alta.
+                </h3>
+                <p className="dashBlog__post__time">6 min de leitura</p>
+              </div>
+              <div className="dashBlog__image"></div>
+            </div>
           </div>
         </div>
       </div>

@@ -52,12 +52,13 @@
 .dashSugestion__text__tags {
   display: flex;
   gap: 3px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
 }
 .dashSugestion__text__tag {
   font-size: 12px;
   font-weight: 500;
   color: #342a21;
+  line-height: 1.0;
 }
 .dashSugestion__weather {
   display: inline-flex;

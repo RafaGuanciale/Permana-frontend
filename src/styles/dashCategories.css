@@ -1,7 +1,6 @@
 .dashCategories__content {
-  background-color: rgba(40,55,40,0.55);
+  background-color: rgba(40, 55, 40, 0.55);
   border-radius: 10px;
-  border: 0.5px solid rgba(201, 183, 156, 0.10);
   padding: 14px 15px;
   width: 100%;
   height: 400px;
@@ -31,10 +30,62 @@
   margin-bottom: 5px;
 }
 
+/* Boxes da section */
+.dashCategories__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  flex: 1;
+  border-radius: 10px;
+
+}
+.dashCategories__categories__box {
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  height: 130px;
+}
+.dashCategories__categories__label {
+  position: absolute;
+  bottom: 4px;
+  left: 7px;
+  font-size: 11px;
+  font-weight: 500;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 3px;
+  padding: 0 2px;
+}
+.dashCategories__categories__image {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+.dashCategories__categories__image-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  transition: background 0.2s ease;
+}
+.dashCategories__categories__image-overlay:hover {
+  background: rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.dashCategories__categories__box:hover .dashCategories__categories__image {
+  transform: scale(1.02);
+}
+
 /* Footer da section */
 .dashCategories__footer {
-margin-top: auto;
-margin-bottom: 5px;
+  margin: 10px 0 5px;
 }
 .dashCategories__footer__view {
   text-decoration: none;

@@ -1,7 +1,7 @@
 .dashCollection__content {
   width: 100%;
   max-width: 1440px;
-  background-color: var(--color-off-white);
+  background-color: #F1E0C5;
   border-radius: 10px;
   display: flex;
   flex-direction: column;

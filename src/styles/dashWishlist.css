@@ -30,6 +30,55 @@
   margin-bottom: 5px;
 }
 
+/* Containers da section */
+.dashWishlist__box {
+  gap: 4px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.dashWishlist__wish {
+  display: flex;
+  align-items: center;
+  padding: 7px 0;
+  background: rgba(201, 183, 156, 0.17);
+  /* border-bottom: 0.5px solid rgba(201, 183, 156, 0.15); */
+  margin: 2px 0;
+  border-radius: 4px;
+}
+.dashWishlist__wish__image {
+  margin-left: 15px;
+  object-fit: contain;
+  width: 60px;
+  border-radius: 4px;
+}
+.dashWishlist__wish__texts {
+  margin-left: 15px;
+}
+.dashWishlist__name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #f1e0c5;
+}
+.dashWishlist__brand {
+  font-size: 12px;
+  font-weight: 500;
+  color: #c9b79c;
+  margin-top: 2px;
+  line-height: 1.4;
+}
+.dashWishlist__view-more {
+  background-image: url("../images/icons/lupa.png");
+  width: 28px;
+  height: 28px;
+  margin-right: 15px;
+  margin-left: auto;
+  cursor: pointer;
+}
+.dashWishlist__view-more:hover {
+  background-image: url("../images/icons/lupa-hover.png");
+}
+
 /* Footer da section */
 .dashWishlist__footer {
   margin-top: auto;
