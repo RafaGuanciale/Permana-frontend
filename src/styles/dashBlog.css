@@ -46,26 +46,85 @@
   gap: 8px;
 }
 .dashBlog__post {
-  height: auto;
-  width: auto;
-  border: 0.5px solid rgba(201,183,156,0.12);
-  border-radius: 8px;
-  background-color: rgba(255,255,255,0.07);
-  padding: 10px;
+  position: relative;
   display: grid;
-  grid-template-columns: 60% 40%;
-  transition: background 0.2s;
-}
-.dashBlog__post:hover{
-  background: rgba(255,255,255,0.11);
+  grid-template-columns: 55% 45%;
+  padding: 10px;
+  border: 0.5px solid rgba(201, 183, 156, 0.12);
+  border-radius: 8px;
+  overflow: hidden;
   cursor: pointer;
 }
-.dashBlog__texts{
+.dashBlog__image-analise {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image: url("../images/blog/post3.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+.dashBlog__post:hover .dashBlog__image-analise {
+  transform: scale(1.04);
+}
+.dashBlog__image-guide {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image: url("../images/blog/post5.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+.dashBlog__post:hover .dashBlog__image-guide {
+  transform: scale(1.04);
+}
+.dashBlog__image-tendencies {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background-image: url("../images/blog/post1.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: scale(1);
+  transition: transform 0.45s ease;
+}
+.dashBlog__post:hover .dashBlog__image-tendencies {
+  transform: scale(1.04);
+}
+
+.dashBlog__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+
+  background: linear-gradient(
+    90deg,
+    rgba(52, 42, 33, 0.88) 0%,
+    rgba(52, 42, 33, 0.8) 32%,
+    rgba(52, 42, 33, 0.64) 50%,
+    rgba(52, 42, 33, 0.38) 68%,
+    rgba(52, 42, 33, 0.12) 82%,
+    rgba(52, 42, 33, 0) 100%
+  );
+}
+
+.dashBlog__texts {
   display: flex;
   flex-direction: column;
+  z-index: 2;
 }
-.dashBlog__post__tag-analise{
-  background: rgba(113,129,109,0.20);
+.dashBlog__post__tag-analise {
+  background: rgba(113, 129, 109, 0.2);
   color: #71816d;
   font-size: 10px;
   border-radius: 20px;
@@ -74,8 +133,8 @@
   margin-bottom: 8px;
   text-transform: uppercase;
 }
-.dashBlog__post__tag-guide{
-  background: rgba(201,183,156,0.10);
+.dashBlog__post__tag-guide {
+  background: rgba(201, 183, 156, 0.1);
   color: #c9b79c;
   font-size: 10px;
   border-radius: 20px;
@@ -84,9 +143,9 @@
   margin-bottom: 8px;
   text-transform: uppercase;
 }
-.dashBlog__post__tag-tendencies{
-  background: rgba(218,102,123,0.15);
-  color: #DA667B;
+.dashBlog__post__tag-tendencies {
+  background: rgba(218, 102, 123, 0.15);
+  color: #da667b;
   font-size: 10px;
   border-radius: 20px;
   padding: 2px 8px;
@@ -94,21 +153,21 @@
   margin-bottom: 8px;
   text-transform: uppercase;
 }
-.dashBlog__post__title{
+.dashBlog__post__title {
   font-size: 14px;
   font-weight: 500;
   color: #f1e0c5;
   line-height: 1.4;
   margin-bottom: 12px;
 }
-.dashBlog__post__subtitle{
+.dashBlog__post__subtitle {
   font-size: 12px;
   color: #c9b79c;
   line-height: 1.5;
   margin-bottom: 20px;
 }
-.dashBlog__post__time{
-  font-size: 12px;
+.dashBlog__post__time {
+  font-size: 14px;
   color: #71816d;
   margin-top: auto;
   margin-bottom: 0;
