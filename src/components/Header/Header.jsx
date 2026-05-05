@@ -33,7 +33,7 @@ function Header() {
               <NavLink to="/analyse" className="header__nav-link">
                 Análise
               </NavLink>
-              <NavLink to="/collection" className="header__nav-link">
+              <NavLink to="/recomendation" className="header__nav-link">
                 Recomendações
               </NavLink>
               <NavLink to="/categories" className="header__nav-link">

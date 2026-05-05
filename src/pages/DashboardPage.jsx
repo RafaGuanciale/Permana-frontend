@@ -89,7 +89,7 @@ function DashboardPage() {
           </div>
 
           <div className="dashCollection__footer">
-            <Link className="dashCollection__footer__view" to="#">
+            <Link className="dashCollection__footer__view" to="/collection">
               Ver coleção completa →
             </Link>
           </div>
@@ -328,79 +328,79 @@ function DashboardPage() {
             </div>
           </div>
           <div className="dashIdentity__footer">
-            <Link className="dashIdentity__footer__view" to="#">
+            <Link className="dashIdentity__footer__view" to="/analyse">
               Ver análise completa →
             </Link>
           </div>
         </div>
-        <div className="recomendation__content">
-          <div className="recomendation__header">
-            <p className="recomendation__header__section-name">
+        <div className="dashRecomendation__content">
+          <div className="dashRecomendation__header">
+            <p className="dashRecomendation__header__section-name">
               Recomendações para você
             </p>
-            <p className="recomendation__header__gaps">
+            <p className="dashRecomendation__header__gaps">
               3 Lacunas identificadas
             </p>
-            <p className="recomendation__header__label">
+            <p className="dashRecomendation__header__label">
               Perfis que vão equilibrar e evoluir sua coleção
             </p>
           </div>
-          <div className="recomendation__container">
-            <div className="recomendation__box">
-              <div className="recomendation__category">
+          <div className="dashRecomendation__container">
+            <div className="dashRecomendation__box">
+              <div className="dashRecomendation__category">
                 <img
-                  className="recomendation__category__image"
+                  className="dashRecomendation__category__image"
                   src={fresh}
                   alt="icone fresco"
                 />
-                <div className="recomendation__category__texts">
-                  <h3 className="recomendation__title">Frescos</h3>
-                  <p className="recomendation__description">
+                <div className="dashRecomendation__category__texts">
+                  <h3 className="dashRecomendation__title">Frescos</h3>
+                  <p className="dashRecomendation__description">
                     Notas cítricas e leves para trazer brilho e frescor ao seu
                     perfil.
                   </p>
                 </div>
-                <Link className="recomendation__category__cta" to="#">
+                <Link className="dashRecomendation__category__cta" to="#">
                   Ver sugestões →
                 </Link>
               </div>
-              <div className="recomendation__category">
+              <div className="dashRecomendation__category">
                 <img
-                  className="recomendation__category__image"
+                  className="dashRecomendation__category__image"
                   src={aquatic}
                   alt="icone fresco"
                 />
-                <div className="recomendation__category__texts">
-                  <h3 className="recomendation__title">Aquáticos</h3>
-                  <p className="recomendation__description">
+                <div className="dashRecomendation__category__texts">
+                  <h3 className="dashRecomendation__title">Aquáticos</h3>
+                  <p className="dashRecomendation__description">
                     Acordes limpos e fluidos para um perfil mais fresco e
                     arejado.
                   </p>
                 </div>
-                <Link className="recomendation__category__cta" to="#">
+                <Link className="dashRecomendation__category__cta" to="#">
                   Ver sugestões →
                 </Link>
               </div>
-              <div className="recomendation__category">
+              <div className="dashRecomendation__category">
                 <img
-                  className="recomendation__category__image"
+                  className="dashRecomendation__category__image"
                   src={floral}
                   alt="icone fresco"
                 />
-                <div className="recomendation__category__texts">
-                  <h3 className="recomendation__title">Florais</h3>
-                  <p className="recomendation__description">
+                <div className="dashRecomendation__category__texts">
+                  <h3 className="dashRecomendation__title">Florais</h3>
+                  <p className="dashRecomendation__description">
                     Facetas florais sutis para mais elegância e suavidade.
                   </p>
                 </div>
-                <Link className="recomendation__category__cta" to="#">
+                <Link className="dashRecomendation__category__cta" to="#">
                   Ver sugestões →
                 </Link>
               </div>
             </div>
           </div>
-          <div className="recomendation__footer">
-            <Link className="recomendation__footer__view" to="#">
+          <div className="dashRecomendation__footer">
+            <Link className="dashRecomendation__footer__view" to="/recomendation">
               Ver todas as recomendações →
             </Link>
           </div>
@@ -432,7 +432,7 @@ function DashboardPage() {
             />
           </div>
           <div className="dashSugestion__footer">
-            <Link className="dashSugestion__footer__view" to="#">
+            <Link className="dashSugestion__footer__view" to="">
               Ver detalhes →
             </Link>
           </div>
@@ -483,7 +483,7 @@ function DashboardPage() {
             </div>
           </div>
           <div className="dashCategories__footer">
-            <Link className="dashCategories__footer__view" to="#">
+            <Link className="dashCategories__footer__view" to="/categories">
               Ver todas as categorias →
             </Link>
           </div>
@@ -555,7 +555,7 @@ function DashboardPage() {
                 Conteúdos selecionados para inspirar sua jornada
               </p>
             </div>
-            <Link className="dashBlog__header__cta" to="#">
+            <Link className="dashBlog__header__cta" to="/blog">
               Ver todos os artigos →
             </Link>
           </div>

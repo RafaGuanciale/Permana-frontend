@@ -9,7 +9,6 @@
   z-index: 999;
   align-items: center;
   height: 70px;
-  grid-area: header;
   border-radius: 0 0 15px 15px;
 }
 .header__container {

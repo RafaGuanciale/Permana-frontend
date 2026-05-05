@@ -1,4 +1,4 @@
-.recomendation__content {
+.dashRecomendation__content {
   background-color: #342a21;
   border-radius: 10px;
   width: 100%;
@@ -10,12 +10,12 @@
 }
 
 /* Header da section */
-.recomendation__header {
+.dashRecomendation__header {
   display: flex;
   flex-direction: column;
   margin-bottom: 12px;
 }
-.recomendation__header__section-name {
+.dashRecomendation__header__section-name {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.08em;
@@ -23,13 +23,13 @@
   text-transform: uppercase;
   margin-bottom: 12px;
 }
-.recomendation__header__gaps {
+.dashRecomendation__header__gaps {
   font-size: 20px;
   font-weight: 500;
   color: #f1e0c5;
   margin-bottom: 5px;
 }
-.recomendation__header__label {
+.dashRecomendation__header__label {
   font-size: 12px;
   font-weight: 400;
   color: #f1e0c5;
@@ -37,38 +37,38 @@
 }
 
 /* Containers da section */
-.recomendation__box {
+.dashRecomendation__box {
   gap: 4px;
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-.recomendation__category {
+.dashRecomendation__category {
   display: flex;
   align-items: center;
   padding: 7px 0;
   border-bottom: 0.5px solid rgba(201, 183, 156, 0.15);
   margin: 4px 0;
 }
-.recomendation__category__image{
+.dashRecomendation__category__image{
   margin-left: 15px;
 }
-.recomendation__category__texts{
+.dashRecomendation__category__texts{
   margin-left: 15px;
 }
-.recomendation__title {
+.dashRecomendation__title {
   font-size: 14px;
   font-weight: 500;
   color: #f1e0c5;
 }
-.recomendation__description {
+.dashRecomendation__description {
   font-size: 12px;
   font-weight: 500;
   color: #c9b79c;
   margin-top: 2px;
   line-height: 1.4;
 }
-.recomendation__category__cta {
+.dashRecomendation__category__cta {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
@@ -78,22 +78,22 @@
   margin-right: 15px;
   margin-left: auto;
 }
-.recomendation__category__cta:hover {
+.dashRecomendation__category__cta:hover {
   color: #71816d;
 }
 
 /* Footer da section */
-.recomendation__footer {
+.dashRecomendation__footer {
   margin-top: auto;
   margin-bottom: 5px;
 }
-.recomendation__footer__view {
+.dashRecomendation__footer__view {
   text-decoration: none;
   font-size: 14px;
   font-weight: 500;
   color: #c9b79c;
   transition: color 0.2s;
 }
-.recomendation__footer__view:hover {
+.dashRecomendation__footer__view:hover {
   color: #71816d;
 }

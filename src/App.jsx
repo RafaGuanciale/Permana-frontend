@@ -23,69 +23,71 @@ function App() {
     <>
       <AuthProvider>
         <PopupProvider>
-          <Header />
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route path="/about" element={<AboutPage />} />
-            <Route path="/newAccount" element={<NewAccountPage />} />
-            <Route
-              path="/onboarding"
-              element={
-                <ProtectedRoute>
-                  <OnboardingPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/dashboard"
-              element={
-                <ProtectedRoute>
-                  <DashboardPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/collection"
-              element={
-                <ProtectedRoute>
-                  <CollectionPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/analyse"
-              element={
-                <ProtectedRoute>
-                  <AnalysePage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/recomendation"
-              element={
-                <ProtectedRoute>
-                  <RecomendationPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/categories"
-              element={
-                <ProtectedRoute>
-                  <CategoriesPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="/blog"
-              element={
-                <ProtectedRoute>
-                  <BlogPage />
-                </ProtectedRoute>
-              }
-            />
-          </Routes>
-          <Footer />
+          <div className="page">
+            <Header />
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/about" element={<AboutPage />} />
+              <Route path="/newAccount" element={<NewAccountPage />} />
+              <Route
+                path="/onboarding"
+                element={
+                  <ProtectedRoute>
+                    <OnboardingPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/dashboard"
+                element={
+                  <ProtectedRoute>
+                    <DashboardPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/collection"
+                element={
+                  <ProtectedRoute>
+                    <CollectionPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/analyse"
+                element={
+                  <ProtectedRoute>
+                    <AnalysePage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/recomendation"
+                element={
+                  <ProtectedRoute>
+                    <RecomendationPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/categories"
+                element={
+                  <ProtectedRoute>
+                    <CategoriesPage />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/blog"
+                element={
+                  <ProtectedRoute>
+                    <BlogPage />
+                  </ProtectedRoute>
+                }
+              />
+            </Routes>
+            <Footer />
+          </div>
         </PopupProvider>
       </AuthProvider>
     </>
