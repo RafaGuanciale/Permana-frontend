@@ -120,7 +120,7 @@ function DashboardPage() {
               </div>
               <div className="dashIdentity__bar-aromatic">
                 <div className="dashIdentity__bar__text">
-                  <p className="dashIdentity__bar__title">aromático</p>
+                  <p className="dashIdentity__bar__title">Aromático</p>
                   <p className="dashIdentity__bar__percent-label">72%</p>
                 </div>
                 <div className="dashIdentity__bar-bars">

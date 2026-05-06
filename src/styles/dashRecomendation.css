@@ -38,7 +38,6 @@
 
 /* Containers da section */
 .dashRecomendation__box {
-  gap: 4px;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -51,6 +50,7 @@
   margin: 4px 0;
 }
 .dashRecomendation__category__image{
+  width: 48px;
   margin-left: 15px;
 }
 .dashRecomendation__category__texts{

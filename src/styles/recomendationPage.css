@@ -1,13 +1,8 @@
 .recomendationPage {
-  background-color: #f1e0c5;
-  border-radius: 30px;
-  margin: 20px;
-}
-.recomendationPage__logged-in {
-  display: block;
-}
-.recomendationPage__container {
+  display: flex;
+  flex-direction: column;
   max-width: 1440px;
+  align-items: flex-start;
   margin: 0 auto;
 }
 
@@ -15,39 +10,50 @@
 .recomendationPage__header {
   display: flex;
   flex-direction: column;
+  max-width: 1440px;
 }
 .recomendationPage__eyebrow {
+  font-family: "Montserrat";
   text-align: left;
-  font-size: 14px;
-  letter-spacing: 4px;
-  color: #7f907c;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: #f1e0c5;
   text-transform: uppercase;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 .recomendationPage__title {
   font-family: "Playfair Display";
   text-align: left;
   font-size: 44px;
   font-weight: 400;
-  margin-bottom: 14px;
-  color: #7f907c;
+  margin-bottom: 10px;
+  color: #f1e0c5;
+  font-style: italic;
+  line-height: 1.15;
 }
 .recomendationPage__subtitle {
   text-align: left;
-  font-size: 16px;
-  line-height: 1.8;
-  font-weight: 400;
-  max-width: 560px;
-  color: #7f907c;
-  margin: 0 0 52px 0;
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 300;
+  max-width: 440px;
+  color: #f1e0c5;
+  margin: 0 0 40px;
 }
+
+/* Container da section */
+.recomendationPage__container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
 
 /* Bloco das categorias */
 .recomendationPage__content {
   background-color: #f1e0c5;
   border-radius: 10px;
   padding: 40px 60px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -100,7 +106,7 @@
   font-style: italic;
   line-height: 1.3;
 }
-.recomendationPage__categories_header-button {
+.recomendationPage__categories__header-button {
   background: transparent;
   align-self: center;
   padding: 0;
@@ -109,6 +115,9 @@
   cursor: pointer;
   margin-left: auto;
   transition: transform 0.3s ease;
+}
+.recomendationPage__categories__header-button__active {
+  transform: rotate(180deg);
 }
 
 /* conteúdo do header-under */

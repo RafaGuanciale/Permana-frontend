@@ -1,21 +1,60 @@
+import arrowDown from "../images/icons/arrow-down.png";
+import kayakOceano from "../images/perfumes/kaiak-oceano.png";
+import versacePourHomme from "../images/perfumes/Versace_pour_homme.jpg";
+import aquaDiGioEdt from "../images/perfumes/acqua_di_gio.jpg";
+import malbecGold from "../images/perfumes/malbec-gold.jpg";
+import leauDissey from "../images/perfumes/isseyMiyake-leauDissey.png";
+import coloniaAdp from "../images/perfumes/acquaDiParma-colonia.jpg";
+import essencialNatura from "../images/perfumes/natura-essencial.jpg";
+import bottleHb from "../images/perfumes/hugoBoss-bottled.jpg";
+import diorHommeIntense from "../images/perfumes/dior-hommeIntense.jpg";
+import { useState } from "react";
+
 function recomendationPagePage() {
+  const [openCategory, setOpenCategory] = useState("");
+
+  const expandCategory = (e) => {
+    const category = e.currentTarget.dataset.name;
+    const container = document.querySelector(
+      `.recomendationPage__${category}-container`,
+    );
+    const someContainerActive = document.querySelector(
+      ".recomendationPage__category-active",
+    );
+
+    if (container.classList.contains("recomendationPage__category-active")) {
+      container.classList.remove("recomendationPage__category-active");
+      setOpenCategory("");
+    } else if (someContainerActive !== container && someContainerActive) {
+      someContainerActive.classList.remove(
+        "recomendationPage__category-active",
+      );
+      container.classList.add("recomendationPage__category-active");
+      setOpenCategory(category);
+    } else {
+      container.classList.toggle("recomendationPage__category-active");
+      setOpenCategory(category);
+    }
+  };
+
   return (
     <section className="recomendationPage" id="recomendationPage">
+      <div className="recomendationPage__header">
+        <p className="recomendationPage__eyebrow">INTELIGÊNCIA DA COLEÇÃO</p>
+        <h2 className="section__tittle recomendationPage__title">
+          Recomendações para sua coleção
+        </h2>
+        <p className="section__subtittle recomendationPage__subtitle">
+          Baseado na análise da sua coleção, identificamos os perfis olfativos
+          que precisam de atenção.
+        </p>
+      </div>
       <div className="recomendationPage__container">
-        <div className="recomendationPage__header">
-          <p className="recomendationPage__eyebrow">INTELIGÊNCIA DA COLEÇÃO</p>
-          <h2 className="section__tittle recomendationPage__title">
-            Recomendações para sua coleção
-          </h2>
-          <p className="section__subtittle recomendationPage__subtitle">
-            Baseado na análise da sua coleção, identificamos os perfis olfativos
-            que precisam de atenção.
-          </p>
-        </div>
         <div className="recomendationPage__content">
           <div
             data-name="fresh"
             className="recomendationPage__olfactory_categories recomendationPage__olfactory_categories-fresh"
+            onClick={expandCategory}
           >
             <div className="recomendationPage__categories_header-top">
               <div className="recomendationPage__fresh-bar"></div>
@@ -23,11 +62,17 @@ function recomendationPagePage() {
                 <p className="recomendationPage__categories_header-eyebrow">
                   perfil olfativo
                 </p>
-                <h2 className="recomendationPage__categories_header-title">Frescos</h2>
+                <h2 className="recomendationPage__categories_header-title">
+                  Frescos
+                </h2>
               </div>
               <img
-                className="recomendationPage__categories_header-button"
-                src="./images/icons/arrow-down.png"
+                className={`recomendationPage__categories__header-button ${
+                  openCategory === "fresh"
+                    ? "recomendationPage__categories__header-button__active"
+                    : ""
+                }`}
+                src={arrowDown}
                 alt="Seta para baixo"
               />
             </div>
@@ -45,7 +90,7 @@ function recomendationPagePage() {
                   <div className="recomendationPage__image_overlay-light"></div>
                   <img
                     className="recomendationPage__olfactory-image"
-                    src="./images/perfumes/kaiak-oceano.png"
+                    src={kayakOceano}
                     alt="Kaiak Oceano"
                   />
                 </div>
@@ -66,13 +111,15 @@ function recomendationPagePage() {
                   <div className="recomendationPage__image_overlay-premium"></div>
                   <img
                     className="recomendationPage__olfactory-image"
-                    src="./images/perfumes/Versace_pour_homme.JPG"
+                    src={versacePourHomme}
                     alt="Kaiak Oceano"
                   />
                 </div>
                 <div className="recomendationPage__olfactory-texts">
                   <p className="recomendationPage__light-eyebrow">PREMIUM</p>
-                  <h2 className="recomendationPage__light-title">Versace Pour Homme</h2>
+                  <h2 className="recomendationPage__light-title">
+                    Versace Pour Homme
+                  </h2>
                   <p className="recomendationPage__light-brand">Versace</p>
                   <p className="recomendationPage__light-description">
                     Aquático fresco com notas marinhas e amadeiradas. O clássico
@@ -87,14 +134,18 @@ function recomendationPagePage() {
                   <div className="recomendationPage__image_overlay-high"></div>
                   <img
                     className="recomendationPage__olfactory-image"
-                    src="./images/perfumes/acqua di gio.jpg"
+                    src={aquaDiGioEdt}
                     alt="Kaiak Oceano"
                   />
                 </div>
                 <div className="recomendationPage__olfactory-texts">
                   <p className="recomendationPage__light-eyebrow">HIGH</p>
-                  <h2 className="recomendationPage__light-title">Acqua di Gio EDT</h2>
-                  <p className="recomendationPage__light-brand">Giorgio Armani</p>
+                  <h2 className="recomendationPage__light-title">
+                    Acqua di Gio EDT
+                  </h2>
+                  <p className="recomendationPage__light-brand">
+                    Giorgio Armani
+                  </p>
                   <p className="recomendationPage__light-description">
                     O aquático mais icônico do mundo. Bergamota, jasmin e notas
                     marinhas mediterrâneas.
@@ -108,6 +159,7 @@ function recomendationPagePage() {
           <div
             data-name="citrus"
             className="recomendationPage__olfactory_categories recomendationPage__olfactory_categories-citrus"
+            onClick={expandCategory}
           >
             <div className="recomendationPage__categories_header-top">
               <div className="recomendationPage__citric-bar"></div>
@@ -115,11 +167,17 @@ function recomendationPagePage() {
                 <p className="recomendationPage__categories_header-eyebrow">
                   perfil olfativo
                 </p>
-                <h2 className="recomendationPage__categories_header-title">Cítricos</h2>
+                <h2 className="recomendationPage__categories_header-title">
+                  Cítricos
+                </h2>
               </div>
               <img
-                className="recomendationPage__categories_header-button"
-                src="./images/icons/arrow-down.png"
+                className={`recomendationPage__categories__header-button ${
+                  openCategory === "citrus"
+                    ? "recomendationPage__categories__header-button__active"
+                    : ""
+                }`}
+                src={arrowDown}
                 alt="Seta para baixo"
               />
             </div>
@@ -136,8 +194,8 @@ function recomendationPagePage() {
                   <div className="recomendationPage__image_overlay-light"></div>
                   <img
                     className="recomendationPage__olfactory-image"
-                    src="./images/perfumes/malbec-gold.jpg"
-                    alt="Kaiak Oceano"
+                    src={malbecGold}
+                    alt="Malbec Gold"
                   />
                 </div>
                 <div className="recomendationPage__olfactory-texts">
@@ -157,8 +215,8 @@ function recomendationPagePage() {
                   <div className="recomendationPage__image_overlay-premium"></div>
                   <img
                     className="recomendationPage__olfactory-image"
-                    src="./images/perfumes/isseyMiyake-LeauDissey.png"
-                    alt="Kaiak Oceano"
+                    src={leauDissey}
+                    alt="leau Dissey"
                   />
                 </div>
                 <div className="recomendationPage__olfactory-texts">
@@ -180,14 +238,16 @@ function recomendationPagePage() {
                   <div className="recomendationPage__image_overlay-high"></div>
                   <img
                     className="recomendationPage__olfactory-image"
-                    src="./images/perfumes/acquaDiParma-colonia.jpg"
-                    alt="Kaiak Oceano"
+                    src={coloniaAdp}
+                    alt="Acqua di Parma"
                   />
                 </div>
                 <div className="recomendationPage__olfactory-texts">
                   <p className="recomendationPage__light-eyebrow">HIGH</p>
                   <h2 className="recomendationPage__light-title">Colonia</h2>
-                  <p className="recomendationPage__light-brand">Acqua di Parma</p>
+                  <p className="recomendationPage__light-brand">
+                    Acqua di Parma
+                  </p>
                   <p className="recomendationPage__light-description">
                     Cítrico clássico italiano com bergamota e vetiver. Elegância
                     atemporal e sofisticada.
@@ -201,6 +261,7 @@ function recomendationPagePage() {
           <div
             data-name="floral"
             className="recomendationPage__olfactory_categories recomendationPage__olfactory_categories-floral"
+            onClick={expandCategory}
           >
             <div className="recomendationPage__categories_header-top">
               <div className="recomendationPage__floral-bar"></div>
@@ -208,11 +269,17 @@ function recomendationPagePage() {
                 <p className="recomendationPage__categories_header-eyebrow">
                   perfil olfativo
                 </p>
-                <h2 className="recomendationPage__categories_header-title">Florais</h2>
+                <h2 className="recomendationPage__categories_header-title">
+                  Florais
+                </h2>
               </div>
               <img
-                className="recomendationPage__categories_header-button"
-                src="./images/icons/arrow-down.png"
+                className={`recomendationPage__categories__header-button ${
+                  openCategory === "floral"
+                    ? "recomendationPage__categories__header-button__active"
+                    : ""
+                }`}
+                src={arrowDown}
                 alt="Seta para baixo"
               />
             </div>
@@ -229,7 +296,7 @@ function recomendationPagePage() {
                   <div className="recomendationPage__image_overlay-light"></div>
                   <img
                     className="recomendationPage__olfactory-image"
-                    src="./images/perfumes/natura-essencial.jpg"
+                    src={essencialNatura}
                     alt="natura essencial"
                   />
                 </div>
@@ -250,7 +317,7 @@ function recomendationPagePage() {
                   <div className="recomendationPage__image_overlay-premium"></div>
                   <img
                     className="recomendationPage__olfactory-image"
-                    src="./images/perfumes/hugoBoss-bottled.jpg"
+                    src={bottleHb}
                     alt="Hugo Boss Bottled"
                   />
                 </div>
@@ -271,13 +338,15 @@ function recomendationPagePage() {
                   <div className="recomendationPage__image_overlay-high"></div>
                   <img
                     className="recomendationPage__olfactory-image"
-                    src="./images/perfumes/dior-diorHommeIntense.jpg"
+                    src={diorHommeIntense}
                     alt="dior homme intense"
                   />
                 </div>
                 <div className="recomendationPage__olfactory-texts">
                   <p className="recomendationPage__light-eyebrow">HIGH</p>
-                  <h2 className="recomendationPage__light-title">Dior Homme Intense</h2>
+                  <h2 className="recomendationPage__light-title">
+                    Dior Homme Intense
+                  </h2>
                   <p className="recomendationPage__light-brand">Dior</p>
                   <p className="recomendationPage__light-description">
                     Íris empoado com lavanda e cedro. Sofisticado e sensual para
