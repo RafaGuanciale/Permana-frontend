@@ -48,6 +48,19 @@ function recomendationPagePage() {
           Baseado na análise da sua coleção, identificamos os perfis olfativos
           que precisam de atenção.
         </p>
+        <div className="recomendationPage__gap__container">
+          <div className="recomendationPage__gap__container-wraper">
+            <p className="recomendationPage__gap__title">cobertura olfativa</p>
+            <div className="recomendationPage__gap__bars">
+              <div className="recomendationPage__gap__wrap-bar"></div>
+              <div className="recomendationPage__gap__fill-bar"></div>
+            </div>
+            <p className="recomendationPage__gap__description">
+              3 de 6 famílias cobertas - 3 lacunas identificadas
+            </p>
+          </div>
+          <h3 className="recomendationPage__gap__indicator">3<span className="recomendationPage__gap__indicator-span">/6</span></h3>
+        </div>
       </div>
       <div className="recomendationPage__container">
         <div className="recomendationPage__content">

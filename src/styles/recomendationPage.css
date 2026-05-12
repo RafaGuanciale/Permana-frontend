@@ -42,12 +42,71 @@
   margin: 0 0 40px;
 }
 
+.recomendationPage__gap__container{
+  display: flex;
+  align-items:center;
+  background: rgba(52, 42, 33, 0.20);
+  border-radius: 12px;
+  padding: 14px 20px;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.recomendationPage__gap__container-wraper{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.recomendationPage__gap__title{
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(241, 224, 197, 0.80);
+  margin-bottom: 6px;
+}
+.recomendationPage__gap__bars{
+  width: 100%;
+  display: grid;
+}
+.recomendationPage__gap__wrap-bar{
+  grid-area: 1/1;
+  height: 4px;
+  background: rgba(241, 224, 197, 0.15);
+  border-radius: 4px;
+  margin-bottom: 6px;
+  width: 100%;
+}
+.recomendationPage__gap__fill-bar{
+  grid-area: 1/1;
+  background: #f1e0c5;
+  width: 50%;
+  height: 4px;
+  z-index: 1;
+}
+.recomendationPage__gap__description{
+  font-size: 12px;
+  font-weight: 300;
+  color: rgba(241, 224, 197, 0.80);
+}
+.recomendationPage__gap__indicator{
+  font-family: 'Playfair Display';
+  font-size: 28px;
+  font-weight: 700;
+  color: #f1e0c5;
+  line-height: 1;
+}
+.recomendationPage__gap__indicator-span{
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(241, 224, 197, 0.55);
+}
+
 /* Container da section */
 .recomendationPage__container {
   max-width: 1440px;
   margin: 0 auto;
 }
-
 
 /* Bloco das categorias */
 .recomendationPage__content {
