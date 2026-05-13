@@ -10,7 +10,7 @@ import bottleHb from "../images/perfumes/hugoBoss-bottled.jpg";
 import diorHommeIntense from "../images/perfumes/dior-hommeIntense.jpg";
 import { useState } from "react";
 
-function recomendationPagePage() {
+function recomendationPage() {
   const [openCategory, setOpenCategory] = useState("");
 
   const expandCategory = (e) => {
@@ -59,7 +59,9 @@ function recomendationPagePage() {
               3 de 6 famílias cobertas - 3 lacunas identificadas
             </p>
           </div>
-          <h3 className="recomendationPage__gap__indicator">3<span className="recomendationPage__gap__indicator-span">/6</span></h3>
+          <h3 className="recomendationPage__gap__indicator">
+            3<span className="recomendationPage__gap__indicator-span">/6</span>
+          </h3>
         </div>
       </div>
       <div className="recomendationPage__container">
@@ -94,7 +96,6 @@ function recomendationPagePage() {
                 Sua coleção tem poucas representações de notas frescas e
                 marinhas
               </p>
-              <div className="recomendationPage__categories-eyebrow"></div>
             </div>
             <div className="recomendationPage__olfactory_categories-cards recomendationPage__fresh-container">
               <div className="recomendationPage__fresh-low">
@@ -167,6 +168,7 @@ function recomendationPagePage() {
                 </div>
               </div>
             </div>
+            <div className="recomendationPage__categories-eyebrow"></div>
           </div>
 
           <div
@@ -198,7 +200,6 @@ function recomendationPagePage() {
               <p className="recomendationPage__categories-subtitle">
                 Adicione leveza e frescor para os dias de calor
               </p>
-              <div className="recomendationPage__categories-eyebrow"></div>
             </div>
             <div className="recomendationPage__olfactory_categories-cards recomendationPage__citrus-container">
               <div className="recomendationPage__fresh-low">
@@ -269,6 +270,7 @@ function recomendationPagePage() {
                 </div>
               </div>
             </div>
+            <div className="recomendationPage__categories-eyebrow"></div>
           </div>
 
           <div
@@ -300,7 +302,6 @@ function recomendationPagePage() {
               <p className="recomendationPage__categories-subtitle">
                 Explore notas delicadas que contrastam com seu perfil amadeirado
               </p>
-              <div className="recomendationPage__categories-eyebrow"></div>
             </div>
             <div className="recomendationPage__olfactory_categories-cards recomendationPage__floral-container">
               <div className="recomendationPage__fresh-low">
@@ -369,6 +370,7 @@ function recomendationPagePage() {
                 </div>
               </div>
             </div>
+            <div className="recomendationPage__categories-eyebrow"></div>
           </div>
         </div>
       </div>
@@ -376,4 +378,4 @@ function recomendationPagePage() {
   );
 }
 
-export default recomendationPagePage;
+export default recomendationPage;

@@ -18,22 +18,22 @@ function CollectionPage() {
           <p className="section__subtittle collectionPage__subtitle">
             5 fragrâncias que compõem sua identidade.
           </p>
-          <div class="collectionPage__stats__row">
-            <div class="collectionPage__stat__card">
-              <div class="collectionPage__stat__val">5</div>
-              <div class="collectionPage__stat__label">Perfumes</div>
+          <div className="collectionPage__stats__row">
+            <div className="collectionPage__stat__card">
+              <div className="collectionPage__stat__val">5</div>
+              <div className="collectionPage__stat__label">Perfumes</div>
             </div>
-            <div class="collectionPage__stat__card">
-              <div class="collectionPage__stat__val">4</div>
-              <div class="collectionPage__stat__label">Famílias</div>
+            <div className="collectionPage__stat__card">
+              <div className="collectionPage__stat__val">4</div>
+              <div className="collectionPage__stat__label">Famílias</div>
             </div>
-            <div class="collectionPage__stat__card">
-              <div class="collectionPage__stat__val">3</div>
-              <div class="collectionPage__stat__label">Ocasiões</div>
+            <div className="collectionPage__stat__card">
+              <div className="collectionPage__stat__val">3</div>
+              <div className="collectionPage__stat__label">Ocasiões</div>
             </div>
-            <div class="collectionPage__stat__card">
-              <div class="collectionPage__stat__val">2</div>
-              <div class="collectionPage__stat__label">Climas</div>
+            <div className="collectionPage__stat__card">
+              <div className="collectionPage__stat__val">2</div>
+              <div className="collectionPage__stat__label">Climas</div>
             </div>
           </div>
         </div>
@@ -46,28 +46,28 @@ function CollectionPage() {
                 className="collectionPage__lupa"
               />
               <div className="collectionPage__search__wrap">
-                <form className="collectionPage__form">
+                <div className="collectionPage__form">
                   <input
                     name="searchInput"
                     type="text"
                     className="collectionPage__search__input"
                     placeholder="Buscar por nome ou marca..."
                   />
-                </form>
+                </div>
               </div>
-              <button type="input" class="collectionPage__add__btn">
+              <button type="button" className="collectionPage__add__btn">
                 + Adicionar
               </button>
             </div>
-            <div class="collectionPage__pills">
-              <button class="collectionPage__pill active">Todos</button>
-              <button class="collectionPage__pill">Cítrico</button>
-              <button class="collectionPage__pill">Amadeirado</button>
-              <button class="collectionPage__pill">Almiscarado</button>
-              <button class="collectionPage__pill">Aromático</button>
-              <button class="collectionPage__pill">Floral</button>
+            <div className="collectionPage__pills">
+              <button className="collectionPage__pill active">Todos</button>
+              <button className="collectionPage__pill">Cítrico</button>
+              <button className="collectionPage__pill">Amadeirado</button>
+              <button className="collectionPage__pill">Almiscarado</button>
+              <button className="collectionPage__pill">Aromático</button>
+              <button className="collectionPage__pill">Floral</button>
             </div>
-            <div class="collectionPage__list">
+            <div className="collectionPage__list">
               <div className="collectionPage__list__item">
                 <img
                   className="collectionPage__item__img"
@@ -119,9 +119,9 @@ function CollectionPage() {
                   alt=""
                 />
                 <div className="collectionPage__item__info">
-                  <p className="collectionPage__item__brand">Bleu Noir</p>
+                  <p className="collectionPage__item__brand">Narciso Rodriguez</p>
                   <p className="collectionPage__item__name">
-                    Narciso Rodriguez
+                    Bleu Noir
                   </p>
                   <div className="collectionPage__item__tags">
                     <span className="collectionPage__item__tag">
@@ -145,7 +145,7 @@ function CollectionPage() {
                 />
                 <div className="collectionPage__item__info">
                   <p className="collectionPage__item__brand">
-                    Dolce && Gabbana
+                    Dolce & Gabbana
                   </p>
                   <p className="collectionPage__item__name">Light Blue</p>
                   <div className="collectionPage__item__tags">
