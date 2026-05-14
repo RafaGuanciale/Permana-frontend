@@ -41,35 +41,35 @@
   color: #f1e0c5;
   margin: 0 0 40px;
 }
-
-.recomendationPage__gap__container{
+/* Header gap section */
+.recomendationPage__gap__container {
   display: flex;
-  align-items:center;
-  background: rgba(52, 42, 33, 0.20);
+  align-items: center;
+  background: rgba(52, 42, 33, 0.2);
   border-radius: 12px;
   padding: 14px 20px;
   justify-content: space-between;
   gap: 16px;
   margin-bottom: 40px;
 }
-.recomendationPage__gap__container-wraper{
+.recomendationPage__gap__container-wraper {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
-.recomendationPage__gap__title{
+.recomendationPage__gap__title {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: rgba(241, 224, 197, 0.80);
+  color: rgba(241, 224, 197, 0.8);
   margin-bottom: 6px;
 }
-.recomendationPage__gap__bars{
+.recomendationPage__gap__bars {
   width: 100%;
   display: grid;
 }
-.recomendationPage__gap__wrap-bar{
+.recomendationPage__gap__wrap-bar {
   grid-area: 1/1;
   height: 4px;
   background: rgba(241, 224, 197, 0.15);
@@ -77,26 +77,26 @@
   margin-bottom: 6px;
   width: 100%;
 }
-.recomendationPage__gap__fill-bar{
+.recomendationPage__gap__fill-bar {
   grid-area: 1/1;
   background: #f1e0c5;
   width: 50%;
   height: 4px;
   z-index: 1;
 }
-.recomendationPage__gap__description{
+.recomendationPage__gap__description {
   font-size: 12px;
   font-weight: 300;
-  color: rgba(241, 224, 197, 0.80);
+  color: rgba(241, 224, 197, 0.8);
 }
-.recomendationPage__gap__indicator{
-  font-family: 'Playfair Display';
+.recomendationPage__gap__indicator {
+  font-family: "Playfair Display";
   font-size: 28px;
   font-weight: 700;
   color: #f1e0c5;
   line-height: 1;
 }
-.recomendationPage__gap__indicator-span{
+.recomendationPage__gap__indicator-span {
   font-size: 13px;
   font-weight: 300;
   color: rgba(241, 224, 197, 0.55);
@@ -196,16 +196,19 @@
 
 /* Bloco dos cards */
 .recomendationPage__olfactory_categories-cards {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+.recomendationPage__active__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  border-radius: 14px;
   border-radius: 14px;
   overflow: hidden;
   border: 1px solid rgba(52, 42, 33, 0.1);
   margin: 0;
-  max-height: 0;
-  opacity: 0;
-  transition: all 0.4s ease;
 }
 
 /* Container com display none */
@@ -214,8 +217,71 @@
   opacity: 1;
   margin-top: 16px;
 }
-.recomendationPage__categories__container{
-display: flex;
+.recomendationPage__categories__container {
+  display: flex;
+}
+
+/* Diagnostic dentro da categoria*/
+.recomendationPage__diagnostic__container {
+  padding: 0 0 16px 19px;
+}
+.recomendationPage__diagnostic__label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 6px;
+}
+.recomendationPage__diagnostic__title {
+  font-size: 13px;
+  font-weight: 500;
+  color: rgba(52, 42, 33, 0.5);
+  letter-spacing: 0.03em;
+}
+.recomendationPage__diagnostic__percent {
+  font-family: "Playfair Display";
+  font-size: 16px;
+  font-weight: 700;
+  color: #342a21;
+}
+.recomendationPage__diagnostic__bars {
+  width: 100%;
+  display: grid;
+  margin-bottom: 6px;
+}
+.recomendationPage__diagnostic__wrap-bar {
+  grid-area: 1/1;
+  height: 4px;
+  background: rgba(52, 42, 33, 0.1);
+  border-radius: 4px;
+  width: 100%;
+}
+.recomendationPage__diagnostic__fresh-bar {
+  grid-area: 1/1;
+  background: #da667b;
+  width: 0%;
+  height: 4px;
+  z-index: 1;
+}
+.recomendationPage__diagnostic__citric-bar {
+  grid-area: 1/1;
+  background: #c9b79c;
+  width: 20%;
+  height: 4px;
+  z-index: 1;
+}
+.recomendationPage__diagnostic__floral-bar {
+  grid-area: 1/1;
+  background: #da667b;
+  width: 8%;
+  height: 4px;
+  z-index: 1;
+}
+.recomendationPage__diagnostic__subtitle {
+  font-size: 14px;
+  font-weight: 300;
+  font-style: italic;
+  color: rgba(52, 42, 33, 0.65);
+  line-height: 1.55;
 }
 
 /* Divisão de tiers dos cards */
@@ -379,14 +445,58 @@ display: flex;
   line-height: 1.2;
 }
 
-/* Faixa de preço */
+/* footer do card */
+.recomendationPage__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 12px;
+}
 .recomendationPage__low-price {
-  margin-top: 14px;
   color: #342a21;
   font-size: 14px;
 }
+.recomendationPage__footer__button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(52, 42, 33, 0.5);
+  color: rgba(52, 42, 33, 0.5);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  letter-spacing: 0.03em;
+}
+.recomendationPage__footer__button:hover {
+  color: #da667b;
+  border: 1px solid #da667b;
+}
+.recomendationPage__footer__light-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(241, 224, 197, 0.6);
+  color: rgba(241, 224, 197, 0.6);
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  letter-spacing: 0.03em;
+}
+.recomendationPage__footer__light-button:hover {
+  color: #da667b;
+  border: 1px solid #da667b;
+}
 .recomendationPage__light-price {
-  margin-top: 14px;
   color: rgba(241, 224, 197, 0.6);
   font-size: 14px;
 }
