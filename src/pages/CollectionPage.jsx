@@ -37,152 +37,140 @@ function CollectionPage() {
             </div>
           </div>
         </div>
-        <div className="collectionPage__container">
-          <div className="collectionPage__content">
-            <div className="collectionPage__toolbar">
+        <div className="collectionPage__content">
+          <div className="collectionPage__toolbar">
+            <img
+              src={lupa}
+              alt="lupa de busca"
+              className="collectionPage__lupa"
+            />
+            <div className="collectionPage__search__wrap">
+              <div className="collectionPage__form">
+                <input
+                  name="searchInput"
+                  type="text"
+                  className="collectionPage__search__input"
+                  placeholder="Buscar por nome ou marca..."
+                />
+              </div>
+            </div>
+            <button type="button" className="collectionPage__add__btn">
+              + Adicionar
+            </button>
+          </div>
+          <div className="collectionPage__pills">
+            <button className="collectionPage__pill active">Todos</button>
+            <button className="collectionPage__pill">Cítrico</button>
+            <button className="collectionPage__pill">Amadeirado</button>
+            <button className="collectionPage__pill">Almiscarado</button>
+            <button className="collectionPage__pill">Aromático</button>
+            <button className="collectionPage__pill">Floral</button>
+          </div>
+          <div className="collectionPage__list">
+            <div className="collectionPage__list__item">
               <img
-                src={lupa}
-                alt="lupa de busca"
-                className="collectionPage__lupa"
+                className="collectionPage__item__img"
+                src={bleuChanel}
+                alt=""
               />
-              <div className="collectionPage__search__wrap">
-                <div className="collectionPage__form">
-                  <input
-                    name="searchInput"
-                    type="text"
-                    className="collectionPage__search__input"
-                    placeholder="Buscar por nome ou marca..."
-                  />
+              <div className="collectionPage__item__info">
+                <p className="collectionPage__item__brand">Chanel</p>
+                <p className="collectionPage__item__name">Bleu de Chanel</p>
+                <div className="collectionPage__item__tags">
+                  <span className="collectionPage__item__tag">Aromático</span>
+                  <span className="collectionPage__item__tag">Versátil</span>
+                  <span className="collectionPage__item__tag">Ameno</span>
                 </div>
               </div>
-              <button type="button" className="collectionPage__add__btn">
-                + Adicionar
-              </button>
+              <img
+                className="collectionPage__item__arrow"
+                src={setaDireita}
+                alt=""
+              />
             </div>
-            <div className="collectionPage__pills">
-              <button className="collectionPage__pill active">Todos</button>
-              <button className="collectionPage__pill">Cítrico</button>
-              <button className="collectionPage__pill">Amadeirado</button>
-              <button className="collectionPage__pill">Almiscarado</button>
-              <button className="collectionPage__pill">Aromático</button>
-              <button className="collectionPage__pill">Floral</button>
+            <div className="collectionPage__list__item">
+              <img
+                className="collectionPage__item__img"
+                src={terreHermes}
+                alt=""
+              />
+              <div className="collectionPage__item__info">
+                <p className="collectionPage__item__brand">Hermés</p>
+                <p className="collectionPage__item__name">Terre d`Hermès</p>
+                <div className="collectionPage__item__tags">
+                  <span className="collectionPage__item__tag">Amadeirado</span>
+                  <span className="collectionPage__item__tag">Dia</span>
+                  <span className="collectionPage__item__tag">Ameno</span>
+                </div>
+              </div>
+              <img
+                className="collectionPage__item__arrow"
+                src={setaDireita}
+                alt=""
+              />
             </div>
-            <div className="collectionPage__list">
-              <div className="collectionPage__list__item">
-                <img
-                  className="collectionPage__item__img"
-                  src={bleuChanel}
-                  alt=""
-                />
-                <div className="collectionPage__item__info">
-                  <p className="collectionPage__item__brand">Chanel</p>
-                  <p className="collectionPage__item__name">Bleu de Chanel</p>
-                  <div className="collectionPage__item__tags">
-                    <span className="collectionPage__item__tag">Aromático</span>
-                    <span className="collectionPage__item__tag">Versátil</span>
-                    <span className="collectionPage__item__tag">Ameno</span>
-                  </div>
+            <div className="collectionPage__list__item">
+              <img
+                className="collectionPage__item__img"
+                src={bleuNoirNarciso}
+                alt=""
+              />
+              <div className="collectionPage__item__info">
+                <p className="collectionPage__item__brand">Narciso Rodriguez</p>
+                <p className="collectionPage__item__name">Bleu Noir</p>
+                <div className="collectionPage__item__tags">
+                  <span className="collectionPage__item__tag">Almiscarado</span>
+                  <span className="collectionPage__item__tag">Noite</span>
+                  <span className="collectionPage__item__tag">Frio</span>
                 </div>
-                <img
-                  className="collectionPage__item__arrow"
-                  src={setaDireita}
-                  alt=""
-                />
               </div>
-              <div className="collectionPage__list__item">
-                <img
-                  className="collectionPage__item__img"
-                  src={terreHermes}
-                  alt=""
-                />
-                <div className="collectionPage__item__info">
-                  <p className="collectionPage__item__brand">Hermés</p>
-                  <p className="collectionPage__item__name">Terre d`Hermès</p>
-                  <div className="collectionPage__item__tags">
-                    <span className="collectionPage__item__tag">
-                      Amadeirado
-                    </span>
-                    <span className="collectionPage__item__tag">Dia</span>
-                    <span className="collectionPage__item__tag">Ameno</span>
-                  </div>
+              <img
+                className="collectionPage__item__arrow"
+                src={setaDireita}
+                alt=""
+              />
+            </div>
+            <div className="collectionPage__list__item">
+              <img
+                className="collectionPage__item__img"
+                src={ligthBlueDB}
+                alt=""
+              />
+              <div className="collectionPage__item__info">
+                <p className="collectionPage__item__brand">Dolce & Gabbana</p>
+                <p className="collectionPage__item__name">Light Blue</p>
+                <div className="collectionPage__item__tags">
+                  <span className="collectionPage__item__tag">Cítrico</span>
+                  <span className="collectionPage__item__tag">Casual</span>
+                  <span className="collectionPage__item__tag">Calor</span>
                 </div>
-                <img
-                  className="collectionPage__item__arrow"
-                  src={setaDireita}
-                  alt=""
-                />
               </div>
-              <div className="collectionPage__list__item">
-                <img
-                  className="collectionPage__item__img"
-                  src={bleuNoirNarciso}
-                  alt=""
-                />
-                <div className="collectionPage__item__info">
-                  <p className="collectionPage__item__brand">Narciso Rodriguez</p>
-                  <p className="collectionPage__item__name">
-                    Bleu Noir
-                  </p>
-                  <div className="collectionPage__item__tags">
-                    <span className="collectionPage__item__tag">
-                      Almiscarado
-                    </span>
-                    <span className="collectionPage__item__tag">Noite</span>
-                    <span className="collectionPage__item__tag">Frio</span>
-                  </div>
+              <img
+                className="collectionPage__item__arrow"
+                src={setaDireita}
+                alt=""
+              />
+            </div>
+            <div className="collectionPage__list__item">
+              <img
+                className="collectionPage__item__img"
+                src={hommeIntenseDior}
+                alt=""
+              />
+              <div className="collectionPage__item__info">
+                <p className="collectionPage__item__brand">Dior</p>
+                <p className="collectionPage__item__name">Dior Homme Intense</p>
+                <div className="collectionPage__item__tags">
+                  <span className="collectionPage__item__tag">Floral</span>
+                  <span className="collectionPage__item__tag">Evento</span>
+                  <span className="collectionPage__item__tag">Frio</span>
                 </div>
-                <img
-                  className="collectionPage__item__arrow"
-                  src={setaDireita}
-                  alt=""
-                />
               </div>
-              <div className="collectionPage__list__item">
-                <img
-                  className="collectionPage__item__img"
-                  src={ligthBlueDB}
-                  alt=""
-                />
-                <div className="collectionPage__item__info">
-                  <p className="collectionPage__item__brand">
-                    Dolce & Gabbana
-                  </p>
-                  <p className="collectionPage__item__name">Light Blue</p>
-                  <div className="collectionPage__item__tags">
-                    <span className="collectionPage__item__tag">Cítrico</span>
-                    <span className="collectionPage__item__tag">Casual</span>
-                    <span className="collectionPage__item__tag">Calor</span>
-                  </div>
-                </div>
-                <img
-                  className="collectionPage__item__arrow"
-                  src={setaDireita}
-                  alt=""
-                />
-              </div>
-              <div className="collectionPage__list__item">
-                <img
-                  className="collectionPage__item__img"
-                  src={hommeIntenseDior}
-                  alt=""
-                />
-                <div className="collectionPage__item__info">
-                  <p className="collectionPage__item__brand">Dior</p>
-                  <p className="collectionPage__item__name">
-                    Dior Homme Intense
-                  </p>
-                  <div className="collectionPage__item__tags">
-                    <span className="collectionPage__item__tag">Floral</span>
-                    <span className="collectionPage__item__tag">Evento</span>
-                    <span className="collectionPage__item__tag">Frio</span>
-                  </div>
-                </div>
-                <img
-                  className="collectionPage__item__arrow"
-                  src={setaDireita}
-                  alt=""
-                />
-              </div>
+              <img
+                className="collectionPage__item__arrow"
+                src={setaDireita}
+                alt=""
+              />
             </div>
           </div>
         </div>
