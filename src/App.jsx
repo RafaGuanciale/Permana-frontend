@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import AnalysePage from "./pages/AnalysePage";
+import AnalysisPage from "./pages/AnalysisPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import CollectionPage from "./pages/CollectionPage";
 import DashboardPage from "./pages/DashboardPage";
@@ -54,10 +54,10 @@ function App() {
                 }
               />
               <Route
-                path="/analyse"
+                path="/analysis"
                 element={
                   <ProtectedRoute>
-                    <AnalysePage />
+                    <AnalysisPage />
                   </ProtectedRoute>
                 }
               />
