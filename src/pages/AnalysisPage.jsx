@@ -197,12 +197,152 @@ function AnalysisPage() {
 
             <div className="analysisPage__olfactive__distribution__footer">
               <p className="analysisPage__olfactive__distribution__footer-text">
-                <span className="analysisPage__olfactive__distribuction__footer-text-span">66%</span> em 1 família — especialização alta,
-                versatilidade baixa.
+                <span className="analysisPage__olfactive__distribuction__footer-text-span">
+                  66%
+                </span>{" "}
+                em 1 família — especialização alta, versatilidade baixa.
               </p>
             </div>
           </div>
-          <div className="analysisPage__content__distribuction"></div>
+        </div>
+        <div className="analysisPage__content-middle">
+          <div className="analysisPage__content__diagnostic">
+            <div className="analysisPage__diagnostic__header">
+              <p className="analysisPage__diagnostic__header__label">
+                Diagnóstico
+              </p>
+              <h3 className="analysisPage__diagnostic__header__title">
+                O que os números revelam
+              </h3>
+            </div>
+            <div className="analysisPage__diagnostic__content">
+              <div className="analysisPage__diagnostic__problem">
+                <p className="analysisPage__diagnostic__problem__label">
+                  Raiz do problema
+                </p>
+                <p className="analysisPage__diagnostic__problem__text">
+                  Esta coleção está muito centrada. Quase 2 em cada 3 perfumes
+                  vêm da mesma família aromática — o que é uma{" "}
+                  <span>escolha clara, mas também um ponto fraco.</span>
+                </p>
+              </div>
+              <div className="analysisPage__diagnostic__context">
+                <p className="analysisPage__diagnostic__context__label">
+                  Contexto estratégico
+                </p>
+                <p className="analysisPage__diagnostic__context__text">
+                  Uma coleção especializada pode ser forte. A questão é: essa
+                  concentração nasceu de uma <span>escolha consciente</span> ou
+                  de <span>falta de exploração?</span> Se é proposital, ótimo —
+                  se é acaso, há oportunidade real.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="analysisPage__content__practical-impact">
+            <div className="analysisPage__practical-impact__header">
+              <p className="analysisPage__practical-impact__header__label">
+                Impacto prático
+              </p>
+              <h3 className="analysisPage__practical-impact__header__title">
+                Onde a coleção performa
+              </h3>
+            </div>
+            <div className="analysisPage__practical-impact__content">
+              <div className="analysisPage__practical-impact__good">
+                <p className="analysisPage__practical-impact__good__label">
+                  ✓ Bem-sucedida em
+                </p>
+                <div className="analysisPage__practical-impact__good__list">
+                  <div className="analysisPage__practical-impact__good__item">
+                    <div className="analysisPage__practical-impact__good__item-label">
+                      <p className="analysisPage__good__span-title">
+                        🌙 Noites
+                      </p>
+                      <p className="analysisPage__good__span-percentage">95%</p>
+                    </div>
+                    <div>
+                      <div className="analysisPage__practical-impact__good__item-bar">
+                        <div className="analysisPage__practical-impact__good__item-bar-fill-night"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="analysisPage__practical-impact__good__item">
+                    <div className="analysisPage__practical-impact__good__item-label">
+                      <p className="analysisPage__good__span-title">
+                        ❄️ Clima frio
+                      </p>
+                      <p className="analysisPage__good__span-percentage">92%</p>
+                    </div>
+                    <div>
+                      <div className="analysisPage__practical-impact__good__item-bar">
+                        <div className="analysisPage__practical-impact__good__item-bar-fill-cold"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="analysisPage__practical-impact__good__item">
+                    <div className="analysisPage__practical-impact__good__item-label">
+                      <p className="analysisPage__good__span-title">
+                        💼 Formal
+                      </p>
+                      <p className="analysisPage__good__span-percentage">88%</p>
+                    </div>
+                    <div>
+                      <div className="analysisPage__practical-impact__good__item-bar">
+                        <div className="analysisPage__practical-impact__good__item-bar-fill-formal"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="analysisPage__practical-impact__bad">
+                <p className="analysisPage__practical-impact__bad__label">
+                  ✗ Crítica em
+                </p>
+                <div className="analysisPage__practical-impact__bad__list">
+                  <div className="analysisPage__practical-impact__bad__item">
+                    <div className="analysisPage__practical-impact__bad__item-label">
+                      <p className="analysisPage__bad__span-title">
+                        ☀️ Dia quente
+                      </p>
+                      <p className="analysisPage__bad__span-percentage">12%</p>
+                    </div>
+                    <div>
+                      <div className="analysisPage__practical-impact__bad__item-bar">
+                        <div className="analysisPage__practical-impact__bad__item-bar-fill-hotday"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="analysisPage__practical-impact__bad__item">
+                    <div className="analysisPage__practical-impact__bad__item-label">
+                      <p className="analysisPage__bad__span-title">
+                        🏖️ Praia e verão
+                      </p>
+                      <p className="analysisPage__bad__span-percentage">8%</p>
+                    </div>
+                    <div>
+                      <div className="analysisPage__practical-impact__bad__item-bar">
+                        <div className="analysisPage__practical-impact__bad__item-bar-fill-beach"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="analysisPage__practical-impact__bad__item">
+                    <div className="analysisPage__practical-impact__bad__item-label">
+                      <p className="analysisPage__bad__span-title">
+                        🏃 Exercício
+                      </p>
+                      <p className="analysisPage__bad__span-percentage">5%</p>
+                    </div>
+                    <div>
+                      <div className="analysisPage__practical-impact__bad__item-bar">
+                        <div className="analysisPage__practical-impact__bad__item-bar-fill-sports"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
