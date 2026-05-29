@@ -3,9 +3,6 @@ import profileIcon from "../../images/Developper/avatar.jpg";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useContext } from "react";
-import Popup from "../Popups/Popup";
-import LoginPopup from "../Popups/LoginPopup";
-import ProfilePopup from "../Popups/ProfilePopup";
 import { PopupContext } from "../../contexts/PopupContext";
 
 function Header() {
@@ -86,17 +83,6 @@ function Header() {
           </button>
         </div>
       </div>
-      {activePopup === "login" && (
-        <Popup popupClass="popup__login">
-          <LoginPopup />
-        </Popup>
-      )}
-
-      {activePopup === "profile" && (
-        <Popup popupClass="popup__profile">
-          <ProfilePopup />
-        </Popup>
-      )}
     </header>
   );
 }

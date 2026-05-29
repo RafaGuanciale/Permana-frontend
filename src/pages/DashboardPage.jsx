@@ -610,11 +610,6 @@ function DashboardPage() {
           </div>
         </div>
       </div>
-      {activePopup === "card" && (
-        <Popup popupClass="popup__cards">
-          <CardsPopup />
-        </Popup>
-      )}
     </div>
   );
 }

@@ -6,7 +6,8 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function ProfilePopup() {
-  const { handleClosePopup } = useContext(PopupContext);
+  const { activePopup } = useContext(PopupContext);
+  const { handleOpenPopup, handleClosePopup } = useContext(PopupContext);
   const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleLogout = () => {
@@ -18,6 +19,7 @@ function ProfilePopup() {
     handleClosePopup();
     navigate("/");
   };
+
   return (
     <>
       <div className="profile__info">
@@ -34,6 +36,7 @@ function ProfilePopup() {
           <button
             className="profile__btn profile__btn--edit"
             id="profile-edit-btn"
+            onClick={() => handleOpenPopup("edit")}
           >
             Edit
           </button>

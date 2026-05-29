@@ -11,13 +11,12 @@ import RecomendationPage from "./pages/RecommendationPage";
 import BlogPage from "./pages/BlogPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { useContext } from "react";
-import { AuthContext, AuthProvider } from "./contexts/AuthContext";
+import { AuthProvider } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
-import { PopupContext, PopupProvider } from "./contexts/PopupContext";
+import { PopupProvider } from "./contexts/PopupContext";
+import PopupManager from "./components/Popups/PopupManager";
 
 function App() {
-  // const authContext = useContext(AuthContext);
 
   return (
     <>
@@ -88,6 +87,7 @@ function App() {
             </Routes>
             <Footer />
           </div>
+          <PopupManager />
         </PopupProvider>
       </AuthProvider>
     </>
