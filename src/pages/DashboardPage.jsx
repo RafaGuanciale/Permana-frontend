@@ -23,6 +23,7 @@ import { useContext } from "react";
 
 function DashboardPage() {
   const { activePopup } = useContext(PopupContext);
+  const isEmpty = initialCards.length === 0;
 
   return (
     <div className="dashboard__content">
@@ -51,48 +52,67 @@ function DashboardPage() {
                 Minha Coleção
               </p>
               <p className="dashCollection__header__resume">
-                5 fragrâncias na sua coleção
+                {isEmpty
+                  ? "Nenhuma fragrância ainda"
+                  : `${initialCards.length} fragrâncias na sua coleção`}
               </p>
             </div>
-            <button className="dashCollection__header__add">
-              + Adicionar fragrância
-            </button>
-          </div>
-          <div className="dashCollection__carousel">
-            <img
-              src={arrowLeft}
-              alt="arrow left"
-              className="dashCollection__carousel__arrow--left"
-            />
-            <div className="dashCollection__grid">
-              {initialCards.map((card) => (
-                <CollectionCard
-                  key={card.id}
-                  name={card.name}
-                  brand={card.brand}
-                  image={card.link}
-                  card={card}
-                />
-              ))}
-              <div className="dashCollection__card__new">
-                <div className="dashCollection__new__info">
-                  <p className="dashCollection__new__icon">+</p>
-                  <p className="dashCollection__new__label">Adicionar</p>
-                </div>
-              </div>
-            </div>
-            <img
-              src={arrowRight}
-              alt="arrow right"
-              className="dashCollection__carousel__arrow--right"
-            />
           </div>
 
-          <div className="dashCollection__footer">
-            <Link className="dashCollection__footer__view" to="/collection">
-              Ver coleção completa →
-            </Link>
-          </div>
+          {isEmpty ? (
+            /* ── EMPTY STATE ── */
+            <div className="dashCollection__empty">
+              <p className="dashCollection__empty__icon">✦</p>
+              <p className="dashCollection__empty__title">
+                Adicione sua primeira fragrância
+              </p>
+              <p className="dashCollection__empty__text">
+                Com pelo menos 3 perfumes, o Aromatik consegue identificar sua
+                identidade olfativa e gerar recomendações.
+              </p>
+              <button className="dashCollection__header__add dashCollection__empty__cta">
+                + Adicionar fragrância
+              </button>
+            </div>
+          ) : (
+            /* ── ESTADO NORMAL ── */
+            <>
+              <div className="dashCollection__carousel">
+                <img
+                  src={arrowLeft}
+                  alt="arrow left"
+                  className="dashCollection__carousel__arrow--left"
+                />
+                <div className="dashCollection__grid">
+                  {initialCards.map((card) => (
+                    <CollectionCard
+                      key={card.id}
+                      name={card.name}
+                      brand={card.brand}
+                      image={card.link}
+                      card={card}
+                    />
+                  ))}
+                  <div className="dashCollection__card__new">
+                    <div className="dashCollection__new__info">
+                      <p className="dashCollection__new__icon">+</p>
+                      <p className="dashCollection__new__label">Adicionar</p>
+                    </div>
+                  </div>
+                </div>
+                <img
+                  src={arrowRight}
+                  alt="arrow right"
+                  className="dashCollection__carousel__arrow--right"
+                />
+              </div>
+              <div className="dashCollection__footer">
+                <Link className="dashCollection__footer__view" to="/collection">
+                  Ver coleção completa →
+                </Link>
+              </div>
+            </>
+          )}
         </div>
       </div>
       <div className="dashboard__wrapper--middle">
@@ -400,7 +420,10 @@ function DashboardPage() {
             </div>
           </div>
           <div className="dashRecomendation__footer">
-            <Link className="dashRecomendation__footer__view" to="/recommendation">
+            <Link
+              className="dashRecomendation__footer__view"
+              to="/recommendation"
+            >
               Ver todas as recomendações →
             </Link>
           </div>

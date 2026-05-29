@@ -2,7 +2,7 @@ import loginIcon from "../../images/icons/circle-user-champagne.png";
 import profileIcon from "../../images/Developper/avatar.jpg";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../contexts/AuthContext";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
 
 function Header() {
@@ -13,6 +13,8 @@ function Header() {
   const handleChangePopup = () => {
     handleOpenPopup(isLogged ? "profile" : "login");
   };
+
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="header" id="header">
@@ -56,6 +58,14 @@ function Header() {
         </div>
         <div className="header__actions">
           <button
+            className="header__menu-btn"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <button
             className="header__action header__action--profile"
             id="header-user-btn"
             onClick={handleChangePopup}
@@ -82,6 +92,81 @@ function Header() {
             )}
           </button>
         </div>
+      </div>
+      <div
+        className={`header__mobile-menu ${
+          isMenuOpen ? "header__mobile-menu--open" : ""
+        }`}
+      >
+        {isLogged ? (
+          <nav className="header__mobile-nav">
+            <NavLink
+              to="/dashboard"
+              className="header__mobile-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Dashboard
+            </NavLink>
+
+            <NavLink
+              to="/collection"
+              className="header__mobile-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Coleção
+            </NavLink>
+
+            <NavLink
+              to="/analysis"
+              className="header__mobile-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Análise
+            </NavLink>
+
+            <NavLink
+              to="/recommendation"
+              className="header__mobile-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Recomendações
+            </NavLink>
+
+            <NavLink
+              to="/categories"
+              className="header__mobile-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Categorias
+            </NavLink>
+          </nav>
+        ) : (
+          <nav className="header__mobile-nav">
+            <Link
+              to="/"
+              className="header__mobile-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+
+            <a
+              href="#about-aromatik"
+              className="header__mobile-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Produto
+            </a>
+
+            <a
+              href="#author"
+              className="header__mobile-link"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Desenvolvedor
+            </a>
+          </nav>
+        )}
       </div>
     </header>
   );
