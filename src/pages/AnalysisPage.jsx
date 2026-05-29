@@ -344,6 +344,32 @@ function AnalysisPage() {
             </div>
           </div>
         </div>
+        <div className="analysisPage__content-bottom">
+          <div className="analysisPage__content__next-steps">
+            <div className="analysisPage__next-steps__infos">
+              <p className="analysisPage__next-steps__label">Próximo passo</p>
+              <h3 className="analysisPage__next-steps__title">
+                Esta coleção quer respirar.
+              </h3>
+              <p className="analysisPage__next-steps__text">
+                Recomendações personalizadas com base neste diagnóstico — por
+                família olfativa e faixa de preço.
+              </p>
+            </div>
+            <button className="analysisPage__next-steps_cta-btn">
+              → Explorar recomendações
+            </button>
+          </div>
+          <div className="analysisPage__content__reanalyze">
+            <p className="analysisPage__reanalyze__label">Próxima análise em</p>
+            <p className="analysisPage__reanalyze__time">
+              5 <span className="analysisPage__reanalyze__span">dias</span>
+            </p>
+            <button className="analysisPage__reanalyze__btn">
+              ↻ Reanalisar
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   );

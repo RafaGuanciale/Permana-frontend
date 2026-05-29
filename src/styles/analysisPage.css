@@ -131,9 +131,9 @@
 }
 .analysisPage__content-bottom {
   display: grid;
-  grid-template-columns: 2fr 1.2fr;
+  grid-template-columns: 1fr auto;
   gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  align-items: stretch;
   width: 100%;
 }
 
@@ -320,8 +320,6 @@
   font-weight: 400;
   color: #f1e0c5;
 }
-
-/* Olfactive Distribuction content */
 .analysisPage__olfactive__distribution__content {
   padding: 1.8rem 1.8rem;
   flex: 1;
@@ -368,8 +366,6 @@
   color: #71816d;
   margin: 0;
 }
-
-/* Olfactive Distribuction footer */
 .analysisPage__olfactive__distribution__footer {
   background: #f9f7f4;
   border-top: 1px solid #ede9e3;
@@ -385,8 +381,6 @@
 .analysisPage__olfactive__distribuction__footer-text-span {
   font-weight: 600;
 }
-
-/* Olfactive Categories */
 .analysisPage__olfactive__content__item-bar__fill-woody {
   width: 62%;
   height: 100%;
@@ -597,7 +591,6 @@
   background: #71816d;
   border-radius: 2px;
 }
-
 .analysisPage__practical-impact__bad {
   padding: 1.8rem;
   background: #f9e9e9;
@@ -659,4 +652,103 @@
   height: 100%;
   background: #da667b;
   border-radius: 3px;
+}
+
+/* Next Step Content */
+.analysisPage__content__next-steps {
+  background: #342A21;
+  border-radius: 20px;
+  padding: 2.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+  box-shadow: 0 4px 24px rgba(52, 42, 33, 0.1);
+}
+.analysisPage__next-steps__infos {
+  display: flex;
+  flex-direction: column;
+}
+.analysisPage__next-steps__label {
+  font-size: 12px;
+  color: rgba(241, 224, 197, 0.65);
+  margin: 0 0 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.analysisPage__next-steps__title {
+  font-family: "Playfair Display", serif;
+  font-size: 24px;
+  font-style: italic;
+  margin: 0 0 10px;
+  font-weight: 400;
+  color: #f1e0c5;
+}
+.analysisPage__next-steps__text {
+  font-size: 14px;
+  color: rgba(241, 224, 197, 0.8);
+  margin: 0;
+  line-height: 1.7;
+  font-weight: 300;
+}
+.analysisPage__next-steps_cta-btn {
+  background: #f1e0c5;
+  border: none;
+  color: #342a21;
+  padding: 14px 36px;
+  border-radius: 24px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* Reanalyze Content */
+.analysisPage__content__reanalyze {
+    background: white;
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    box-shadow: 0 4px 24px rgba(52, 42, 33, 0.06);
+    min-width: 220px;
+}
+.analysisPage__reanalyze__label {
+    font-size: 11px;
+    color: #C9B79C;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    font-weight: 600;
+    text-align: center;
+}
+.analysisPage__reanalyze__time {
+    font-size: 32px;
+    color: #342A21;
+    margin: 0;
+    font-weight: 300;
+    line-height: 1;
+}
+.analysisPage__reanalyze__span {
+font-size: 16px;
+    font-weight: 400;
+}
+.analysisPage__reanalyze__btn {
+    background: transparent;
+    border: 1.5px solid #342A21;
+    color: #342A21;
+    padding: 9px 20px;
+    border-radius: 18px;
+    font-size: 12px;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+    cursor: not-allowed;
+    opacity: 0.6;
+    letter-spacing: 0.03em;
 }
