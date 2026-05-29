@@ -2,7 +2,7 @@ import instagram from "../../images/icons/social-media/instagram-circle-green.pn
 import github from "../../images/icons/social-media/github-green.png";
 import linkedin from "../../images/icons/social-media/linkedin-circle-green.png";
 
-function Header() {
+function Footer() {
   return (
     <footer className="footer" id="footer">
       <div className="footer__columns">
@@ -12,7 +12,7 @@ function Header() {
           </div>
           <div className="footer__column__copyright">
             <p className="footer__text">© 2025 Aromatik.</p>
-            <p className="footer__text">
+            <p className="footer__text footer__text--developer">
               Desenvolvido com dedicação por Rafael Guanciale Nacarato.
             </p>
           </div>
@@ -68,4 +68,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default Footer;

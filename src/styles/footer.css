@@ -1,16 +1,14 @@
 .footer {
-  background-color: #F1E0C5;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0;
+  background-color: #f1e0c5;
   margin-top: auto;
-  padding: 40px 70px;
+  padding: 28px 40px;
+  border-top: 1px solid rgba(52, 42, 33, 0.08);
 }
 .footer__columns {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 24px;
   width: 100%;
 }
 
@@ -20,7 +18,7 @@
 }
 .footer__column__logo {
   font-family: "Playfair Display", serif;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 1.1;
   font-weight: 700;
   letter-spacing: 0.5px;
@@ -30,7 +28,7 @@
   margin-bottom: 6px;
 }
 .footer__column__copyright {
-  color: #71816D;
+  color: #71816d;
   font-size: 14px;
   font-weight: normal;
 }
@@ -40,12 +38,12 @@
   list-style-type: none;
   padding: 0;
   line-height: 1.3;
-  color: #71816D;
+  color: #71816d;
   font-size: 16px;
   font-weight: normal;
   letter-spacing: 1px;
   display: flex;
-  gap: 28px;
+  gap: 20px;
 }
 .footer__social-link {
   display: flex;
@@ -56,6 +54,80 @@
   transition: color 0.3s ease;
 }
 .footer__social-icon {
-  height: 32px;
-  width: 32px;
+  height: 28px;
+  width: 28px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding: 24px 18px;
+  }
+
+  .footer__columns {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .footer__column--main {
+    gap: 4px;
+  }
+
+  .footer__column__logo {
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+
+  .footer__column__copyright {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .footer__text--developer {
+    display: none;
+  }
+
+  .footer__list {
+    gap: 18px;
+    font-size: 13px;
+
+    flex-wrap: wrap;
+  }
+
+  .footer__social-link {
+    gap: 6px;
+  }
+
+  .footer__social-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 20px 14px;
+  }
+
+  .footer__columns {
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer__column--main {
+    align-items: center;
+  }
+
+  .footer__list {
+    justify-content: center;
+  }
+
+  .footer__social-link {
+    font-size: 0;
+  }
+
+  .footer__social-icon {
+    width: 26px;
+    height: 26px;
+  }
 }
