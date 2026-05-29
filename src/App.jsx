@@ -4,7 +4,6 @@ import CategoriesPage from "./pages/CategoriesPage";
 import CollectionPage from "./pages/CollectionPage";
 import DashboardPage from "./pages/DashboardPage";
 import LandingPage from "./pages/LandingPage";
-import AboutPage from "./pages/AboutPage";
 import NewAccountPage from "./pages/NewAccountPage";
 import OnboardingPage from "./pages/OnboardingPage";
 import RecomendationPage from "./pages/RecommendationPage";
@@ -26,7 +25,6 @@ function App() {
             <Header />
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              <Route path="/about" element={<AboutPage />} />
               <Route path="/newAccount" element={<NewAccountPage />} />
               <Route
                 path="/onboarding"
@@ -61,7 +59,7 @@ function App() {
                 }
               />
               <Route
-                path="/recomendation"
+                path="/recommendation"
                 element={
                   <ProtectedRoute>
                     <RecomendationPage />

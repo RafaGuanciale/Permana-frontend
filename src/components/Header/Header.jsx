@@ -30,15 +30,15 @@ function Header() {
               <NavLink to="/analysis" className="header__nav-link">
                 Análise
               </NavLink>
-              <NavLink to="/recomendation" className="header__nav-link">
+              <NavLink to="/recommendation" className="header__nav-link">
                 Recomendações
               </NavLink>
               <NavLink to="/categories" className="header__nav-link">
                 Categorias
               </NavLink>
-              <NavLink to="/blog" className="header__nav-link">
+              {/* <NavLink to="/blog" className="header__nav-link">
                 Blog
-              </NavLink>
+              </NavLink> */}
             </nav>
           ) : (
             <nav className="header__nav" id="header__nav-landing">

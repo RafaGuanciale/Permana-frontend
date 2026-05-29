@@ -400,7 +400,7 @@ function DashboardPage() {
             </div>
           </div>
           <div className="dashRecomendation__footer">
-            <Link className="dashRecomendation__footer__view" to="/recomendation">
+            <Link className="dashRecomendation__footer__view" to="/recommendation">
               Ver todas as recomendações →
             </Link>
           </div>

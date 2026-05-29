@@ -1,4 +1,8 @@
+import { useNavigate } from "react-router-dom";
+
 function AnalysisPage() {
+  const navigate = useNavigate();
+
   return (
     <section className="analysisPage" id="analysisPage">
       <div className="analysisPage__header">
@@ -359,7 +363,10 @@ function AnalysisPage() {
                 família olfativa e faixa de preço.
               </p>
             </div>
-            <button className="analysisPage__next-steps_cta-btn">
+            <button
+              className="analysisPage__next-steps_cta-btn"
+              onClick={() => navigate("/recommendation")}
+            >
               → Explorar recomendações
             </button>
           </div>

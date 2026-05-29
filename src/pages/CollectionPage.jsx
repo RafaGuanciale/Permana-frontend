@@ -20,11 +20,11 @@ function CollectionPage() {
             Minha Coleção
           </h2>
           <p className="section__subtittle collectionPage__subtitle">
-            5 fragrâncias que compõem sua identidade.
+            {initialCards.length} fragrâncias que compõem sua identidade.
           </p>
           <div className="collectionPage__stats__row">
             <div className="collectionPage__stat__card">
-              <div className="collectionPage__stat__val">5</div>
+              <div className="collectionPage__stat__val">{initialCards.length}</div>
               <div className="collectionPage__stat__label">Perfumes</div>
             </div>
             <div className="collectionPage__stat__card">
