@@ -12,6 +12,7 @@
   padding: 12px 14px;
 }
 .dashboard__wrapper--middle {
+  padding: 12px 14px;
   display: grid;
   grid-template-columns: 1fr 1fr;
   column-gap: 12px;
@@ -24,6 +25,11 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   column-gap: 12px;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+.dashboard__wrapper--blog {
+  padding: 12px 14px;
   max-width: 1440px;
   margin: 0 auto;
 }

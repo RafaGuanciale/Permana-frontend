@@ -21,6 +21,8 @@ function recomendationPage() {
   return (
     <section className="recomendationPage" id="recomendationPage">
       <div className="recomendationPage__header">
+        <div className="recomendationPage__header__circle-1"></div>
+        <div className="recomendationPage__header__circle-2"></div>
         <p className="recomendationPage__eyebrow">INTELIGÊNCIA DA COLEÇÃO</p>
         <h2 className="section__tittle recomendationPage__title">
           Recomendações para sua coleção

@@ -328,7 +328,7 @@ function DashboardPage() {
             </div>
           </div>
           <div className="dashIdentity__footer">
-            <Link className="dashIdentity__footer__view" to="/analyse">
+            <Link className="dashIdentity__footer__view" to="/analysis">
               Ver análise completa →
             </Link>
           </div>

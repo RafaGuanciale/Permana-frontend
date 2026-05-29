@@ -11,8 +11,10 @@ import CollectionPageCard from "../components/Cards/CollectionPageCards";
 function CollectionPage() {
   return (
     <section className="collectionPage" id="collectionPage">
-      <div className="collectionPage__wrapper">
+
         <div className="collectionPage__header">
+          <div className="collectionPage__header__circle-1"></div>
+          <div className="collectionPage__header__circle-2"></div>
           <p className="collectionPage__eyebrow">Sua coleção</p>
           <h2 className="section__tittle collectionPage__title">
             Minha Coleção
@@ -80,7 +82,6 @@ function CollectionPage() {
             ))}
           </div>
         </div>
-      </div>
     </section>
   );
 }

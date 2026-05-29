@@ -38,6 +38,9 @@ function categoriesPage() {
   return (
     <section className="categoriesPage" id="categoriesPage">
       <div className="categoriesPage__header">
+        <div className="categoriesPage__header__circle-1"></div>
+        <div className="categoriesPage__header__circle-2"></div>
+
         <p className="categoriesPage__eyebrow">EXPLORE POR MOMENTO</p>
         <h2 className="section__tittle categoriesPage__title">
           Categorias & Ocasiões

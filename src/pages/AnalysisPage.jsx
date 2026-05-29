@@ -4,6 +4,9 @@ function AnalysisPage() {
       <div className="analysisPage__header">
         <div className="analysisPage__header__circle-1"></div>
         <div className="analysisPage__header__circle-2"></div>
+
+        <div className="analysisPage__header__circle-1"></div>
+        <div className="analysisPage__header__circle-2"></div>
         <div className="analysisPage__header__left">
           <p className="analysisPage__eyebrow">identidade olfativa</p>
           <h2 className="section__tittle analysisPage__title">
