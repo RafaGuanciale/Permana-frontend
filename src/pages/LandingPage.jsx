@@ -128,7 +128,7 @@ function LandingPage() {
               </ul>
             </div>
           </div>
-          <Link to="/newAccount" className="about__cta-btn--brown">
+          <Link to="/register" className="about__cta-btn--brown">
             Criar minha conta
           </Link>
         </div>

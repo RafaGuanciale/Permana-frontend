@@ -6,7 +6,7 @@ function ProtectedRoute({ children }) {
     const { isLogged } = useContext(AuthContext)
 
   return (
-    isLogged ? children : <Navigate to="/" />
+    isLogged ? children : <Navigate to="/" replace />
   );
 }
 
