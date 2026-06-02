@@ -3,13 +3,13 @@ import { createContext, useEffect, useState } from "react";
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-  const [isLogged, setIsLogged] = useState(true);
+  const [isLogged, setIsLogged] = useState(false);
   const [isApiAvailable, setIsApiAvailable] = useState(false);
-  const [user, setUser] = useState("");
+  const [user, setUser] = useState({ username: "", password: "" });
 
-  const login = (userName) => {
+  const login = (authData) => {
     setIsLogged(true);
-    setUser(userName);
+    setUser(authData.user);
   };
   const logout = () => {
     setIsLogged(false);

@@ -1,9 +1,9 @@
 import loginIcon from "../../images/icons/circle-user-champagne.png";
 import profileIcon from "../../images/Developper/avatar.jpg";
 import { Link, NavLink } from "react-router-dom";
-import { AuthContext } from "../../contexts/AuthContext";
 import { useContext, useState } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
+import { AuthContext } from "../../contexts/AuthContext";
 
 function Header() {
   const { isLogged } = useContext(AuthContext);

@@ -1,8 +1,8 @@
 function BrandPanel() {
   return (
     <div className="registerPage__container__left">
-      <div class="registerPage__deco-1"></div>
-      <div class="registerPage__deco-2"></div>
+      <div className="registerPage__deco-1"></div>
+      <div className="registerPage__deco-2"></div>
       <div className="registerPage__left__logo">
         Aromati<span className="registerPage__logo__span">k</span>
       </div>

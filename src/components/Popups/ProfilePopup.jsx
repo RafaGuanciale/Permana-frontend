@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
+import { removeToken } from "../../utils/token";
 
 function ProfilePopup() {
   const { activePopup } = useContext(PopupContext);
@@ -15,6 +16,7 @@ function ProfilePopup() {
     if (!confirmation) {
       return;
     }
+    removeToken();
     logout();
     handleClosePopup();
     navigate("/");

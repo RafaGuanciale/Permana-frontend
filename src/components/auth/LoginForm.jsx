@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import googleIcon from "../../images/icons/social-media/google-logo.jpg";
 
-function LoginForm({ handleRegistration }) {
+function LoginForm({ handleLogin }) {
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -18,7 +18,7 @@ function LoginForm({ handleRegistration }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    handleRegistration(data);
+    handleLogin(data);
   };
 
   return (

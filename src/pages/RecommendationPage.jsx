@@ -123,7 +123,7 @@ function recomendationPage() {
                     <div className="recomendationPage__footer">
                       <p className="recomendationPage__low-price">Até R$300</p>
                       <button
-                        class="recomendationPage__footer__button"
+                        className="recomendationPage__footer__button"
                         onclick="toggleWish(this)"
                       >
                         ♡ Salvar
@@ -156,7 +156,7 @@ function recomendationPage() {
                         R$300-800
                       </p>
                       <button
-                        class="recomendationPage__footer__light-button"
+                        className="recomendationPage__footer__light-button"
                         onclick="toggleWish(this)"
                       >
                         ♡ Salvar
@@ -189,7 +189,7 @@ function recomendationPage() {
                     <div className="recomendationPage__footer">
                       <p className="recomendationPage__light-price">R$800+</p>
                       <button
-                        class="recomendationPage__footer__light-button"
+                        className="recomendationPage__footer__light-button"
                         onclick="toggleWish(this)"
                       >
                         ♡ Salvar
@@ -275,7 +275,7 @@ function recomendationPage() {
                     <div className="recomendationPage__footer">
                       <p className="recomendationPage__low-price">Até R$300</p>
                       <button
-                        class="recomendationPage__footer__button"
+                        className="recomendationPage__footer__button"
                         onclick="toggleWish(this)"
                       >
                         ♡ Salvar
@@ -310,7 +310,7 @@ function recomendationPage() {
                         R$300-800
                       </p>
                       <button
-                        class="recomendationPage__footer__light-button"
+                        className="recomendationPage__footer__light-button"
                         onclick="toggleWish(this)"
                       >
                         ♡ Salvar
@@ -341,7 +341,7 @@ function recomendationPage() {
                     <div className="recomendationPage__footer">
                       <p className="recomendationPage__light-price">R$800+</p>
                       <button
-                        class="recomendationPage__footer__light-button"
+                        className="recomendationPage__footer__light-button"
                         onclick="toggleWish(this)"
                       >
                         ♡ Salvar
@@ -425,7 +425,7 @@ function recomendationPage() {
                     <div className="recomendationPage__footer">
                       <p className="recomendationPage__low-price">Até R$300</p>
                       <button
-                        class="recomendationPage__footer__button"
+                        className="recomendationPage__footer__button"
                         onclick="toggleWish(this)"
                       >
                         ♡ Salvar
@@ -456,7 +456,7 @@ function recomendationPage() {
                         R$300-800
                       </p>
                       <button
-                        class="recomendationPage__footer__light-button"
+                        className="recomendationPage__footer__light-button"
                         onclick="toggleWish(this)"
                       >
                         ♡ Salvar
@@ -487,7 +487,7 @@ function recomendationPage() {
                     <div className="recomendationPage__footer">
                       <p className="recomendationPage__light-price">R$800+</p>
                       <button
-                        class="recomendationPage__footer__light-button"
+                        className="recomendationPage__footer__light-button"
                         onclick="toggleWish(this)"
                       >
                         ♡ Salvar

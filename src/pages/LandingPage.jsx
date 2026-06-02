@@ -19,8 +19,8 @@ function LandingPage() {
     <>
       <section className="home" id="home">
         <div className="home__bg">
-          <div class="home__bg--right"></div>
-          <div class="home__bg--left"></div>
+          <div className="home__bg--right"></div>
+          <div className="home__bg--left"></div>
           <svg
             className="home__divider"
             viewBox="0 0 70 100"
@@ -135,51 +135,51 @@ function LandingPage() {
           </Link>
         </div>
       </section>
-      <section class="author" id="author">
-        <div class="author__container">
-          <div class="author__picture">
+      <section className="author" id="author">
+        <div className="author__container">
+          <div className="author__picture">
             <img
               src={author}
               alt="Foto do autor Rafael"
-              class="author__image"
+              className="author__image"
             />
-            <div class="author__image-overlay">
-              <p class="author__image-overlay__name">
+            <div className="author__image-overlay">
+              <p className="author__image-overlay__name">
                 Rafael Guanciale Nacarato
               </p>
-              <p class="author__image-overlay__job">
+              <p className="author__image-overlay__job">
                 Web developer - Fullstack in training
               </p>
             </div>
           </div>
-          <div class="author__info">
-            <div class="author__eyebrow"></div>
-            <p class="author__eyebrow__label">
+          <div className="author__info">
+            <div className="author__eyebrow"></div>
+            <p className="author__eyebrow__label">
               SOBRE O DESENVOLVEDOR & O PROJETO
             </p>
-            <h3 class="author__title">Paixão por perfumaria,</h3>
-            <h4 class="author__subtitle">aprendizado em código</h4>
-            <p class="author__paragraph">
+            <h3 className="author__title">Paixão por perfumaria,</h3>
+            <h4 className="author__subtitle">aprendizado em código</h4>
+            <p className="author__paragraph">
               O Aromatik nasceu da união de duas paixões: o universo das
               fragrâncias e o desenvolvimento web. É o meu laboratório de
               aprendizado, onde cada funcionalidade reflete um novo conceito
               aprendido.
             </p>
-            <p class="author__paragraph">
+            <p className="author__paragraph">
               HTML, CSS, JavaScript e arquitetura orientada a objetos aplicados
               em um produto real, pensado para quem leva a perfumaria a sério.
             </p>
-            <div class="author__buttons">
+            <div className="author__buttons">
               <a
                 href="https://github.com/RafaGuanciale"
-                class="author__cta-btn--brown"
+                className="author__cta-btn--brown"
                 target="_blank"
               >
                 GITHUB
               </a>
               <a
                 href="https://www.linkedin.com/in/rafaelguanciale/"
-                class="author__cta-btn--transparent"
+                className="author__cta-btn--transparent"
                 target="_blank"
               >
                 LINKEDIN

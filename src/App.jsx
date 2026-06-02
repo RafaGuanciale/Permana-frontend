@@ -1,5 +1,11 @@
-import { Route, Routes, Navigate } from "react-router-dom";
-import { useState, useContext } from "react";
+import {
+  Route,
+  Routes,
+  Navigate,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
 import AnalysisPage from "./pages/AnalysisPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import CollectionPage from "./pages/CollectionPage";
@@ -12,17 +18,20 @@ import RecomendationPage from "./pages/RecommendationPage";
 import BlogPage from "./pages/BlogPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { useNavigate } from "react-router-dom";
 import { AuthProvider } from "./contexts/AuthContext";
 import { AuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { PopupProvider } from "./contexts/PopupContext";
 import PopupManager from "./components/Popups/PopupManager";
 import * as auth from "./utils/auth";
+import * as api from "./utils/api";
+// import { setToken, getToken } from "./utils/token";
 
 function App() {
+  const { isLogged, login } = useContext(AuthContext);
   const navigate = useNavigate();
-  const { isLogged } = useContext(AuthContext);
+  const location = useLocation();
+
   const handleRegistration = ({
     name,
     username,
@@ -34,25 +43,73 @@ function App() {
       alert("As senhas não coincidem!");
       return;
     }
-    auth.register(name, username, password, email).then(() => {
-      alert("Registro bem-sucedido!");
-      navigate("/login");
-    });
+    auth
+      .register(name, username, password, email)
+      .then(() => {
+        alert("Registro bem-sucedido!");
+        navigate("/login");
+      })
+      .catch(console.error);
   };
+
+  const handleLogin = ({ email, password }) => {
+    if (!email || !password) {
+      alert("Por favor, preencha todos os campos!");
+      return;
+    }
+
+    auth
+      .authorize(email, password)
+      .then((data) => {
+        login(data);
+        // setToken(data.jwt);
+        const redirectPath = location.state?.from?.pathname || "/dashboard";
+        navigate(redirectPath);
+      })
+      .catch(console.error);
+  };
+
+  // useEffect(() => {
+  //   const jwt = getToken();
+  //   if (!jwt) {
+  //     return;
+  //   }
+  //   api
+  //     .getUserInfo(jwt)
+  //     .then((data) => {
+  //       login(data);
+  //     })
+  //     .catch(console.error);
+  // }, []);
 
   return (
     <>
       <div className="page">
         <Header />
         <Routes>
-          <Route path="/" element={<LandingPage />} />
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute anonymous>
+                <LandingPage />
+              </ProtectedRoute>
+            }
+          />
           <Route
             path="/register"
-            element={<RegisterPage handleRegistration={handleRegistration} />}
+            element={
+              <ProtectedRoute anonymous>
+                <RegisterPage handleRegistration={handleRegistration} />
+              </ProtectedRoute>
+            }
           />
           <Route
             path="/login"
-            element={<LoginPage />}
+            element={
+              <ProtectedRoute anonymous>
+                <LoginPage handleLogin={handleLogin} />
+              </ProtectedRoute>
+            }
           />
           <Route
             path="/onboarding"
