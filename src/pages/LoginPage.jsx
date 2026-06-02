@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import BrandPanel from "../components/auth/BrandPanel";
-import RegisterForm from "../components/auth/RegisterForm";
+import LoginForm from "../components/auth/LoginForm";
 
-function RegisterPage({ handleRegistration }) {
+function LoginPage({ handleRegistration }) {
 
   useEffect(() => {
     document.body.style.backgroundColor = "var(--color-bistre)";
@@ -15,9 +15,9 @@ function RegisterPage({ handleRegistration }) {
     <section className="registerPage" id="registerPage">
       <div className="registerPage__container">
         <BrandPanel />
-        <RegisterForm handleRegistration={handleRegistration}/>
+        <LoginForm />
       </div>
     </section>
   );
 }
-export default RegisterPage;
+export default LoginPage;

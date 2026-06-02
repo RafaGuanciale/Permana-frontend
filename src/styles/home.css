@@ -113,6 +113,7 @@
   letter-spacing: 2px;
   cursor: pointer;
   transition: 0.2s;
+  text-decoration: none;
 }
 .home__cta-btn--brown:hover {
   background: #4a3828;

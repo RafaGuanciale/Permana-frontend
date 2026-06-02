@@ -31,6 +31,24 @@
   overflow: hidden;
   box-sizing: border-box;
 }
+.registerPage__deco-1 {
+  position: absolute;
+  bottom: -70px;
+  right: -70px;
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  background: rgba(113, 129, 109, 0.15);
+}
+.registerPage__deco-2 {
+  position: absolute;
+  top: -50px;
+  left: -38px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background: rgba(201, 183, 156, 0.07);
+}
 .registerPage__left__logo {
   font-family: "Playfair Display", serif;
   font-style: italic;
@@ -53,7 +71,7 @@
   font-family: "Playfair Display", serif;
   font-style: italic;
   font-weight: 400;
-  font-size: 26px;
+  font-size: 28px;
   color: #f1e0c5;
   line-height: 1.45;
   margin: 0 0 12px;
@@ -211,9 +229,11 @@
 .registerPage__input__hint {
   font-size: 12px;
   font-weight: 300;
-  color: #c4ae97;
   margin: 4px 0 0 6px;
   font-family: "Montserrat", sans-serif;
+  color: #71816d;
+  margin-bottom: 16px;
+  text-decoration: none;
 }
 .registerPage__input__btn {
   width: 100%;

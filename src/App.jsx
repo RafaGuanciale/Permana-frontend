@@ -6,6 +6,7 @@ import CollectionPage from "./pages/CollectionPage";
 import DashboardPage from "./pages/DashboardPage";
 import LandingPage from "./pages/LandingPage";
 import RegisterPage from "./pages/RegisterPage";
+import LoginPage from "./pages/LoginPage";
 import OnboardingPage from "./pages/OnboardingPage";
 import RecomendationPage from "./pages/RecommendationPage";
 import BlogPage from "./pages/BlogPage";
@@ -48,6 +49,10 @@ function App() {
           <Route
             path="/register"
             element={<RegisterPage handleRegistration={handleRegistration} />}
+          />
+          <Route
+            path="/login"
+            element={<LoginPage />}
           />
           <Route
             path="/onboarding"

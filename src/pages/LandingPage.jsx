@@ -6,13 +6,15 @@ import Popup from "../components/Popups/Popup";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { PopupContext } from "../contexts/PopupContext";
+import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
-  const { activePopup, handleOpenPopup, handleClosePopup } =
-    useContext(PopupContext);
-  const handleChangePopup = (popup) => {
-    handleOpenPopup(popup);
-  };
+  const navigate = useNavigate();
+  // const { activePopup, handleOpenPopup, handleClosePopup } =
+  //   useContext(PopupContext);
+  // const handleChangePopup = (popup) => {
+  //   handleOpenPopup(popup);
+  // };
   return (
     <>
       <section className="home" id="home">
@@ -38,13 +40,13 @@ function LandingPage() {
               fragrância por fragrância.
             </p>
             <div className="home__left__buttons">
-              <button
+              <Link
+                to="/login"
                 className="home__cta-btn--brown"
                 id="home__loginBtn"
-                onClick={() => handleChangePopup("login")}
               >
                 ENTRAR
-              </button>
+              </Link>
               <Link
                 className="home__cta-btn--transparent"
                 id="home__exploreBtn"
@@ -186,9 +188,9 @@ function LandingPage() {
           </div>
         </div>
       </section>
-      {activePopup && (
+      {/* {activePopup && (
         <Popup popupClass={"popup__login"}>{<LoginPopup />}</Popup>
-      )}
+      )} */}
     </>
   );
 }
