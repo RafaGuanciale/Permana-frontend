@@ -36,7 +36,7 @@
   color: #342a21;
   padding-left: 10px;
 }
-.profile__description {
+.profile__email {
   grid-area: description;
   font-family: "Montserrat", sans-serif;
   font-size: 20px;

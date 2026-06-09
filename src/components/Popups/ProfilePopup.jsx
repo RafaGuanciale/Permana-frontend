@@ -10,7 +10,7 @@ function ProfilePopup() {
   const { activePopup } = useContext(PopupContext);
   const { handleOpenPopup, handleClosePopup } = useContext(PopupContext);
   const { logout } = useContext(AuthContext);
-  const { updateUser } = useContext(UserContext);
+  const { updateUser, user } = useContext(UserContext);
   const navigate = useNavigate();
   const handleLogout = () => {
     const confirmation = confirm("Tem certeza que deseja sair?");
@@ -23,6 +23,7 @@ function ProfilePopup() {
     navigate("/");
   };
 
+  if (!user) return null;
   return (
     <>
       <div className="profile__info">
@@ -32,9 +33,9 @@ function ProfilePopup() {
           type="button"
           onClick={handleClosePopup}
         ></button>
-        <img className="profile__avatar" src={devAvatar} alt="avatar" />
-        <h1 className="profile__name">Rafael Guanciale</h1>
-        <p className="profile__description">Front-end developer in training</p>
+        <img className="profile__avatar" src={user.avatar} alt="avatar" />
+        <h1 className="profile__name">{user.name}</h1>
+        <p className="profile__email">{user.email}</p>
         <div className="profile__buttons">
           <button
             className="profile__btn profile__btn--edit"

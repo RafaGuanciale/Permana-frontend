@@ -1,12 +1,13 @@
 import loginIcon from "../../images/icons/circle-user-champagne.png";
-import profileIcon from "../../images/Developper/avatar.jpg";
 import { Link, NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
+import { UserContext } from "../../contexts/UserContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
 
 function Header() {
+  const { user } = useContext(UserContext);
   const { isLogged } = useContext(AuthContext);
   const { activePopup, handleOpenPopup, handleClosePopup } =
     useContext(PopupContext);
@@ -64,7 +65,7 @@ function Header() {
               <img
                 id="profile-icon"
                 className="header__action-icon"
-                src={profileIcon}
+                src={user.avatar}
                 alt="Profile"
               />
             ) : (
