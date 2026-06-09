@@ -14,7 +14,7 @@ import casual from "../images/categorias/dashCategories/dashCategories__casual.j
 import party from "../images/categorias/dashCategories/dashCategories__party.jpg";
 import cloud from "../images/icons/cloud_brown.png";
 import { Link } from "react-router-dom";
-import { initialCards } from "../utils/consts";
+import { CollectionContext } from "../contexts/CollectionContext";
 import CollectionCard from "../components/Cards/CollectionCards";
 import { PopupContext } from "../contexts/PopupContext";
 import Popup from "../components/Popups/Popup";
@@ -23,7 +23,8 @@ import { useContext } from "react";
 
 function DashboardPage() {
   const { activePopup } = useContext(PopupContext);
-  const isEmpty = initialCards.length === 0;
+  const { cards } = useContext(CollectionContext);
+  const isEmpty = cards.length === 0;
 
   return (
     <div className="dashboard__content">
@@ -54,13 +55,12 @@ function DashboardPage() {
               <p className="dashCollection__header__resume">
                 {isEmpty
                   ? "Nenhuma fragrância ainda"
-                  : `${initialCards.length} fragrâncias na sua coleção`}
+                  : `${cards.length} fragrâncias na sua coleção`}
               </p>
             </div>
           </div>
 
           {isEmpty ? (
-            /* ── EMPTY STATE ── */
             <div className="dashCollection__empty">
               <p className="dashCollection__empty__icon">✦</p>
               <p className="dashCollection__empty__title">
@@ -75,7 +75,6 @@ function DashboardPage() {
               </button>
             </div>
           ) : (
-            /* ── ESTADO NORMAL ── */
             <>
               <div className="dashCollection__carousel">
                 <img
@@ -84,7 +83,7 @@ function DashboardPage() {
                   className="dashCollection__carousel__arrow--left"
                 />
                 <div className="dashCollection__grid">
-                  {initialCards.map((card) => (
+                  {cards.map((card) => (
                     <CollectionCard
                       key={card.id}
                       name={card.name}

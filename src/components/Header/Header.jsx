@@ -65,7 +65,7 @@ function Header() {
               <img
                 id="profile-icon"
                 className="header__action-icon"
-                src={user.avatar}
+                src={user?.avatar}
                 alt="Profile"
               />
             ) : (

@@ -1,10 +1,11 @@
 import lupa from "../images/icons/lupa.png";
-import setaDireita from "../images/icons/right_arrow.png";
-import { initialCards } from "../utils/consts";
 import CollectionPageCard from "../components/Cards/CollectionPageCards";
+import { useContext } from "react";
+import { CollectionContext } from "../contexts/CollectionContext";
 
 function CollectionPage() {
-  const isEmpty = initialCards.length === 0;
+  const { cards } = useContext(CollectionContext);
+  const isEmpty = cards.length === 0;
 
   return (
     <section className="collectionPage" id="collectionPage">
@@ -16,14 +17,11 @@ function CollectionPage() {
         <p className="section__subtittle collectionPage__subtitle">
           {isEmpty
             ? "Sua jornada olfativa começa aqui!"
-            : `${initialCards.length} fragrâncias que compõem sua identidade.`}
-          {initialCards.length} fragrâncias que compõem sua identidade.
+            : `${cards.length} fragrâncias que compõem sua identidade.`}
         </p>
         <div className="collectionPage__stats__row">
           <div className="collectionPage__stat__card">
-            <div className="collectionPage__stat__val">
-              {initialCards.length}
-            </div>
+            <div className="collectionPage__stat__val">{cards.length}</div>
             <div className="collectionPage__stat__label">Perfumes</div>
           </div>
           <div className="collectionPage__stat__card">
@@ -100,7 +98,7 @@ function CollectionPage() {
               <button className="collectionPage__pill">Floral</button>
             </div>
             <div className="collectionPage__list">
-              {initialCards.map((card) => (
+              {cards.map((card) => (
                 <CollectionPageCard
                   key={card.id}
                   name={card.name}
