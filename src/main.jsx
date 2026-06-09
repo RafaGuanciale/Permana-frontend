@@ -5,14 +5,17 @@ import { BrowserRouter } from "react-router-dom";
 import "./index.css";
 import { AuthProvider } from "./contexts/AuthContext";
 import { PopupProvider } from "./contexts/PopupContext";
+import { UserProvider } from "./contexts/UserContext.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <AuthProvider>
-        <PopupProvider>
-          <App />
-        </PopupProvider>
+        <UserProvider>
+          <PopupProvider>
+            <App />
+          </PopupProvider>
+        </UserProvider>
       </AuthProvider>
     </BrowserRouter>
   </StrictMode>,

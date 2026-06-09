@@ -4,20 +4,21 @@ import { useContext } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
 import { AuthContext } from "../../contexts/AuthContext";
 import { useNavigate } from "react-router-dom";
-import { removeToken } from "../../utils/token";
+import { UserContext } from "../../contexts/UserContext";
 
 function ProfilePopup() {
   const { activePopup } = useContext(PopupContext);
   const { handleOpenPopup, handleClosePopup } = useContext(PopupContext);
   const { logout } = useContext(AuthContext);
+  const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
   const handleLogout = () => {
     const confirmation = confirm("Tem certeza que deseja sair?");
     if (!confirmation) {
       return;
     }
-    removeToken();
     logout();
+    updateUser(null);
     handleClosePopup();
     navigate("/");
   };

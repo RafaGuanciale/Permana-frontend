@@ -8,7 +8,7 @@ function ProtectedRoute({ children, anonymous = false }) {
   const from = location.state?.from || "/";
 
   if (anonymous && isLogged) {
-    return <Navigate to={from} />;
+    return <Navigate to="/dashboard" />;
   }
 
   if (!anonymous && !isLogged) {

@@ -4,14 +4,16 @@ import { Link, NavLink } from "react-router-dom";
 import { useContext, useState } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
 import { AuthContext } from "../../contexts/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 function Header() {
   const { isLogged } = useContext(AuthContext);
   const { activePopup, handleOpenPopup, handleClosePopup } =
     useContext(PopupContext);
+  const navigate = useNavigate();
 
   const handleChangePopup = () => {
-    handleOpenPopup(isLogged ? "profile" : "login");
+    isLogged ? handleOpenPopup("profile") : navigate("/login");
   };
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);

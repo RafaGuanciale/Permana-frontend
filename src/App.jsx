@@ -21,6 +21,7 @@ import Footer from "./components/Footer/Footer";
 import { AuthProvider, AuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { PopupProvider } from "./contexts/PopupContext";
+import { UserContext } from "./contexts/UserContext";
 import PopupManager from "./components/Popups/PopupManager";
 import * as auth from "./utils/auth";
 import * as api from "./utils/api";
@@ -28,7 +29,8 @@ import { setToken, getToken } from "./utils/token";
 
 function App() {
   const [loading, setLoading] = useState(!!getToken);
-  const { isLogged, login, updateUser } = useContext(AuthContext);
+  const { isLogged, login } = useContext(AuthContext);
+  const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -57,13 +59,15 @@ function App() {
       alert("Por favor, preencha todos os campos!");
       return;
     }
-
     auth
       .authorize(email, password)
       .then((data) => {
-        login(data);
-        const redirectPath = location.state?.from?.pathname || "/dashboard";
-        navigate(redirectPath);
+        auth.checkToken(data.token).then((userData) => {
+          updateUser(userData);
+          login(data);
+          const redirectPath = location.state?.from?.pathname || "/dashboard";
+          navigate(redirectPath);
+        });
       })
       .catch(console.error);
   };
