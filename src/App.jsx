@@ -18,8 +18,7 @@ import RecomendationPage from "./pages/RecommendationPage";
 import BlogPage from "./pages/BlogPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import { AuthProvider } from "./contexts/AuthContext";
-import { AuthContext } from "./contexts/AuthContext";
+import { AuthProvider, AuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { PopupProvider } from "./contexts/PopupContext";
 import PopupManager from "./components/Popups/PopupManager";
@@ -29,7 +28,7 @@ import { setToken, getToken } from "./utils/token";
 
 function App() {
   const [loading, setLoading] = useState(!!getToken);
-  const { isLogged, login } = useContext(AuthContext);
+  const { isLogged, login, updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -81,6 +80,7 @@ function App() {
         login({
           token: jwt,
         });
+        updateUser(data);
       })
       .catch(console.error)
       .finally(() => {
