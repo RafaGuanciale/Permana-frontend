@@ -1,25 +1,22 @@
 import { createContext, useEffect, useState } from "react";
+import { setToken, removeToken } from "../utils/token";
 
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
   const [isLogged, setIsLogged] = useState(false);
-  const [isApiAvailable, setIsApiAvailable] = useState(false);
-  const [user, setUser] = useState({ username: "", password: "" });
 
   const login = (authData) => {
     setIsLogged(true);
-    setUser(authData.user);
+    setToken(authData.token);
   };
   const logout = () => {
     setIsLogged(false);
-    setUser("");
+    removeToken();
   };
 
   return (
-    <AuthContext.Provider
-      value={{ isLogged, isApiAvailable, user, login, logout }}
-    >
+    <AuthContext.Provider value={{ isLogged, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

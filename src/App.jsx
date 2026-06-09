@@ -25,9 +25,10 @@ import { PopupProvider } from "./contexts/PopupContext";
 import PopupManager from "./components/Popups/PopupManager";
 import * as auth from "./utils/auth";
 import * as api from "./utils/api";
-// import { setToken, getToken } from "./utils/token";
+import { setToken, getToken } from "./utils/token";
 
 function App() {
+  const [loading, setLoading] = useState(!!getToken);
   const { isLogged, login } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -62,25 +63,31 @@ function App() {
       .authorize(email, password)
       .then((data) => {
         login(data);
-        // setToken(data.jwt);
         const redirectPath = location.state?.from?.pathname || "/dashboard";
         navigate(redirectPath);
       })
       .catch(console.error);
   };
 
-  // useEffect(() => {
-  //   const jwt = getToken();
-  //   if (!jwt) {
-  //     return;
-  //   }
-  //   api
-  //     .getUserInfo(jwt)
-  //     .then((data) => {
-  //       login(data);
-  //     })
-  //     .catch(console.error);
-  // }, []);
+  useEffect(() => {
+    const jwt = getToken();
+    if (!jwt) {
+      return;
+    }
+
+    auth
+      .checkToken(jwt)
+      .then((data) => {
+        login({
+          token: jwt,
+        });
+      })
+      .catch(console.error)
+      .finally(() => {
+        setLoading(false);
+      });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
