@@ -3,6 +3,7 @@ import { PopupContext } from "../../contexts/PopupContext";
 import Popup from "./Popup";
 import LoginPopup from "./LoginPopup";
 import ProfilePopup from "./ProfilePopup";
+import ProfileMenu from "./ProfileMenu";
 import EditProfilePopup from "./EditProfilePopup";
 import CardsPopup from "./CardsPopup";
 
@@ -19,7 +20,7 @@ function PopupManager() {
 
       {activePopup === "profile" && (
         <Popup popupClass="popup__profile">
-          <ProfilePopup />
+          <ProfileMenu />
         </Popup>
       )}
 

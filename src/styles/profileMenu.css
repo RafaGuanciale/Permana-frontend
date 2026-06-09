@@ -1,0 +1,205 @@
+.profile-menu {
+  position: absolute;
+  top: 50px;
+  right: 50px;
+  z-index: 60;
+  width: 325px;
+  background-color: #fafaf8;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(52, 42, 33, 0.22);
+}
+
+/* ── Foto ──────────────────────────────────────────────────────────── */
+.profile-menu__photo {
+  position: relative;
+  width: 100%;
+  height: 220px;
+  overflow: hidden;
+}
+
+.profile-menu__avatar {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-menu__scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(52, 42, 33, 0) 35%,
+    rgba(52, 42, 33, 0.75) 100%
+  );
+}
+
+/* ── Chip de plano ─────────────────────────────────────────────────── */
+.profile-menu__plan {
+  position: absolute;
+  top: 14px;
+  left: 16px;
+  z-index: 2;
+  font-family: "Montserrat", sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 999px;
+  padding: 5px 12px;
+}
+
+.profile-menu__plan--pro {
+  background-color: #342a21;
+  color: #f1e0c5;
+}
+
+.profile-menu__plan--free {
+  background-color: rgba(250, 250, 248, 0.85);
+  color: #71816d;
+}
+
+/* ── Nome e handle sobre a foto ────────────────────────────────────── */
+.profile-menu__identity {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 16px;
+  z-index: 2;
+}
+
+.profile-menu__name {
+  font-family: "Montserrat", sans-serif;
+  font-size: 26px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  color: #f1e0c5;
+  margin: 0;
+}
+
+.profile-menu__username {
+    font-family: var(--pm-sans);
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    color: rgba(241, 224, 197, 0.7);
+    margin-top: 3px;
+}
+
+/* ── Email ─────────────────────────────────────────────────────────── */
+.profile-menu__email {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  color: #342a21;
+  padding: 14px 20px 0;
+  margin: 0;
+}
+
+.profile-menu__email::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #71816d;
+  flex-shrink: 0;
+}
+
+/* ── Lista de ações ────────────────────────────────────────────────── */
+.profile-menu__list {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  margin-top: 10px;
+}
+
+.profile-menu__btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 12px 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: #342a21;
+  text-align: left;
+  transition: background 140ms ease;
+}
+
+.profile-menu__btn:hover {
+  background-color: rgba(199, 179, 150, 0.4);
+}
+
+.profile-menu__btn + .profile-menu__btn {
+  border-top: 1px solid rgba(52, 42, 33, 0.1);
+}
+
+.profile-menu__btn-icon {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.profile-menu__btn-icon-wrap {
+  width: 32px;
+  height: 32px;
+  border-radius: 10px;
+  background-color: #e8d9c4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.profile-menu__btn--exit .profile-menu__btn-icon-wrap {
+  background-color: rgba(218, 102, 123, 0.15);
+}
+
+.profile-menu__btn--exit {
+  color: #da667b;
+}
+
+.profile-menu__btn--exit:hover {
+  background-color: rgba(218, 102, 123, 0.12);
+}
+
+/* ── Botão fechar ──────────────────────────────────────────────────── */
+.popup__close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 4;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  background: rgba(52, 42, 33, 0.35);
+  color: var(--pm-champagne);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 140ms ease;
+}
+
+.popup__close img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.popup__close:hover {
+  opacity: 0.6;
+}

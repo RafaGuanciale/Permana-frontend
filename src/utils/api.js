@@ -27,3 +27,17 @@ export const getCollection = (token) => {
     return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
   });
 };
+
+export const updateUserInfo = (token, name) => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: "PATCH",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify({ name }),
+  }).then((res) => {
+    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+  });
+};

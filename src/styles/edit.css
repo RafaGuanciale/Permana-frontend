@@ -1,57 +1,202 @@
 .profile-edit__content {
+  --ep-card: #fafaf8;
+  --ep-champagne: #f1e0c5;
+  --ep-green: #71816d;
+  --ep-green-wash: #e7ece4;
+  --ep-bistre: #342a21;
+  --ep-bistre-soft: #4a3d31;
+  --ep-khaki: #c9b79c;
+  --ep-khaki-deep: #b09c7c;
+  --ep-blush: #da667b;
+  --ep-blush-soft: #f2d7dd;
+  --ep-muted: #8a7b66;
+  --ep-line: rgba(52, 42, 33, 0.1);
+  --ep-display: "Playfair Display", Georgia, serif;
+  --ep-sans:
+    "Montserrat", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+
   position: absolute;
   top: 50px;
   right: 50px;
-  display: flex;
-  flex-direction: column;
-  height: 533.75px;
-  width: 325px;
-  background-color: #c9b79c;
-  border-radius: 30px;
-  padding: 10px;
-  align-content: start;
+  width: 360px;
+  box-sizing: border-box;
+  background: var(--ep-card);
+  border-radius: 28px;
+  box-shadow: 0 18px 50px rgba(52, 42, 33, 0.28);
+  font-family: var(--ep-sans);
+  overflow: hidden;
 }
 
-.profile-edit__close {
-  width: 25px;
-  height: 25px;
-  background: transparent url("../images/close.svg") center no-repeat;
-  background-size: 35px 35px;
-  border: none;
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 0;
-  margin: 0;
-  cursor: pointer;
+/* ── Título ───────────────────────────────────────────────────────── */
+.edit__text {
+  padding: 26px 28px 18px;
+  border-bottom: 1px solid var(--ep-line);
 }
-
-.profile-edit__close:hover {
-  opacity: 0.6;
-}
-
-.profile-edit__form-button {
-  width: 100%;
-  border-radius: 15px;
-}
-
 .edit__message {
-  font-family: "Montserrat", sans-serif;
-  font-size: 30px;
-  line-height: 100%;
-  font-weight: bold;
-  letter-spacing: 0;
-  color: #342a21;
-  margin: 37px 0 15px;
-  text-align: center;
+  margin: 0;
+  font-family: var(--ep-display);
+  font-weight: 700;
+  font-size: 24px;
+  letter-spacing: -0.01em;
+  color: var(--ep-bistre);
 }
 
+/* ── Linha do avatar ──────────────────────────────────────────────── */
+.profile-edit__avatar-row {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--ep-line);
+}
+.profile-edit__avatar {
+  position: relative;
+  flex-shrink: 0;
+  width: 76px;
+  height: 76px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  background: radial-gradient(
+    120% 90% at 50% 18%,
+    #8a9785 0%,
+    #71816d 45%,
+    #5e6b5a 100%
+  );
+}
+.profile-edit__avatar-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.profile-edit__avatar-silhouette {
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+  transform: translateX(-50%);
+  width: 78%;
+  display: block;
+}
+.profile-edit__avatar-info {
+  min-width: 0;
+}
+.profile-edit__avatar-label {
+  font-weight: 600;
+  font-size: 13.5px;
+  color: var(--ep-bistre);
+}
+.profile-edit__avatar-hint {
+  margin: 2px 0 0;
+  font-weight: 300;
+  font-size: 11.5px;
+  color: var(--ep-muted);
+}
+.profile-edit__avatar-actions {
+  display: flex;
+  gap: 4px;
+  margin: 8px 0 0 -12px;
+}
+.profile-edit__photo-btn {
+  padding: 7px 12px;
+  border: none;
+  border-radius: 999px;
+  background: none;
+  cursor: pointer;
+  font-family: var(--ep-sans);
+  font-weight: 500;
+  font-size: 12.5px;
+  color: var(--ep-green);
+  transition: background 140ms ease;
+}
+.profile-edit__photo-btn:hover {
+  background: var(--ep-green-wash);
+}
+.profile-edit__photo-btn--remove {
+  color: var(--ep-blush);
+}
+.profile-edit__photo-btn--remove:hover {
+  background: var(--ep-blush-soft);
+}
+.profile-edit__photo-btn:disabled {
+  color: var(--ep-khaki-deep);
+  cursor: default;
+  background: none;
+}
+
+/* ── Campo de nome ────────────────────────────────────────────────── */
+.profile-edit__form {
+  padding: 20px 28px 24px;
+}
 .edit__form-label {
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  line-height: 100%;
-  font-weight: bold;
-  color: #342a21;
-  margin: 10px 0;
-  padding-left: 5px;
+  display: block;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ep-green);
+}
+.form__input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 8px;
+  padding: 12px 14px;
+  font-family: var(--ep-sans);
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--ep-bistre);
+  background: var(--ep-card);
+  border: 1.5px solid var(--ep-khaki);
+  border-radius: 12px;
+  transition:
+    border-color 140ms ease,
+    box-shadow 140ms ease;
+}
+.form__input::placeholder {
+  color: var(--ep-khaki-deep);
+}
+.form__input:focus {
+  outline: none;
+  border-color: var(--ep-green);
+  box-shadow: 0 0 0 3px rgba(113, 129, 109, 0.18);
+}
+
+/* ── Ações ────────────────────────────────────────────────────────── */
+.profile-edit__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+.edit__form-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-family: var(--ep-sans);
+  font-weight: 500;
+  font-size: 14px;
+  background: var(--ep-bistre);
+  color: var(--ep-champagne);
+  transition:
+    background 140ms ease,
+    transform 120ms ease;
+}
+.edit__form-button:hover {
+  background: var(--ep-bistre-soft);
+}
+.edit__form-button:active {
+  transform: scale(0.98);
+}
+.edit__form-button--ghost {
+  padding: 12px 22px;
+  background: transparent;
+  color: var(--ep-bistre);
+  border: 1.5px solid var(--ep-khaki-deep);
+}
+.edit__form-button--ghost:hover {
+  background: rgba(52, 42, 33, 0.05);
 }
