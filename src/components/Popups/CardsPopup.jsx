@@ -4,6 +4,7 @@ import { PopupContext } from "../../contexts/PopupContext";
 function CardsPopup(props) {
   const { selectedCard, handleClosePopup } = useContext(PopupContext);
 
+
   return (
     <>
       <div className="card__modal">
@@ -24,10 +25,10 @@ function CardsPopup(props) {
           <div className="cardModal__divisor"></div>
           <p className="cardModal__description">{selectedCard.description}</p>
           <ul className="cardModal__labels">
-            <li className="cardModal__label cardModal__family">{selectedCard.family}</li>
-            <li className="cardModal__label cardModal__occasion">{selectedCard.occasion}</li>
-            <li className="cardModal__label cardModal__climate">{selectedCard.climate}</li>
-            <li className="cardModal__label cardModal__intensity">{selectedCard.intensity}</li>
+            <li className="cardModal__label cardModal__family">{selectedCard.mainFamily}</li>
+            <li className="cardModal__label cardModal__occasion">{selectedCard.mainOccasion}</li>
+            <li className="cardModal__label cardModal__climate">{selectedCard.mainClimate}</li>
+            <li className="cardModal__label cardModal__intensity">{selectedCard.mainIntensity}</li>
           </ul>
           <div className="cardModal__role">
             <h2 className="cardModal__role-title">Papel na coleção</h2>

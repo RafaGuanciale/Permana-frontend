@@ -2,9 +2,11 @@ import lupa from "../images/icons/lupa.png";
 import CollectionPageCard from "../components/Cards/CollectionPageCards";
 import { useContext } from "react";
 import { CollectionContext } from "../contexts/CollectionContext";
+import { PopupContext } from "../contexts/PopupContext";
 
 function CollectionPage() {
   const { collection } = useContext(CollectionContext);
+  const { handleOpenPopup } = useContext(PopupContext);
   const isEmpty = collection.length === 0;
 
   return (
@@ -52,6 +54,7 @@ function CollectionPage() {
             <button
               type="button"
               className="collectionPage__add__btn collectionPage__empty__cta"
+              onClick={() => handleOpenPopup("drawer")}
             >
               + Adicionar primeiro perfume
             </button>
@@ -85,7 +88,11 @@ function CollectionPage() {
                   />
                 </div>
               </div>
-              <button type="button" className="collectionPage__add__btn">
+              <button
+                type="button"
+                className="collectionPage__add__btn"
+                onClick={() => handleOpenPopup("drawer")}
+              >
                 + Adicionar
               </button>
             </div>
@@ -100,10 +107,10 @@ function CollectionPage() {
             <div className="collectionPage__list">
               {collection.map((card) => (
                 <CollectionPageCard
-                  key={card.id}
-                  name={card.name}
-                  brand={card.brand}
-                  image={card.link}
+                  key={card._id}
+                  name={card.perfumeId.name}
+                  brand={card.perfumeId.brand}
+                  image={card.perfumeId.link}
                   card={card}
                 />
               ))}

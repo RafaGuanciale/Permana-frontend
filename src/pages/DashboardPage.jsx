@@ -88,14 +88,17 @@ function DashboardPage() {
                 <div className="dashCollection__grid">
                   {collection.map((card) => (
                     <CollectionCard
-                      key={card.id}
-                      name={card.name}
-                      brand={card.brand}
-                      image={card.link}
+                      key={card._id}
+                      name={card.perfumeId.name}
+                      brand={card.perfumeId.brand}
+                      image={card.perfumeId.link}
                       card={card}
                     />
                   ))}
-                  <div className="dashCollection__card__new">
+                  <div
+                    className="dashCollection__card__new"
+                    onClick={() => handleOpenPopup("drawer")}
+                  >
                     <div className="dashCollection__new__info">
                       <p className="dashCollection__new__icon">+</p>
                       <p className="dashCollection__new__label">Adicionar</p>
@@ -191,163 +194,6 @@ function DashboardPage() {
                 </div>
               </div>
             </div>
-            {/* <div className="dashIdentity__chart">
-              <svg
-                viewBox="0 0 320 320"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <text
-                  x="160"
-                  y="20"
-                  textAnchor="middle"
-                  fill="#D8C9B1"
-                  fontSize="13"
-                  fontFamily="Montserrat"
-                >
-                  Amadeirado
-                </text>
-                <text
-                  x="265"
-                  y="75"
-                  textAnchor="middle"
-                  fill="#D8C9B1"
-                  fontSize="13"
-                  fontFamily="Montserrat"
-                >
-                  Aromático
-                </text>
-                <text
-                  x="265"
-                  y="245"
-                  textAnchor="middle"
-                  fill="#D8C9B1"
-                  fontSize="13"
-                  fontFamily="Montserrat"
-                >
-                  Fresco
-                </text>
-                <text
-                  x="160"
-                  y="300"
-                  textAnchor="middle"
-                  fill="#D8C9B1"
-                  fontSize="13"
-                  fontFamily="Montserrat"
-                >
-                  Aquático
-                </text>
-                <text
-                  x="55"
-                  y="245"
-                  textAnchor="middle"
-                  fill="#D8C9B1"
-                  fontSize="13"
-                  fontFamily="Montserrat"
-                >
-                  Cítrico
-                </text>
-                <text
-                  x="55"
-                  y="75"
-                  textAnchor="middle"
-                  fill="#D8C9B1"
-                  fontSize="13"
-                  fontFamily="Montserrat"
-                >
-                  Oriental
-                </text>
-
-                <polygon
-                  points="160,50 245,95 245,225 160,270 75,225 75,95"
-                  stroke="#D8C9B1"
-                  strokeOpacity="0.18"
-                  fill="none"
-                />
-                <polygon
-                  points="160,72 223,106 223,214 160,248 97,214 97,106"
-                  stroke="#D8C9B1"
-                  strokeOpacity="0.14"
-                  fill="none"
-                />
-                <polygon
-                  points="160,94 201,117 201,203 160,226 119,203 119,117"
-                  stroke="#D8C9B1"
-                  strokeOpacity="0.12"
-                  fill="none"
-                />
-                <polygon
-                  points="160,116 179,128 179,192 160,204 141,192 141,128"
-                  stroke="#D8C9B1"
-                  strokeOpacity="0.10"
-                  fill="none"
-                />
-
-                <line
-                  x1="160"
-                  y1="160"
-                  x2="160"
-                  y2="50"
-                  stroke="#D8C9B1"
-                  strokeOpacity="0.18"
-                />
-                <line
-                  x1="160"
-                  y1="160"
-                  x2="245"
-                  y2="95"
-                  stroke="#D8C9B1"
-                  strokeOpacity="0.18"
-                />
-                <line
-                  x1="160"
-                  y1="160"
-                  x2="245"
-                  y2="225"
-                  stroke="#D8C9B1"
-                  strokeOpacity="0.18"
-                />
-                <line
-                  x1="160"
-                  y1="160"
-                  x2="160"
-                  y2="270"
-                  stroke="#D8C9B1"
-                  strokeOpacity="0.18"
-                />
-                <line
-                  x1="160"
-                  y1="160"
-                  x2="75"
-                  y2="225"
-                  stroke="#D8C9B1"
-                  strokeOpacity="0.18"
-                />
-                <line
-                  x1="160"
-                  y1="160"
-                  x2="75"
-                  y2="95"
-                  stroke="#D8C9B1"
-                  strokeOpacity="0.18"
-                />
-
-                <polygon
-                  points="160,66 218,116 212,206 160,238 141,208 116,126"
-                  fill="#A8B7A4"
-                  fillOpacity="0.22"
-                  stroke="#D8C9B1"
-                  strokeWidth="2"
-                />
-
-                <circle cx="160" cy="66" r="4" fill="#DA667B" />
-                <circle cx="218" cy="116" r="4" fill="#A8B7A4" />
-                <circle cx="212" cy="206" r="4" fill="#D8C9B1" />
-                <circle cx="160" cy="238" r="4" fill="#CDBB9D" />
-                <circle cx="141" cy="208" r="4" fill="#CFAF6D" />
-                <circle cx="116" cy="126" r="4" fill="#B59D87" />
-              </svg>
-            </div> */}
           </div>
           <div className="dashIdentity__footer">
             <Link className="dashIdentity__footer__view" to="/analysis">

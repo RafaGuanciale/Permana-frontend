@@ -8,7 +8,10 @@ function CollectionCards(props) {
   const { handleOpenCardPopup } = useContext(PopupContext);
 
   const handleCard = (card) => {
-    handleOpenCardPopup(card);
+    handleOpenCardPopup({
+      ...card.perfumeId,
+      role: card.role,
+    });
   };
   return (
     <div className="dashCollection__card" onClick={() => handleCard(card)}>

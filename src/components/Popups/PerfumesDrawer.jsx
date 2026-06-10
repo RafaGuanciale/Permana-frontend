@@ -13,7 +13,8 @@ function PerfumesDrawer() {
     const timer = setTimeout(() => {
       searchPerfumes(getToken(), searchValue).then((data) => {
         console.log(data);
-        setResults(data)});
+        setResults(data);
+      });
     }, 300);
 
     return () => clearTimeout(timer);
@@ -103,7 +104,7 @@ function PerfumesDrawer() {
               >
                 <img
                   className="PerfumesDrawer__thumb"
-                  src={perfume.image}
+                  src={perfume.link}
                   alt={perfume.name}
                 />
                 <span className="PerfumesDrawer__info">
@@ -134,7 +135,7 @@ function PerfumesDrawer() {
             <>
               <img
                 className="PerfumesDrawer__footerThumb"
-                src={selectedPerfume.image}
+                src={selectedPerfume.link}
                 alt={selectedPerfume.name}
               />
               <span className="PerfumesDrawer__footerInfo">

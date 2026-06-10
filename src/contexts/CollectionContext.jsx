@@ -21,7 +21,8 @@ export function CollectionProvider({ children }) {
 
   const addPerfume = (perfumeId) => {
     addPerfumeToCollection(getToken(), perfumeId)
-      .then((newItem) => setCollection([...collection, newItem]))
+      .then(() => getCollection(getToken()))
+      .then((data) => setCollection(data))
       .catch(console.error);
   };
 
