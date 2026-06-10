@@ -57,13 +57,13 @@ function CollectionPage() {
             </button>
             <div className="collectionPage__empty__hints">
               <span className="collectionPage__empty__hint">
-                🌿 Sua família predominante
+                Sua família predominante
               </span>
               <span className="collectionPage__empty__hint">
-                📊 Análise da coleção
+                Análise da coleção
               </span>
               <span className="collectionPage__empty__hint">
-                💡 Recomendações personalizadas
+                Recomendações personalizadas
               </span>
             </div>
           </div>

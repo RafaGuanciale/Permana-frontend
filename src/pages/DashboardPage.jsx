@@ -188,7 +188,7 @@ function DashboardPage() {
                 </div>
               </div>
             </div>
-            <div className="dashIdentity__chart">
+            {/* <div className="dashIdentity__chart">
               <svg
                 viewBox="0 0 320 320"
                 fill="none"
@@ -344,7 +344,7 @@ function DashboardPage() {
                 <circle cx="141" cy="208" r="4" fill="#CFAF6D" />
                 <circle cx="116" cy="126" r="4" fill="#B59D87" />
               </svg>
-            </div>
+            </div> */}
           </div>
           <div className="dashIdentity__footer">
             <Link className="dashIdentity__footer__view" to="/analysis">

@@ -1,9 +1,9 @@
 .dashRecomendation__content {
   background-color: #342a21;
-  border-radius: 10px;
+  border-radius: 24px;
   width: 100%;
   height: 400px;
-  padding: 14px 15px;
+  padding: 24px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;

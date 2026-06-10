@@ -112,21 +112,21 @@
   align-items: center;
   max-width: 1440px;
   background-color: #f1e0c5;
-  border-radius: 10px;
-  padding: 40px 60px;
+  border-radius: 22px;
+  padding: 28px;
+  gap: 28px;
+  margin-bottom: 28px;
 }
 .analysisPage__content-top {
   display: grid;
   grid-template-columns: 2fr 1.2fr;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 28px;
   width: 100%;
 }
 .analysisPage__content-middle {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+  gap: 28px;
   width: 100%;
 }
 .analysisPage__content-bottom {
@@ -693,9 +693,9 @@
   font-weight: 300;
 }
 .analysisPage__next-steps_cta-btn {
-  background: #f1e0c5;
+  background: var(--color-green);
   border: none;
-  color: #342a21;
+  color: var(--color-champagne);
   padding: 14px 36px;
   border-radius: 24px;
   font-size: 14px;
