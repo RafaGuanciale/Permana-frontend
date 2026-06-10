@@ -1,3 +1,10 @@
+import { useContext } from "react";
+import { Link } from "react-router-dom";
+import { CollectionContext } from "../contexts/CollectionContext";
+import { PopupContext } from "../contexts/PopupContext";
+import CollectionCard from "../components/Cards/CollectionCards";
+
+import CardsPopup from "../components/Popups/CardsPopup";
 import heroImage from "../images/hero/hero__bg-image7.png";
 import acquaDG from "../images/perfumes/acqua_di_gio-sugestion3.png";
 import theOne from "../images/perfumes/theOne.jpg";
@@ -13,18 +20,11 @@ import date from "../images/categorias/dashCategories/dashCategories__date.jpg";
 import casual from "../images/categorias/dashCategories/dashCategories__casual.jpg";
 import party from "../images/categorias/dashCategories/dashCategories__party.jpg";
 import cloud from "../images/icons/cloud_brown.png";
-import { Link } from "react-router-dom";
-import { CollectionContext } from "../contexts/CollectionContext";
-import CollectionCard from "../components/Cards/CollectionCards";
-import { PopupContext } from "../contexts/PopupContext";
-import Popup from "../components/Popups/Popup";
-import CardsPopup from "../components/Popups/CardsPopup";
-import { useContext } from "react";
 
 function DashboardPage() {
-  const { activePopup } = useContext(PopupContext);
-  const { cards } = useContext(CollectionContext);
-  const isEmpty = cards.length === 0;
+  const { handleOpenPopup } = useContext(PopupContext);
+  const { collection } = useContext(CollectionContext);
+  const isEmpty = collection.length === 0;
 
   return (
     <div className="dashboard__content">
@@ -55,7 +55,7 @@ function DashboardPage() {
               <p className="dashCollection__header__resume">
                 {isEmpty
                   ? "Nenhuma fragrância ainda"
-                  : `${cards.length} fragrâncias na sua coleção`}
+                  : `${collection.length} fragrâncias na sua coleção`}
               </p>
             </div>
           </div>
@@ -70,7 +70,10 @@ function DashboardPage() {
                 Com pelo menos 3 perfumes, o Aromatik consegue identificar sua
                 identidade olfativa e gerar recomendações.
               </p>
-              <button className="dashCollection__header__add dashCollection__empty__cta">
+              <button
+                className="dashCollection__header__add dashCollection__empty__cta"
+                onClick={() => handleOpenPopup("drawer")}
+              >
                 + Adicionar fragrância
               </button>
             </div>
@@ -83,7 +86,7 @@ function DashboardPage() {
                   className="dashCollection__carousel__arrow--left"
                 />
                 <div className="dashCollection__grid">
-                  {cards.map((card) => (
+                  {collection.map((card) => (
                     <CollectionCard
                       key={card.id}
                       name={card.name}

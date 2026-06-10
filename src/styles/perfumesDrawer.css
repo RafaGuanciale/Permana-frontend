@@ -1,0 +1,328 @@
+/* ---- camada escura que cobre a tela inteira ---- */
+.PerfumesDrawer__overlay {
+  position: fixed;
+  inset: 0;                       /* top/right/bottom/left = 0 */
+  z-index: 60;
+  display: flex;
+  justify-content: flex-end;      /* empurra o painel para a direita */
+  background: rgba(52, 42, 33, 0.52);
+  animation: PerfumesDrawer-fade 180ms ease;
+}
+
+/* ---- painel branco que desliza da direita ---- */
+.PerfumesDrawer__panel {
+  width: 440px;
+  max-width: 96vw;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #FAFAF8;
+  box-shadow: -18px 0 50px rgba(52, 42, 33, 0.22);
+  animation: PerfumesDrawer-slide 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* ---- cabeçalho ---- */
+.PerfumesDrawer__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 30px 28px 0;
+}
+
+.PerfumesDrawer__eyebrow {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #71816D;
+}
+
+.PerfumesDrawer__title {
+  margin: 6px 0 0;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 28px;
+  color: #342A21;
+}
+
+/* botão fechar (X) — desenhado em CSS, sem imagem */
+.PerfumesDrawer__close {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  border: 1px solid rgba(52, 42, 33, 0.10);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+.PerfumesDrawer__close::before,
+.PerfumesDrawer__close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 13px;
+  height: 1.5px;
+  background: #8A7B66;
+}
+.PerfumesDrawer__close::before { transform: translate(-50%, -50%) rotate(45deg); }
+.PerfumesDrawer__close::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+.PerfumesDrawer__close:hover { background: rgba(52, 42, 33, 0.06); }
+
+/* ---- campo de busca (pílula escura) ---- */
+.PerfumesDrawer__search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 18px 28px 0;
+  padding: 0 22px;
+  background: #342A21;
+  border-radius: 999px;
+}
+
+.PerfumesDrawer__searchIcon {
+  font-size: 17px;
+  color: rgba(241, 224, 197, 0.5);
+}
+
+.PerfumesDrawer__input {
+  flex: 1;
+  padding: 15px 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  color: #F1E0C5;
+}
+.PerfumesDrawer__input::placeholder { color: rgba(241, 224, 197, 0.55); }
+
+/* ---- rótulo acima da lista ---- */
+.PerfumesDrawer__listLabel {
+  margin: 20px 30px 10px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #71816D;
+}
+
+/* ---- lista de resultados (rola se passar da altura) ---- */
+.PerfumesDrawer__list {
+  flex: 1;                /* ocupa o espaço entre busca e rodapé */
+  overflow-y: auto;
+  padding: 0 20px 18px;
+}
+
+/* ---- cada resultado é um botão ---- */
+.PerfumesDrawer__item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  padding: 10px 12px;
+  border: none;
+  border-radius: 12px;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  transition: background 140ms ease, box-shadow 140ms ease;
+  animation: PerfumesDrawer-row 260ms cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+.PerfumesDrawer__item:hover { background: #F7EBD8; }
+
+/* item escolhido: fundo champagne + contorno bistre */
+.PerfumesDrawer__item--selected,
+.PerfumesDrawer__item--selected:hover {
+  background: #F1E0C5;
+  box-shadow: inset 0 0 0 1.5px #342A21;
+}
+
+/* item que o usuário já tem: apagado e sem clique */
+.PerfumesDrawer__item--owned {
+  opacity: 0.5;
+  cursor: default;
+}
+.PerfumesDrawer__item--owned:hover { background: transparent; }
+
+/* miniatura do frasco (funciona com <img> ou bloco de cor) */
+.PerfumesDrawer__thumb {
+  width: 48px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: #C9B79C;   /* cor de espera enquanto a imagem não carrega */
+}
+
+.PerfumesDrawer__info {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;               /* deixa o nome cortar com reticências */
+}
+.PerfumesDrawer__brand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 10.5px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #B09C7C;
+}
+.PerfumesDrawer__name {
+  margin-top: 2px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 15.5px;
+  color: #342A21;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* círculo de seleção à direita */
+.PerfumesDrawer__radio {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid #B09C7C;
+  border-radius: 50%;
+  font-size: 13px;
+  color: #F1E0C5;
+}
+.PerfumesDrawer__radio--checked {
+  border: none;
+  background: #342A21;
+}
+
+/* etiqueta "Na coleção" */
+.PerfumesDrawer__ownedTag {
+  flex-shrink: 0;
+  padding: 4px 11px;
+  border: 1px solid #C9B79C;
+  border-radius: 999px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #71816D;
+  white-space: nowrap;
+}
+
+/* ---- estado "sem resultados" ---- */
+.PerfumesDrawer__empty {
+  padding: 38px 16px;
+  text-align: center;
+}
+.PerfumesDrawer__emptyTitle {
+  margin: 0;
+  font-family: "Playfair Display", serif;
+  font-style: italic;
+  font-size: 22px;
+  color: #342A21;
+}
+.PerfumesDrawer__emptyText {
+  margin: 8px 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: #8A7B66;
+}
+
+/* ---- rodapé fixo: resumo + confirmar ---- */
+.PerfumesDrawer__footer {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 18px 28px;
+  border-top: 1px solid rgba(52, 42, 33, 0.10);
+  background: #FAFAF8;
+}
+
+.PerfumesDrawer__footerThumb {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  object-fit: cover;
+  background-color: #C9B79C;
+}
+.PerfumesDrawer__footerInfo {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+.PerfumesDrawer__footerName {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #342A21;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.PerfumesDrawer__footerBrand {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 11.5px;
+  color: #8A7B66;
+}
+
+/* texto quando nada está selecionado */
+.PerfumesDrawer__hint {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 13px;
+  color: #8A7B66;
+}
+
+/* botão confirmar (pílula bistre) */
+.PerfumesDrawer__button {
+  flex-shrink: 0;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 999px;
+  background: #342A21;
+  color: #F1E0C5;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background 140ms ease, transform 140ms ease;
+}
+.PerfumesDrawer__button:hover { background: #4A3D31; }
+.PerfumesDrawer__button:active { transform: scale(0.97); }
+
+/* ---- animações ---- */
+@keyframes PerfumesDrawer-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes PerfumesDrawer-slide {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+@keyframes PerfumesDrawer-row {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* respeita quem prefere menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .PerfumesDrawer__overlay,
+  .PerfumesDrawer__panel,
+  .PerfumesDrawer__item { animation: none; }
+}

@@ -6,6 +6,7 @@ import ProfilePopup from "./ProfilePopup";
 import ProfileMenu from "./ProfileMenu";
 import EditProfilePopup from "./EditProfilePopup";
 import CardsPopup from "./CardsPopup";
+import PerfumesDrawer from "./PerfumesDrawer";
 
 function PopupManager() {
   const { activePopup } = useContext(PopupContext);
@@ -33,6 +34,12 @@ function PopupManager() {
       {activePopup === "card" && (
         <Popup popupClass="popup__cards">
           <CardsPopup />
+        </Popup>
+      )}
+
+      {activePopup === "drawer" && (
+        <Popup popupClass="popup__drawer">
+          <PerfumesDrawer />
         </Popup>
       )}
     </>

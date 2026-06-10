@@ -11,9 +11,6 @@
   --ep-blush-soft: #f2d7dd;
   --ep-muted: #8a7b66;
   --ep-line: rgba(52, 42, 33, 0.1);
-  --ep-display: "Playfair Display", Georgia, serif;
-  --ep-sans:
-    "Montserrat", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
 
   position: absolute;
   top: 50px;
@@ -23,7 +20,7 @@
   background: var(--ep-card);
   border-radius: 28px;
   box-shadow: 0 18px 50px rgba(52, 42, 33, 0.28);
-  font-family: var(--ep-sans);
+  font-family: 'Montserrat';
   overflow: hidden;
 }
 
@@ -34,7 +31,7 @@
 }
 .edit__message {
   margin: 0;
-  font-family: var(--ep-display);
+  font-family: "Playfair Display", Georgia, serif;
   font-weight: 700;
   font-size: 24px;
   letter-spacing: -0.01em;
@@ -46,7 +43,7 @@
   display: flex;
   align-items: center;
   gap: 18px;
-  padding: 20px 28px;
+  padding: 10px;
   border-bottom: 1px solid var(--ep-line);
 }
 .profile-edit__avatar {
@@ -138,11 +135,11 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--ep-green);
+  margin-top: 8px;
 }
 .form__input {
   width: 100%;
   box-sizing: border-box;
-  margin-top: 8px;
   padding: 12px 14px;
   font-family: var(--ep-sans);
   font-weight: 400;
@@ -169,7 +166,7 @@
   display: flex;
   justify-content: flex-end;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 .edit__form-button {
   padding: 12px 24px;

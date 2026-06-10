@@ -9,7 +9,7 @@ import { useNavigate } from "react-router-dom";
 function Header() {
   const { user } = useContext(UserContext);
   const { isLogged } = useContext(AuthContext);
-  const { activePopup, handleOpenPopup, handleClosePopup } =
+  const { handleOpenPopup } =
     useContext(PopupContext);
   const navigate = useNavigate();
 

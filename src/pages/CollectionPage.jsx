@@ -4,8 +4,8 @@ import { useContext } from "react";
 import { CollectionContext } from "../contexts/CollectionContext";
 
 function CollectionPage() {
-  const { cards } = useContext(CollectionContext);
-  const isEmpty = cards.length === 0;
+  const { collection } = useContext(CollectionContext);
+  const isEmpty = collection.length === 0;
 
   return (
     <section className="collectionPage" id="collectionPage">
@@ -17,11 +17,11 @@ function CollectionPage() {
         <p className="section__subtittle collectionPage__subtitle">
           {isEmpty
             ? "Sua jornada olfativa começa aqui!"
-            : `${cards.length} fragrâncias que compõem sua identidade.`}
+            : `${collection.length} fragrâncias que compõem sua identidade.`}
         </p>
         <div className="collectionPage__stats__row">
           <div className="collectionPage__stat__card">
-            <div className="collectionPage__stat__val">{cards.length}</div>
+            <div className="collectionPage__stat__val">{collection.length}</div>
             <div className="collectionPage__stat__label">Perfumes</div>
           </div>
           <div className="collectionPage__stat__card">
@@ -98,7 +98,7 @@ function CollectionPage() {
               <button className="collectionPage__pill">Floral</button>
             </div>
             <div className="collectionPage__list">
-              {cards.map((card) => (
+              {collection.map((card) => (
                 <CollectionPageCard
                   key={card.id}
                   name={card.name}
