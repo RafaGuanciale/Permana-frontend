@@ -1,7 +1,7 @@
 .dashCollection__content {
   width: 100%;
   max-width: 1440px;
-  background-color: #F1E0C5;
+  background-color: #f1e0c5;
   border-radius: 22px;
   display: flex;
   flex-direction: column;
@@ -50,6 +50,7 @@
 /* Carousel dos cards */
 .dashCollection__carousel {
   display: flex;
+  flex-direction: column;
   gap: 5px;
   align-items: center;
 }
@@ -69,28 +70,36 @@
 }
 .dashCollection__grid {
   display: flex;
-  gap: 8px;
-  overflow-y: auto;
+  gap: 12px;
+  overflow-y: visible;
   width: auto;
   flex-wrap: wrap;
   max-width: 1262px;
   justify-content: center;
   margin: 0;
+  padding: 5px;
 }
 
 /* Cards */
 .dashCollection__card {
-  width: 220px;
-  border-radius: 8px;
-  border: 0.5px solid #F1E0C5;
-  background: #71816D;
+  width: 190px;
+  border-radius: 12px;
+  border: 0.5px solid #f1e0c5;
+  background: var(--color-off-white);
   overflow: hidden;
   min-width: 0;
   position: relative;
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  box-shadow:
+    0 2px 8px rgba(52, 42, 33, 0.1),
+    0 1px 2px rgba(52, 42, 33, 0.06);
+  transition:
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 .dashCollection__card:hover {
-  box-shadow: 0 2px 8px rgba(52, 42, 33, 0.12);
+  box-shadow:
+    0 2px 8px rgba(52, 42, 33, 0.1),
+    0 1px 2px rgba(52, 42, 33, 0.06);
   cursor: pointer;
   transform: translateY(-2px);
   transition:
@@ -101,11 +110,13 @@
   opacity: 1;
 }
 .dashCollection__card__image {
-  height: 200px;
+  height: 170px;
   width: 100%;
   object-fit: cover;
   object-position: center;
   background-color: #e8ddd0;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
 }
 .dashCollection__card__delete-button {
   width: 18px;
@@ -124,24 +135,27 @@
   transition: opacity 0.2s ease;
 }
 .dashCollection__card__info {
-  padding: 10px 6px;
+  padding: 6px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
+
 }
 .dashCollection__card__name {
   font-family: "Montserrat", sans-serif;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
-  color: #f1e0c5;
-  white-space: nowrap;
+  color: var(--color-bistre);
+  white-space: normal;
   overflow: hidden;
   text-overflow: ellipsis;
+  text-align: center;
 }
 .dashCollection__card__brand {
   font-family: "Montserrat", sans-serif;
-  font-size: 16px;
-  color: #e8ddd0;
+  font-size: 12px;
+  color: var(--color-khaki);
   font-weight: 400;
   text-transform: uppercase;
   letter-spacing: 0.04em;
@@ -206,30 +220,30 @@
   padding: 40px 24px;
   text-align: center;
   gap: 12px;
-  background: #F1E0C5;
+  background: #f1e0c5;
   border-radius: 12px;
   margin: 16px 0;
 }
 
 .dashCollection__empty__icon {
   font-size: 36px;
-  color: #C9B79C;
+  color: #c9b79c;
   margin: 0;
 }
 
 .dashCollection__empty__title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-style: italic;
   font-size: 20px;
-  color: #342A21;
+  color: #342a21;
   margin: 0;
 }
 
 .dashCollection__empty__text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 13px;
-  color: #71816D;
+  color: #71816d;
   max-width: 320px;
   line-height: 1.6;
   margin: 0;

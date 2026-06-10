@@ -1,112 +1,246 @@
+/* ---------- Card ---------- */
 .card__modal {
-  width: 26vw;
-  max-width: 500px;
-  height: auto;
-  max-height: 95vh;
-  overflow-y: auto;
-  background-color: #fff;
-  border-radius: 30px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.6);
+  width: min(400px, calc(100vw - 32px));
+  height: auto; 
+  background-color: #fafaf8;
+  border-radius: 28px;
+  box-shadow:
+    0 24px 70px rgba(52, 42, 33, 0.34),
+    0 6px 18px rgba(52, 42, 33, 0.2);
   position: relative;
   display: flex;
   flex-direction: column;
+  margin: auto;
   overflow: hidden;
-  align-items: center;
+  animation: popupCardIn 280ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
+/* ---------- Imagem (fixa no topo) ---------- */
+.cardModal__image {
+  width: 100%;
+  height: 270px;
+  flex: none;
+  object-fit: cover;
+  display: block;
+  background: linear-gradient(150deg, #3a4038, #262b25);
+}
+
+/* ---------- Botão fechar ---------- */
+.popup__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  background: rgba(52, 42, 33, 0.42);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  z-index: 5;
+  transition:
+    background 160ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    transform 160ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+.popup__close:hover {
+  background: rgba(52, 42, 33, 0.72);
+  transform: scale(1.06);
+}
+.popup__close::before,
+.popup__close::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 14px;
+  height: 1.8px;
+  border-radius: 2px;
+  background: #fafaf8;
+}
+.popup__close::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.popup__close::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+/* ---------- Conteúdo ---------- */
 .cardModal__content {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 15px;
+  text-align: center;
+  padding: 22px 26px 26px;
 }
 
+/* ---------- Nome ---------- */
 .cardModal__name {
-  font-weight: 400;
-  font-size: 28px;
-  margin-top: 6px;
-  font-style: italic;
-  color: #342a21;
-  text-align: center;
   font-family: "Playfair Display", serif;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 27px;
+  line-height: 1.12;
+  margin: 4px 0 0;
+  color: #342a21;
+  text-wrap: balance;
 }
+
+/* ---------- Marca ---------- */
 .cardModal__brand {
-  font-family: "Montserrat", serif;
-  font-size: 12px;
-  margin-top: 5px;
-  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #71816d;
+  margin: 7px 0 0;
 }
 
+/* ---------- Divisor ---------- */
 .cardModal__divisor {
-  background: rgba(201, 183, 156, 0.35);
-  width: calc(100% - 48px);
-  height: 0.6px;
-  margin: 8px 0;
+  width: 60px;
+  height: 1px;
+  background: rgba(201, 183, 156, 0.55);
+  margin: 14px 0;
 }
 
+/* ---------- Descrição ---------- */
 .cardModal__description {
+  font-family: "Montserrat", sans-serif;
   font-size: 13px;
   font-weight: 300;
-  line-height: 1.5;
-  color: #342a21;
-  padding: 0 18px;
-  font-family: "Montserrat", serif;
+  line-height: 1.62;
+  color: #4a3d31;
+  margin: 0;
+  text-wrap: pretty;
 }
 
-.cardModal__image {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  max-height: 500px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
-  object-fit: cover;
-}
-
+/* ---------- Tags / labels ---------- */
 .cardModal__labels {
+  list-style: none;
   padding: 0;
-  list-style-type: none;
+  margin: 16px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
-  margin: 12px 0;
+  justify-content: center;
+  gap: 7px;
 }
-
 .cardModal__label {
-  background-color: rgba(201, 183, 156, 0.12);
-  padding: 3px 8px;
-  border: 0.5px solid rgba(201, 183, 156, 0.25);
-  border-radius: 20px;
+  font-family: "Montserrat", sans-serif;
   font-size: 10px;
   font-weight: 500;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: #342a21;
-  letter-spacing: 1px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-  font-family: "Montserrat", serif;
+  color: #5e6b5a;
+  background: transparent;
+  border: 1px solid #c9b79c;
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
 }
 
+/* ---------- Papel na coleção ---------- */
 .cardModal__role {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  background: rgba(241, 224, 197, 0.22);
-  border: 0.5px solid rgba(201, 183, 156, 0.25);
-  border-radius: 8px;
+  text-align: left;
+  background: rgba(241, 224, 197, 0.55);
+  border: 1px solid rgba(201, 183, 156, 0.5);
+  border-radius: 12px;
   padding: 14px 16px;
 }
-
 .cardModal__role-title {
-  font-size: 9px;
-  line-height: 100%;
-  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  margin-bottom: 6px;
   color: #71816d;
-  font-family: "Montserrat";
+  margin: 0 0 6px;
+}
+.cardModal__role-title::before {
+  content: "";
+  flex: none;
+  width: 14px;
+  height: 14px;
+  background: #71816d;
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2l2.6 6.4L21 9l-5 4.3L17.5 20 12 16.4 6.5 20 8 13.3 3 9l6.4-.6z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M12 2l2.6 6.4L21 9l-5 4.3L17.5 20 12 16.4 6.5 20 8 13.3 3 9l6.4-.6z'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+.cardModal__role-text {
+  font-family: "Montserrat", sans-serif;
+  font-size: 12.5px;
+  font-weight: 300;
+  line-height: 1.55;
+  color: #4a3d31;
+  margin: 0;
 }
 
-.cardModal__role-text {
-  font-family: "Montserrat";
-  font-size: 13px;
-  font-weight: 300;
+/* ==== Responsividade ==== */
+.popup__overlay {
+  overflow-y: auto;
+}
+
+@media (max-height: 720px) {
+  .cardModal__image {
+    height: 210px;
+  }
+}
+@media (max-height: 560px) {
+  .cardModal__image {
+    height: 160px;
+  }
+  .cardModal__content {
+    padding-top: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card__modal {
+    width: calc(100vw - 24px);
+    border-radius: 22px;
+  }
+  .cardModal__image {
+    height: 230px;
+  }
+  .cardModal__content {
+    padding: 20px 20px 22px;
+  }
+  .cardModal__name {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .popup__overlay,
+  .card__modal {
+    animation: none;
+  }
+}
+
+/* ---------- Animações de entrada ---------- */
+@keyframes popupOverlayIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes popupCardIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }

@@ -80,11 +80,11 @@ function DashboardPage() {
           ) : (
             <>
               <div className="dashCollection__carousel">
-                <img
+                {/* <img
                   src={arrowLeft}
                   alt="arrow left"
                   className="dashCollection__carousel__arrow--left"
-                />
+                /> */}
                 <div className="dashCollection__grid">
                   {collection.map((card) => (
                     <CollectionCard
@@ -105,11 +105,11 @@ function DashboardPage() {
                     </div>
                   </div>
                 </div>
-                <img
+                {/* <img
                   src={arrowRight}
                   alt="arrow right"
                   className="dashCollection__carousel__arrow--right"
-                />
+                /> */}
               </div>
               <div className="dashCollection__footer">
                 <Link className="dashCollection__footer__view" to="/collection">
