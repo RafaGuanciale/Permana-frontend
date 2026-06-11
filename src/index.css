@@ -20,7 +20,7 @@
 @import url("./styles/blog.css");
 @import url("./styles/dashboard.css");
 @import url("./styles/hero.css");
-@import url("./styles/dashCollection.css");
+@import url("./styles/dashNewCollection.css");
 @import url("./styles/dashIdentity.css");
 @import url("./styles/dashRecomendation.css");
 @import url("./styles/dashSugestion.css");
@@ -33,3 +33,4 @@
 @import url("./styles/registerPage.css");
 @import url("./styles/profileMenu.css");
 @import url("./styles/perfumesDrawer.css");
+@import url("./styles/DashCollectionSkeleton.css");
