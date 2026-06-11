@@ -6,17 +6,20 @@ export const CollectionContext = createContext();
 
 export function CollectionProvider({ children }) {
   const [collection, setCollection] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const jwt = getToken();
     if (!jwt) {
+      setIsLoading(false);
       return;
     }
     getCollection(jwt)
       .then((data) => {
         setCollection(data);
       })
-      .catch(console.error);
+      .catch(console.error)
+      .finally(() => setIsLoading(false));
   }, []);
 
   const addPerfume = (perfumeId) => {
@@ -27,7 +30,7 @@ export function CollectionProvider({ children }) {
   };
 
   return (
-    <CollectionContext.Provider value={{ collection, addPerfume }}>
+    <CollectionContext.Provider value={{ collection, addPerfume, isLoading }}>
       {children}
     </CollectionContext.Provider>
   );
