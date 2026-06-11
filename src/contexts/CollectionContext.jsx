@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { getToken } from "../utils/token";
-import { getCollection, addPerfumeToCollection } from "../utils/api";
+import { getCollection, addPerfumeToCollection, removePerfumeFromCollection } from "../utils/api";
 
 export const CollectionContext = createContext();
 
@@ -29,8 +29,16 @@ export function CollectionProvider({ children }) {
       .catch(console.error);
   };
 
+    const removePerfume = (perfumeId) => {
+    removePerfumeFromCollection(getToken(), perfumeId)
+      .then(() => getCollection(getToken()))
+      .then((data) => setCollection(data))
+      .catch(console.error);
+  };
+
+
   return (
-    <CollectionContext.Provider value={{ collection, addPerfume, isLoading }}>
+    <CollectionContext.Provider value={{ collection, addPerfume, removePerfume, isLoading }}>
       {children}
     </CollectionContext.Provider>
   );
