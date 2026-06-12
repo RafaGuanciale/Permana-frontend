@@ -1,16 +1,13 @@
 import { React } from "react";
-import cloudIcon from "../../images/icons/cloud_brown.png";
+import defaultBottle from "../../images/perfumes/default.jpg"
 
 function getDate() {
   const now = new Date();
-
   const weekDay = now.toLocaleDateString("pt-BR", { weekday: "long" });
   const day = now.getDate();
   const month = now.toLocaleDateString("pt-BR", { month: "long" });
-
   const weekDayCapitalized = weekDay.charAt(0).toUpperCase() + weekDay.slice(1);
   const monthCapitalized = month.charAt(0).toUpperCase() + month.slice(1);
-
   return `${weekDayCapitalized} · ${day} de ${monthCapitalized}`;
 }
 
@@ -21,17 +18,27 @@ function getGreeting() {
   return "Boa noite";
 }
 
-export function ScentOfTheDay({ weather, perfume, onDetails, style }) {
-  const { temp, condition, detail } = weather;
+function getLede(weather) {
+  if (!weather) {
+    return "Analisando as condições do dia —";
+  }
+  const isNight = weather.detail.includes("Noite");
+  const period = isNight ? "A noite" : "O dia";
+  return `${period} está ${weather.detail
+    .replace("Noite ", "")
+    .replace("Dia ", "")
+    .toLowerCase()} e ${weather.condition.toLowerCase()} —`;
+}
 
+export function ScentOfTheDay({ weather, perfume, onDetails, style }) {
+  const { temp, condition, detail, icon } = weather;
   return (
     <div className="scent-of-the-day" style={style}>
       <p className="scent-of-the-day__label">Perfume do dia</p>
-
       <div className="scent-of-the-day__weather">
         <img
           className="scent-of-the-day__weather-icon"
-          src={cloudIcon}
+          src={icon}
           alt=""
           aria-hidden="true"
         />
@@ -41,14 +48,13 @@ export function ScentOfTheDay({ weather, perfume, onDetails, style }) {
           <span className="scent-of-the-day__condition-sub">{detail}</span>
         </span>
       </div>
-
       <div className="scent-of-the-day__perfume">
-        <div
+        <img
           className="scent-of-the-day__bottle"
-          style={
-            perfume.image
-              ? { backgroundImage: `url(${perfume.image})` }
-              : undefined
+          src={
+            perfume.link
+              ? { backgroundImage: `url(${perfume.link})` }
+              : defaultBottle
           }
         />
         <div className="scent-of-the-day__info">
@@ -65,7 +71,6 @@ export function ScentOfTheDay({ weather, perfume, onDetails, style }) {
           </div>
         </div>
       </div>
-
       <div className="scent-of-the-day__footer">
         <button
           type="button"
@@ -83,17 +88,13 @@ export function DashboardHero({
   name = "Rafael",
   greeting = getGreeting(),
   date = getDate(),
-  lede = "A noite está amena e nublada —",
+  weather,
+  lede = getLede(weather),
   ledeAccent = "pede algo fresco.",
   reanalysis = {
     available: true,
     title: "Nova análise disponível",
     detail: "2 fragrâncias novas desde a última leitura",
-  },
-  weather = {
-    temp: "22°",
-    condition: "Nublado",
-    detail: "Noite amena · 18°–23°",
   },
   perfume = {
     name: "Acqua Di Gio EDT",
@@ -116,7 +117,6 @@ export function DashboardHero({
           {lede}{" "}
           <span className="dashboard-hero__lede-accent">{ledeAccent}</span>
         </p>
-
         {reanalysis?.available && (
           <div className="dashboard-hero__reanalyze">
             <button

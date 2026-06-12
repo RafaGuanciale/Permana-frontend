@@ -89,7 +89,7 @@ function DashboardNewCollection() {
         <>
           <div className="dashCollection__carousel">
             <div className="dashCollection__row">
-              {/* janela rolável (cards) — vai até o slot fixo */}
+
               <div className="dashCollection__viewport">
                 {isScrollable && (
                   <button
@@ -128,7 +128,6 @@ function DashboardNewCollection() {
                 )}
               </div>
 
-              {/* slot "+ Adicionar" — FIXO à direita, fora da rolagem */}
               <div
                 className="dashCollection__card__new"
                 onClick={() => handleOpenPopup("drawer")}

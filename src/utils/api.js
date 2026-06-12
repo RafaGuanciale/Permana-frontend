@@ -1,8 +1,6 @@
 export const BASE_URL = "http://localhost:3000";
 
-// getContent aceita o token como argumento.
 export const getUserInfo = (token) => {
-  // Envie uma solicitação GET a /users/me
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
     headers: {
@@ -70,7 +68,7 @@ export const addPerfumeToCollection = (token, perfumeId) => {
 };
 
 export const removePerfumeFromCollection = (token, perfumeId) => {
-    return fetch(`${BASE_URL}/collection/${perfumeId}`, {
+  return fetch(`${BASE_URL}/collection/${perfumeId}`, {
     method: "DELETE",
     headers: {
       Accept: "application/json",
@@ -80,4 +78,17 @@ export const removePerfumeFromCollection = (token, perfumeId) => {
   }).then((res) => {
     return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
   });
-}
+};
+
+export const getWeather = (lat, lon, token) => {
+  return fetch(`${BASE_URL}/weather?lat=${lat}&lon=${lon}`, {
+    method: "GET",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  }).then((res) => {
+    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+  });
+};

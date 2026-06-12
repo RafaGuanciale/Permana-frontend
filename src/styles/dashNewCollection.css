@@ -25,13 +25,13 @@
   letter-spacing: 0.08em;
   color: var(--color-green);
   text-transform: uppercase;
-  margin: 10px 0 10px 50px;
+  margin: 10px 0 10px 10px;
 }
 .dashCollection__header__resume {
   font-size: 20px;
   font-weight: 500;
   color: #342a21;
-  margin: 0 0 10px 50px;
+  margin: 0 0 10px 10px;
 }
 .dashCollection__header__add {
   background: #342a21;

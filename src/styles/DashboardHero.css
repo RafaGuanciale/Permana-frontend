@@ -6,7 +6,7 @@
   gap: 48px;
   align-items: center;
   min-height: 400px;
-  padding: 40px;
+  padding: 34px;
   border-radius: 20px;
   background: linear-gradient(135deg, #6B7A66 0%, #5E6B5A 48%, #47513F 100%);
   box-sizing: border-box;
@@ -105,7 +105,7 @@
 .dashboard-hero__reanalyze-title {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--color-champagne);
 }
 
