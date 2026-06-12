@@ -7,6 +7,7 @@ export const initialCards = [
     description:
       "Cítrico fresco com toques de zimbro e alecrim. Evoca o verão mediterrâneo com leveza e descontração, ideal para o calor.",
     family: "Cítrico",
+    tint: "#C9B79C",
     occasion: "Casual",
     climate: "Calor",
     intensity: "Leve",
@@ -20,6 +21,7 @@ export const initialCards = [
     description:
       "Íris empoado e aveludado com lavanda, âmbar e cedro. Sofisticado e sensual, com presença elegante e envolvente para ocasiões especiais.",
     family: "Floral",
+    tint: "#C9B79C",
     occasion: "Evento",
     climate: "Frio",
     intensity: "Intenso",
@@ -33,6 +35,7 @@ export const initialCards = [
     description:
       "Amadeirado seco e terroso, com sensação mineral e elegante. Presença madura, firme e discreta, mais racional do que expansiva.",
     family: "Amadeirado",
+    tint: "#C9B79C",
     occasion: "Dia",
     climate: "Ameno",
     intensity: "Moderado",
@@ -46,6 +49,7 @@ export const initialCards = [
     description:
       "Cítrico, aromático e amadeirado com fundo de incenso. Um clássico moderno de elegância discreta, equilibrado e extremamente versátil.",
     family: "Aromático",
+    tint: "#C9B79C",
     occasion: "Versátil",
     climate: "Ameno",
     intensity: "Moderado",
@@ -59,6 +63,7 @@ export const initialCards = [
     description:
       "Almiscarado e amadeirado com especiarias frias. Vetiver e cardamomo criam uma presença intensa e sedutora, densa e misteriosa.",
     family: "Almiscarado",
+    tint: "#C9B79C",
     occasion: "Noite",
     climate: "Frio",
     intensity: "Intenso",

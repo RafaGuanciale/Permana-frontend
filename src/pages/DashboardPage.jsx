@@ -10,6 +10,7 @@ import DashboardIdentity from "../components/Dashboard/DashboardIdentity";
 import DashboardRecomendation from "../components/Dashboard/DashboardRecomendation";
 import DashboardSugestion from "../components/Dashboard/DashboardSugestion";
 import DashboardCategories from "../components/Dashboard/DashboardCategories";
+import { WishlistCard } from "../components/Dashboard/DashboardWishlistCard";
 import DashboardWishlist from "../components/Dashboard/DashboardWishlist";
 import { useWeather } from "../hooks/useWeather";
 
@@ -31,7 +32,8 @@ function DashboardPage() {
       </div>
       <div className="dashboard__wrapper--bottom">
         <DashboardCategories />
-        <DashboardWishlist />
+        <WishlistCard />
+        {/* <DashboardWishlist /> */}
       </div>
       <div className="dashboard__wrapper--blog">
         <DashboardBlog />
