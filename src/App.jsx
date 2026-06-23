@@ -11,6 +11,7 @@ import CategoriesPage from "./pages/CategoriesPage";
 import CollectionPage from "./pages/CollectionPage";
 import DashboardPage from "./pages/DashboardPage";
 import LandingPage from "./pages/LandingPage";
+import LandingPageNew from "./pages/LandingPageNew"
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import OnboardingPage from "./pages/OnboardingPage";
@@ -102,7 +103,7 @@ function App() {
             path="/"
             element={
               <ProtectedRoute anonymous>
-                <LandingPage />
+                <LandingPageNew />
               </ProtectedRoute>
             }
           />

@@ -10,11 +10,7 @@ import { useNavigate } from "react-router-dom";
 
 function LandingPage() {
   const navigate = useNavigate();
-  // const { activePopup, handleOpenPopup, handleClosePopup } =
-  //   useContext(PopupContext);
-  // const handleChangePopup = (popup) => {
-  //   handleOpenPopup(popup);
-  // };
+
   return (
     <>
       <section className="home" id="home">
