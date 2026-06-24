@@ -6,7 +6,9 @@ import CollectionCard from "../components/Cards/CollectionCards";
 import DashboardNewCollection from "../components/Dashboard/DashboardNewCollection";
 import DashboardHero from "../components/Dashboard/DashboardHero";
 import DashboardCategories from "../components/Dashboard/DashboardCategories";
-import DashboardWishlist from "../components/Dashboard/DashboardWishlist"; 
+import { CategoriesCard } from "../components/Dashboard/CategoriesCard";
+import DashboardWishlist from "../components/Dashboard/DashboardWishlist";
+import { categories } from "../utils/consts";
 
 function DashboardPage() {
   const { handleOpenPopup } = useContext(PopupContext);
@@ -21,7 +23,11 @@ function DashboardPage() {
         <DashboardNewCollection />
       </div>
       <div className="dashboard__wrapper--bottom">
-        <DashboardCategories />
+        <CategoriesCard
+          items={categories}
+          onSeeAll={() => console.log("Ver todas")}
+          onSelect={(category) => console.log(category)}
+        />
         <DashboardWishlist />
       </div>
     </div>

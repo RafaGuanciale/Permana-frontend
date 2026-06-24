@@ -10,11 +10,16 @@ import travel from "../images/categorias/travel.jpg";
 import night from "../images/categorias/night.jpg";
 import defaultImg from "../images/perfumes/default.jpg";
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 function categoriesPage() {
   const [openCategory, setOpenCategory] = useState("");
   const [openContainer, setOpenContainer] = useState("");
   const [activeSubcategory, setActiveSubcategory] = useState("");
+
+  const location = useLocation();
+
+  const { category, container } = location.state || {};
 
   const expandContainer = (e) => {
     const container = e.currentTarget.dataset.container;
@@ -29,11 +34,11 @@ function categoriesPage() {
   };
 
   useEffect(() => {
-    console.log(openCategory);
-  }, [openCategory]);
-  useEffect(() => {
-    console.log(openContainer);
-  }, [openContainer]);
+    if (category && container) {
+      setOpenCategory(category);
+      setOpenContainer(container);
+    }
+  }, [category, container]);
 
   return (
     <section className="categoriesPage" id="categoriesPage">

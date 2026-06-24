@@ -1,0 +1,185 @@
+/* Categories */
+.categoriesCard {
+  background: var(--color-bistre);
+  border-radius: 20px;
+  padding: 32px;
+}
+
+/* Header */
+.categoriesCard__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.categoriesCard__eyebrow {
+  font-family: "Montserrat", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(241, 224, 197, 0.6);
+}
+.categoriesCard__title {
+  margin: 6px 0 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  color: var(--color-champagne);
+}
+.categoriesCard__seeall {
+  margin-top: 4px;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: rgba(241, 224, 197, 0.62);
+  transition: color 0.15s ease-out;
+  text-decoration: none;
+}
+.categoriesCard__seeall:hover {
+  color: var(--color-champagne);
+}
+.categoriesCard__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(3, 92px);
+  gap: 10px;
+}
+
+/* Blocos de categorias */
+.categoriesCard__tile {
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.22);
+  transition:
+    transform 0.2s ease-out,
+    box-shadow 0.2s ease-out;
+}
+.categoriesCard__tile:hover {
+  transform: scale(1.004);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.38);
+}
+.categoriesCard__tile-featured {
+  grid-column: 1;
+  grid-row: 1 / 4;
+}
+.categoriesCard__tile-texture {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.025) 0 9px,
+    transparent 9px 18px
+  );
+}
+.categoriesCard__tile-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(12, 8, 4, 0.76) 0%,
+    rgba(12, 8, 4, 0.04) 48%,
+    transparent 100%
+  );
+  transition: background 0.2s ease-out;
+}
+.categoriesCard__tile:hover .categoriesCard__tile-scrim {
+  background: linear-gradient(
+    to top,
+    rgba(12, 8, 4, 0.92) 0%,
+    rgba(12, 8, 4, 0.28) 48%,
+    transparent 100%
+  );
+}
+.categoriesCard__tile-count {
+  position: absolute;
+  z-index: 2;
+  top: 11px;
+  right: 11px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  color: rgba(241, 224, 197, 0.52);
+  transition: color 0.2s ease-out;
+}
+.categoriesCard__tile:hover .categoriesCard__tile-count {
+  color: rgba(241, 224, 197, 0.78);
+}
+.categoriesCard__tile-label {
+  position: absolute;
+  z-index: 2;
+  left: 14px;
+  right: 14px;
+  bottom: 13px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-champagne);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+  transition: bottom 0.2s ease-out;
+}
+.categoriesCard__tile-featured .categoriesCard__tile-label {
+  font-size: 17px;
+}
+.categoriesCard__tile:hover .categoriesCard__tile-label {
+  bottom: 30px;
+}
+.categoriesCard__tile-cta {
+  position: absolute;
+  z-index: 2;
+  left: 14px;
+  bottom: 13px;
+  pointer-events: none;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 500;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(241, 224, 197, 0.78);
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+.categoriesCard__tile:hover .categoriesCard__tile-cta {
+  opacity: 1;
+}
+
+/* Imagem */
+.categoriesCard__tile-imageWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.categoriesCard__tile-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.05);
+}
+.categoriesCard__tile-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85),
+    rgba(0, 0, 0, 0.2),
+    transparent
+  );
+}

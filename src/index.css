@@ -14,13 +14,9 @@
 @import url("./styles/dashboard.css");
 @import url("./styles/DashboardHero.css");
 @import url("./styles/dashNewCollection.css");
-
-
 @import url("./styles/dashCategories.css");
 @import url("./styles/dashWishlist.css");
 @import url("./styles/dashBlog.css");
-
-
 @import url("./styles/collectionPage.css");
 @import url("./styles/categoriesPage.css");
 
@@ -36,8 +32,9 @@
 @import url("./styles/profileMenu.css");
 @import url("./styles/perfumesDrawer.css");
 @import url("./styles/scentOfTheDay.css");
-
 @import url("./styles/LPProject.css");
 @import url("./styles/Hero2.css");
 @import url("./styles/LPCallToAction.css");
 @import url("./styles/LPJourney.css");
+@import url("./styles/CategoriesCard.css");
+

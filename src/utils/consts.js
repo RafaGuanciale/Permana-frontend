@@ -1,3 +1,14 @@
+import work from "../images/categorias/work.jpeg";
+import gym from "../images/categorias/gym.jpeg";
+import date from "../images/categorias/date2.jpeg";
+import events from "../images/categorias/events.jpg";
+import casual from "../images/categorias/casual.jpg";
+import hot from "../images/categorias/hot.jpg";
+import cold from "../images/categorias/cold.jpg";
+import party from "../images/categorias/party.jpg";
+import travel from "../images/categorias/travel.jpg";
+import night from "../images/categorias/night.jpg";
+
 export const initialCards = [
   {
     id: "1",
@@ -41,32 +52,59 @@ export const initialCards = [
     intensity: "Moderado",
     role: "A assinatura diurna da coleção. Representa você no dia a dia com maturidade e elegância discreta. Presente e firme sem precisar gritar para ser notado por quem importa.",
   },
+];
+
+export const categories = [
   {
-    id: "4",
-    name: "Bleu de Chanel",
-    brand: "Chanel",
-    link: "https://www.chanel.com/puls-img/1750768790390-onepdpeditopushdm974x1298px052xjpg_2596x1948.jpg",
-    description:
-      "Cítrico, aromático e amadeirado com fundo de incenso. Um clássico moderno de elegância discreta, equilibrado e extremamente versátil.",
-    family: "Aromático",
-    tint: "#C9B79C",
-    occasion: "Versátil",
-    climate: "Ameno",
-    intensity: "Moderado",
-    role: "O coringa absoluto da coleção. Versátil, equilibrado e refinado, funciona do trabalho ao jantar sem errar nenhuma vez. Confiável e elegante em qualquer situação.",
+    label: "casual",
+    count: 9,
+    image: casual,
+    tint: "#1F2937",
+    featured: true,
+    category: "Casual",
+    container: "top",
   },
   {
-    id: "5",
-    name: "Bleu Noir",
-    brand: "Narciso Rodriguez",
-    link: "https://www.giraofertas.com.br/wp-content/uploads/2024/11/Narciso-Rodriguez-For-Him-Bleu-Noir-Parfum-Masculino-05.jpg",
-    description:
-      "Almiscarado e amadeirado com especiarias frias. Vetiver e cardamomo criam uma presença intensa e sedutora, densa e misteriosa.",
-    family: "Almiscarado",
-    tint: "#C9B79C",
-    occasion: "Noite",
-    climate: "Frio",
-    intensity: "Intenso",
-    role: "Reservado para noites elegantes e ocasiões que exigem presença real. Sofisticado, misterioso e denso, é o perfume certo quando o momento pede impacto e memória.",
+    label: "Trabalho",
+    count: 7,
+    tint: "#334155",
+    image: work,
+    category: "Trabalho",
+    container: "top",
+  },
+  {
+    label: "Encontros",
+    count: 6,
+    tint: "#7C3AED",
+    image: date,
+    category: "Encontros",
+    container: "bottom",
+  },
+  {
+    label: "Calor",
+    count: 8,
+    tint: "#0284C7",
+    image: hot,
+    category: "Calor",
+    container: "top",
+  },
+  {
+    label: "Noite",
+    count: 11,
+    tint: "#111827",
+    featured: true,
+    image: night,
+    category: "Trabalho",
+    container: "top",
+    category: "Noite",
+    container: "bottom",
+  },
+  {
+    label: "Eventos",
+    count: 4,
+    tint: "#B45309",
+    image: events,
+    category: "Eventos",
+    container: "bottom",
   },
 ];
