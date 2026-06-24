@@ -93,3 +93,8 @@
   background: #fff;
   transform: translateY(-1px);
 }
+
+.cta__btn__arrow {
+  font-size: 1.05em;
+  line-height: 1;
+}

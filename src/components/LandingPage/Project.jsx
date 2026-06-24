@@ -18,12 +18,12 @@ function Author() {
         </figure>
 
         <div className="project__body">
-          <p className="eyebrow eyebrow--light">O projeto</p>
+          <p className="project__eyebrow">O projeto</p>
           <h3 className="project__title">
             Paixão por perfumaria, <em>aprendizado em código.</em>
           </h3>
           <p className="project__text">
-            "A ideia veio de uma necessidade pessoal com perfumaria. Mas o
+            "A ideia veio de uma necessidade pessoal com perfumaria. <br /> Mas o
             Permana acabou virando outra coisa: onde aprendi a programar de
             verdade, construindo uma tela de cada vez."
           </p>
@@ -31,7 +31,7 @@ function Author() {
 
         <div className="project__buttons">
           <a
-            className="btn btn--paper"
+            className="project__btn project__btn--paper"
             href="https://github.com/RafaGuanciale"
             target="_blank"
             rel="noreferrer"
@@ -39,7 +39,7 @@ function Author() {
             GitHub
           </a>
           <a
-            className="btn btn--ghost-light"
+            className="project__btn project__btn--ghost-light"
             href="https://www.linkedin.com/in/rafaelguanciale/"
             target="_blank"
             rel="noreferrer"

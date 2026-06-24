@@ -2,7 +2,7 @@ import { useState } from "react";
 import Hero from "../components/LandingPage/Hero";
 import Hero2 from "../components/LandingPage/Hero2";
 import JourneyGrid from "../components/LandingPage/JourneyGrid";
-import Author from "../components/LandingPage/Author";
+import Project from "../components/LandingPage/Project";
 import CallToAction from "../components/LandingPage/CallToAction";
 
 function LandingPageNew() {
@@ -12,7 +12,7 @@ function LandingPageNew() {
     <div className="landing">
       <Hero2 />
       <JourneyGrid />
-      <Author />
+      <Project />
       <CallToAction />
     </div>
   );

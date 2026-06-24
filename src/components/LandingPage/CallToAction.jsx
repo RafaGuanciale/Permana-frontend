@@ -16,7 +16,7 @@ function CallToAction() {
         </p>
         <Link to="/register" className="cta__btn cta__btn--paper">
           Criar conta gratuita
-          <span className="btn__arrow" aria-hidden="true">
+          <span className="cta__btn__arrow" aria-hidden="true">
             →
           </span>
         </Link>

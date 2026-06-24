@@ -201,4 +201,7 @@
   .hero__quote {
     margin-left: 0;
   }
+    .hero__container {
+    padding: 72px var(--gutter) 84px;
+  }
 }
