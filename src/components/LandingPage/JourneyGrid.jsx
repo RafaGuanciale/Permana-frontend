@@ -2,6 +2,9 @@ import { useState } from "react";
 import collection from "../../images/mockups/mockup-collection-new.jpg";
 import analisys from "../../images/mockups/mockup-analisys-new.jpg";
 import recomendation from "../../images/mockups/mockup-recomendation.jpg";
+import descubra from "../../images/mockups/descubra-final.png";
+import entenda from "../../images/mockups/entenda-final.png";
+import reuna from "../../images/mockups/reuna-final.png";
 
 function JourneyGrid() {
   const [active, setActive] = useState(0);
@@ -66,17 +69,17 @@ function JourneyGrid() {
 
           <div className="journey__visual">
             <img
-              src={collection}
+              src={reuna}
               className={"journey__panel" + (active === 0 ? " journey__panel--active" : "")}
               alt=""
             />
             <img
-              src={analisys}
+              src={entenda}
               className={"journey__panel" + (active === 1 ? " journey__panel--active" : "")}
               alt=""
             />
             <img
-              src={recomendation}
+              src={descubra}
               className={"journey__panel" + (active === 2 ? " journey__panel--active" : "")}
               alt=""
             />
