@@ -6,17 +6,12 @@ import {
   useLocation,
 } from "react-router-dom";
 import { useState, useContext, useEffect } from "react";
-import AnalysisPage from "./pages/AnalysisPage";
 import CategoriesPage from "./pages/CategoriesPage";
 import CollectionPage from "./pages/CollectionPage";
 import DashboardPage from "./pages/DashboardPage";
-import LandingPage from "./pages/LandingPage";
 import LandingPageNew from "./pages/LandingPageNew"
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
-import OnboardingPage from "./pages/OnboardingPage";
-import RecomendationPage from "./pages/RecommendationPage";
-import BlogPage from "./pages/BlogPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { AuthProvider, AuthContext } from "./contexts/AuthContext";
@@ -124,14 +119,6 @@ function App() {
             }
           />
           <Route
-            path="/onboarding"
-            element={
-              <ProtectedRoute>
-                <OnboardingPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
             path="/dashboard"
             element={
               <ProtectedRoute>
@@ -148,34 +135,10 @@ function App() {
             }
           />
           <Route
-            path="/analysis"
-            element={
-              <ProtectedRoute>
-                <AnalysisPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/recommendation"
-            element={
-              <ProtectedRoute>
-                <RecomendationPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
             path="/categories"
             element={
               <ProtectedRoute>
                 <CategoriesPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/blog"
-            element={
-              <ProtectedRoute>
-                <BlogPage />
               </ProtectedRoute>
             }
           />

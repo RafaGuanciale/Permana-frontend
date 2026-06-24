@@ -14,17 +14,15 @@
 @import url("./styles/dashboard.css");
 @import url("./styles/DashboardHero.css");
 @import url("./styles/dashNewCollection.css");
-@import url("./styles/dashIdentity.css");
-@import url("./styles/dashRecomendation.css");
+
+
 @import url("./styles/dashCategories.css");
 @import url("./styles/dashWishlist.css");
 @import url("./styles/dashBlog.css");
 
-@import url("./styles/analysisPage.css");
+
 @import url("./styles/collectionPage.css");
-@import url("./styles/recomendationPage.css");
 @import url("./styles/categoriesPage.css");
-@import url("./styles/blog.css");
 
 /* Components */
 @import url("./styles/DashCollectionSkeleton.css");

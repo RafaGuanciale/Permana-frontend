@@ -117,7 +117,7 @@ function DashboardHero({
           {lede}{" "}
           <span className="dashboard-hero__lede-accent">{ledeAccent}</span>
         </p>
-        {reanalysis?.available && (
+        {/* {reanalysis?.available && (
           <div className="dashboard-hero__reanalyze">
             <button
               type="button"
@@ -137,7 +137,7 @@ function DashboardHero({
               </span>
             </div>
           </div>
-        )}
+        )} */}
       </div>
 
       <ScentOfTheDay
