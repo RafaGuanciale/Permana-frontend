@@ -1,7 +1,4 @@
 import { useState } from "react";
-import collection from "../../images/mockups/mockup-collection-new.jpg";
-import analisys from "../../images/mockups/mockup-analisys-new.jpg";
-import recomendation from "../../images/mockups/mockup-recomendation.jpg";
 import descubra from "../../images/mockups/descubra-final.png";
 import entenda from "../../images/mockups/entenda-final.png";
 import reuna from "../../images/mockups/reuna-final.png";
