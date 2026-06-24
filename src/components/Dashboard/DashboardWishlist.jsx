@@ -1,63 +1,57 @@
-import { Link } from "react-router-dom";
-import theOne from "../../images/perfumes/theOne.jpg";
-import imagination from "../../images/perfumes/imagination.jpeg";
-import allureHome from "../../images/perfumes/allure_homme_edition_blunch.jpg";
+import React from "react";
+import { initialCards } from "../../utils/consts";
 
-function DashboardWishlist() {
+function DashboardWishlist({
+  items = initialCards,
+  onAdd = null,
+  onSeeAll = null,
+}) {
+  const visibleItems = items.slice(0, 3);
+
   return (
-    <div className="dashWishlist__content">
-      <div className="dashWishlist__header">
-        <p className="dashWishlist__header__section-name">Wishlist</p>
-        <p className="dashWishlist__header__title">
-          3 fragrâncias na sua lista
-        </p>
-      </div>
-      <div className="dashWishlist__container">
-        <div className="dashWishlist__box">
-          <div className="dashWishlist__wish">
-            <img
-              className="dashWishlist__wish__image"
-              src={allureHome}
-              alt="imagem perfume"
-            />
-            <div className="dashWishlist__wish__texts">
-              <h3 className="dashWishlist__name">
-                Allure Homme Edition Blunch
-              </h3>
-              <p className="dashWishlist__brand">Chanel</p>
-            </div>
-            <a className="dashWishlist__view-more"></a>
-          </div>
-          <div className="dashWishlist__wish">
-            <img
-              className="dashWishlist__wish__image"
-              src={imagination}
-              alt="imagem perfume"
-            />
-            <div className="dashWishlist__wish__texts">
-              <h3 className="dashWishlist__name">Imagination</h3>
-              <p className="dashWishlist__brand">Louis Vuitton</p>
-            </div>
-            <a className="dashWishlist__view-more"></a>
-          </div>
-          <div className="dashWishlist__wish">
-            <img
-              className="dashWishlist__wish__image"
-              src={theOne}
-              alt="imagem perfume"
-            />
-            <div className="dashWishlist__wish__texts">
-              <h3 className="dashWishlist__name">The One EDP</h3>
-              <p className="dashWishlist__brand">Dolce & Gabbana</p>
-            </div>
-            <a className="dashWishlist__view-more"></a>
-          </div>
+    <div className="wishlist-card">
+      <div className="wishlist-card__head">
+        <div>
+          <p className="wishlist-card__eyebrow">Wishlist</p>
+          <h3 className="wishlist-card__title">
+            {items.length} fragrâncias na sua lista
+          </h3>
         </div>
+        <button type="button" className="wishlist-card__add" onClick={onAdd}>
+          + Adicionar
+        </button>
       </div>
-      <div className="dashWishlist__footer">
-        <Link className="dashWishlist__footer__view" to="#">
+
+      <div className="wishlist-gallery">
+        {visibleItems.map((item) => (
+          <div
+            key={item.name}
+            className="wishlist-gallery__item"
+            onClick={null}
+          >
+            <img
+              className="wishlist-card__thumb wishlist-gallery__thumb"
+              src={item.link}
+            />
+            <div>
+              <div className="wishlist-gallery__name">{item.name}</div>
+              <div className="wishlist-gallery__brand">{item.brand}</div>
+            </div>
+            <div className="wishlist-gallery__tag">
+              <span className="wishlist-card__family">{item.family}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="wishlist-card__footer">
+        <button
+          type="button"
+          className="wishlist-card__seeall"
+          onClick={onSeeAll}
+        >
           Ver wishlist completa →
-        </Link>
+        </button>
       </div>
     </div>
   );

@@ -5,13 +5,14 @@ function Author() {
     <section className="project" id="author">
       <div className="project__inner">
         <figure className="project__portrait">
+          <div className="project__image-overlay"></div>
           <img
             className="project__image"
             src={author}
             alt="Foto do desenvolvedor Rafael"
           />
           <figcaption className="project__caption">
-            <span className="project__name">Rafael Guanciale</span>
+            <span className="project__name">Rafael Guanciale Nacarato</span>
             <span className="project__job">Web developer</span>
           </figcaption>
         </figure>
@@ -22,9 +23,9 @@ function Author() {
             Paixão por perfumaria, <em>aprendizado em código.</em>
           </h3>
           <p className="project__text">
-            O Permana nasceu da união de duas paixões — fragrâncias e
-            desenvolvimento web. Um laboratório onde cada funcionalidade é um
-            novo conceito aprendido.
+            "A ideia veio de uma necessidade pessoal com perfumaria. Mas o
+            Permana acabou virando outra coisa: onde aprendi a programar de
+            verdade, construindo uma tela de cada vez."
           </p>
         </div>
 

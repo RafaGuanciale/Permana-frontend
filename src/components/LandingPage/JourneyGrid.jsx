@@ -23,11 +23,11 @@ function JourneyGrid() {
               <span className="step__num">1</span>
               <span className="step__body">
                 <span className="step__kicker">Reúna</span>
-                <span className="step__title">Cada frasco, num só lugar.</span>
+                <span className="step__title">Tudo num lugar só.</span>
                 <span className="step__text">
-                  Busque pelo nome e o perfume entra completo — imagem, marca e
-                  notas direto do catálogo. Da prateleira de casa à vitrine de
-                  nicho.
+                  Busca pelo nome e o perfume entra completo: imagem, marca e
+                  notas, direto do catálogo. Você só confirma e ele entra na sua
+                  coleção.
                 </span>
               </span>
             </button>
@@ -41,9 +41,9 @@ function JourneyGrid() {
                 <span className="step__kicker">Entenda</span>
                 <span className="step__title">Um diagnóstico da coleção.</span>
                 <span className="step__text">
-                  O coração do Permana lê as notas, calcula seu perfil
-                  predominante e mostra — num balance score — onde a coleção
-                  pede equilíbrio.
+                  O Permana lê as notas de cada perfume, define seu perfil
+                  predominante e mostra em quais ocasiões a coleção está pronta
+                  e onde ainda faltam peças.
                 </span>
               </span>
             </button>
@@ -55,10 +55,10 @@ function JourneyGrid() {
               <span className="step__num">3</span>
               <span className="step__body">
                 <span className="step__kicker">Descubra</span>
-                <span className="step__title">O próximo, na sua medida.</span>
+                <span className="step__title">O próximo da lista.</span>
                 <span className="step__text">
-                  A partir do que falta, três caminhos por faixa de preço. Você
-                  escolhe o que faz sentido — em qualquer ponta do catálogo.
+                  A partir do que falta, três caminhos por faixa de preço. A
+                  escolha do próximo continua sendo sua.
                 </span>
               </span>
             </button>

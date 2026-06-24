@@ -3,6 +3,7 @@ import { useContext, useState } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
 import { UserContext } from "../../contexts/UserContext";
 import { AuthContext } from "../../contexts/AuthContext";
+import logo from "../../images/brand/Permana-Logo-Reverse.png"
 
 function Header() {
   const { user } = useContext(UserContext);
@@ -17,7 +18,7 @@ function Header() {
   return (
     <header className="header" id="header">
       <div className="header__container">
-        <h2 className="header__title">Aromatik</h2>
+        <img src={logo} alt="" className="header__logo" />
         <div className="header__navigation">
           <nav className="header__nav" id="header__nav-user">
             <NavLink to="/dashboard" className="header__nav-link">
@@ -26,12 +27,12 @@ function Header() {
             <NavLink to="/collection" className="header__nav-link">
               Coleção
             </NavLink>
-            <NavLink to="/analysis" className="header__nav-link">
+            {/* <NavLink to="/analysis" className="header__nav-link">
               Análise
             </NavLink>
             <NavLink to="/recommendation" className="header__nav-link">
               Recomendações
-            </NavLink>
+            </NavLink> */}
             <NavLink to="/categories" className="header__nav-link">
               Categorias
             </NavLink>

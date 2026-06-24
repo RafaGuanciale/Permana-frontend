@@ -1,0 +1,95 @@
+.cta {
+  background: var(--color-bistre);
+  padding: 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.cta::before {
+  content: "";
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 720px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(113, 129, 109, 0.3),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.cta__inner {
+  position: relative;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.cta__quote {
+  margin: 0 auto 30px;
+  max-width: 660px;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 27px;
+  line-height: 1.4;
+  color: rgba(241, 224, 197, 0.66);
+}
+.cta__title {
+  margin: 0;
+  line-height: 1.02;
+}
+.cta__title--light,
+.cta__title--soft {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(44px, 5.5vw, 62px);
+  letter-spacing: -0.02em;
+}
+.cta__title--light {
+  color: var(--color-champagne);
+}
+.cta__title--soft {
+  font-style: italic;
+  color: var(--color-green-soft);
+  letter-spacing: -0.01em;
+}
+.cta__note {
+  margin: 20px 0 0;
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: 16px;
+  color: rgba(241, 224, 197, 0.72);
+}
+
+.cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: 13px;
+  padding: 11px 22px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    border-color 0.2s ease;
+  padding: 16px 36px;
+  font-size: 14px;
+  margin-top: 32px;
+}
+
+.cta__btn--paper {
+  background: var(--color-champagne);
+  color: var(--color-bistre);
+}
+.cta__btn--paper:hover {
+  background: #fff;
+  transform: translateY(-1px);
+}

@@ -1,5 +1,5 @@
 import { React } from "react";
-import defaultBottle from "../../images/perfumes/default.jpg"
+import defaultBottle from "../../images/perfumes/default.jpg";
 
 function getDate() {
   const now = new Date();
@@ -30,10 +30,10 @@ function getLede(weather) {
     .toLowerCase()} e ${weather.condition.toLowerCase()} —`;
 }
 
-export function ScentOfTheDay({ weather, perfume, onDetails, style }) {
+function ScentOfTheDay({ weather, perfume, onDetails }) {
   const { temp, condition, detail, icon } = weather;
   return (
-    <div className="scent-of-the-day" style={style}>
+    <div className="scent-of-the-day" >
       <p className="scent-of-the-day__label">Perfume do dia</p>
       <div className="scent-of-the-day__weather">
         <img
@@ -84,7 +84,7 @@ export function ScentOfTheDay({ weather, perfume, onDetails, style }) {
   );
 }
 
-export function DashboardHero({
+function DashboardHero({
   name = "Rafael",
   greeting = getGreeting(),
   date = getDate(),
@@ -148,3 +148,5 @@ export function DashboardHero({
     </div>
   );
 }
+
+export default DashboardHero;

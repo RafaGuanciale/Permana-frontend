@@ -1,18 +1,15 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { CollectionContext } from "../contexts/CollectionContext";
 import { PopupContext } from "../contexts/PopupContext";
+import { useWeather } from "../hooks/useWeather";
 import CollectionCard from "../components/Cards/CollectionCards";
 import DashboardBlog from "../components/Dashboard/DashboardBlog";
 import DashboardNewCollection from "../components/Dashboard/DashboardNewCollection";
-import { DashboardHero } from "../components/Dashboard/DashboardHero";
+import DashboardHero from "../components/Dashboard/DashboardHero";
 import DashboardIdentity from "../components/Dashboard/DashboardIdentity";
 import DashboardRecomendation from "../components/Dashboard/DashboardRecomendation";
-import DashboardSugestion from "../components/Dashboard/DashboardSugestion";
 import DashboardCategories from "../components/Dashboard/DashboardCategories";
-import { WishlistCard } from "../components/Dashboard/DashboardWishlistCard";
-import DashboardWishlist from "../components/Dashboard/DashboardWishlist";
-import { useWeather } from "../hooks/useWeather";
+import DashboardWishlist from "../components/Dashboard/DashboardWishlist"; 
 
 function DashboardPage() {
   const { handleOpenPopup } = useContext(PopupContext);
@@ -26,17 +23,16 @@ function DashboardPage() {
       <div className="dashboard__wrapper--top">
         <DashboardNewCollection />
       </div>
-      <div className="dashboard__wrapper--middle">
+      {/* <div className="dashboard__wrapper--middle">
         <DashboardIdentity />
         <DashboardRecomendation />
-      </div>
+      </div> */}
       <div className="dashboard__wrapper--bottom">
         <DashboardCategories />
-        <WishlistCard />
-        {/* <DashboardWishlist /> */}
+        <DashboardWishlist />
       </div>
       <div className="dashboard__wrapper--blog">
-        <DashboardBlog />
+        {/* <DashboardBlog /> */}
       </div>
     </div>
   );

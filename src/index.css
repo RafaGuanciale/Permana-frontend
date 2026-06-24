@@ -1,40 +1,44 @@
+/* CSS principais */
 @import url("./vendor/normalize.css");
 @import url("./styles/page.css");
-@import url("./styles/header.css");
 @import url("./styles/section.css");
-@import url("./styles/cards.css");
-@import url("./styles/categoriesPage.css");
-@import url("./styles/inspired.css");
+@import url("./styles/header.css");
 @import url("./styles/footer.css");
-@import url("./styles/form.css");
-@import url("./styles/iframe.css");
-@import url("./styles/home.css");
-@import url("./styles/popup.css");
-@import url("./styles/profile.css");
-@import url("./styles/cardModal.css");
+
+/* Auth Pages */
 @import url("./styles/login.css");
-@import url("./styles/edit.css");
-@import url("./styles/categoriesPopup.css");
-@import url("./styles/about.css");
-@import url("./styles/author.css");
-@import url("./styles/blog.css");
+@import url("./styles/registerPage.css");
+/* Pages */
+@import url("./styles/LandingPageNew.css");
+
 @import url("./styles/dashboard.css");
-/* @import url("./styles/hero.css"); */
+@import url("./styles/DashboardHero.css");
 @import url("./styles/dashNewCollection.css");
 @import url("./styles/dashIdentity.css");
 @import url("./styles/dashRecomendation.css");
-@import url("./styles/dashSugestion.css");
 @import url("./styles/dashCategories.css");
 @import url("./styles/dashWishlist.css");
-@import url("./styles/dashboardWishlistCard.css");
 @import url("./styles/dashBlog.css");
-@import url("./styles/recomendationPage.css");
-@import url("./styles/collectionPage.css");
+
 @import url("./styles/analysisPage.css");
-@import url("./styles/registerPage.css");
+@import url("./styles/collectionPage.css");
+@import url("./styles/recomendationPage.css");
+@import url("./styles/categoriesPage.css");
+@import url("./styles/blog.css");
+
+/* Components */
+@import url("./styles/DashCollectionSkeleton.css");
+@import url("./styles/cards.css");
+@import url("./styles/form.css");
+@import url("./styles/popup.css");
+@import url("./styles/profile.css");
+@import url("./styles/cardModal.css");
+@import url("./styles/edit.css");
+@import url("./styles/categoriesPopup.css");
 @import url("./styles/profileMenu.css");
 @import url("./styles/perfumesDrawer.css");
-@import url("./styles/DashCollectionSkeleton.css");
-@import url("./styles/DashboardHero.css");
 @import url("./styles/scentOfTheDay.css");
-@import url("./styles/LandingPageNew.css");
+
+@import url("./styles/author.css");
+@import url("./styles/Hero2.css");
+@import url("./styles/LPCallToAction.css");
