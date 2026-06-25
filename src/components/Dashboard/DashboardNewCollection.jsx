@@ -1,4 +1,4 @@
-import { useContext, useRef, useState, useEffect, useCallback } from "react";
+import { useContext, useState, useEffect, useRef } from "react";
 import { CollectionContext } from "../../contexts/CollectionContext";
 import { PopupContext } from "../../contexts/PopupContext";
 import { Link } from "react-router-dom";
@@ -6,57 +6,57 @@ import CollectionCards from "../Cards/CollectionCards";
 import DashboardCollectionSkeleton from "../Loading/DashboardCollectionSkeleton";
 
 function DashboardNewCollection() {
+  const containerRef = useRef(null);
+
   const { handleOpenPopup } = useContext(PopupContext);
   const { collection, isLoading } = useContext(CollectionContext);
-
-  // ---- estado do carrossel ----
-  const trackRef = useRef(null);
-  const [atStart, setAtStart] = useState(true);
-  const [atEnd, setAtEnd] = useState(false);
-  const [page, setPage] = useState(0);
-  const [pages, setPages] = useState(1);
+  const [start, setStart] = useState(0);
+  const [visible, setVisible] = useState(5);
 
   const isEmpty = collection.length === 0;
-  const isScrollable = pages > 1;
+  const visibleItems = collection.slice(start, start + visible);
+  const maxStart = collection.length - visible;
+  const isScrollable = collection.length > visible;
+  const canGoBack = start > 0;
+  const canGoNext = start < maxStart;
 
-  const measure = useCallback(() => {
-    const el = trackRef.current;
-    if (!el) return;
-    const max = el.scrollWidth - el.clientWidth;
-    const per = el.clientWidth || 1;
-    const cols =
-      parseInt(getComputedStyle(el).getPropertyValue("--dc-cols"), 10) || 5;
-    const totalPages =
-      max <= 4 ? 1 : Math.max(1, Math.ceil(collection.length / cols));
-    setAtStart(el.scrollLeft <= 4);
-    setAtEnd(el.scrollLeft >= max - 4);
-    setPages(totalPages);
-    setPage(Math.min(totalPages - 1, Math.round(el.scrollLeft / per)));
-  }, [collection.length]);
+  const scrollCard = (direction) => {
+    setStart((current) => {
+      const next = current + direction;
+      return Math.max(Math.min(next, maxStart), 0);
+    });
+  };
+
+  function getVisible(width) {
+    if (width < 540) return 2;
+    if (width < 760) return 3;
+    if (width < 1040) return 4;
+    return 5;
+  }
 
   useEffect(() => {
-    measure();
-    const el = trackRef.current;
-    if (!el) return;
-    el.addEventListener("scroll", measure, { passive: true });
-    const ro = new ResizeObserver(measure);
-    ro.observe(el);
-    return () => {
-      el.removeEventListener("scroll", measure);
-      ro.disconnect();
-    };
-  }, [measure]);
+    const elements = containerRef.current;
+    if (!elements) return;
 
-  const scrollByPage = (dir) => {
-    const el = trackRef.current;
-    if (!el) return;
-    el.scrollBy({ left: dir * el.clientWidth * 0.85, behavior: "smooth" });
-  };
+    function updateVisible() {
+      const width = elements.clientWidth;
+      setVisible(getVisible(width));
+    }
+
+    updateVisible();
+    const observer = new ResizeObserver(updateVisible);
+    observer.observe(elements);
+    return () => observer.disconnect();
+  }, [isLoading]);
+
+  useEffect(() => {
+  setStart((current) => Math.min(current, maxStart));
+}, [visible, collection.length]);
 
   if (isLoading) return <DashboardCollectionSkeleton />;
 
   return (
-    <div className="dashCollection__content">
+    <div className="dashCollection__content" ref={containerRef}>
       <div className="dashCollection__header">
         <div className="dashCollection__header__text">
           <p className="dashCollection__header__section-name">Minha Coleção</p>
@@ -87,23 +87,26 @@ function DashboardNewCollection() {
         </div>
       ) : (
         <>
-          <div className="dashCollection__carousel">
+          <div
+            className="dashCollection__carousel"
+            style={{ "--dc-cols": visible }}
+          >
             <div className="dashCollection__row">
               <div className="dashCollection__viewport">
                 {isScrollable && (
                   <button
                     type="button"
                     className="dashCollection__carousel__arrow dashCollection__carousel__arrow--left"
-                    onClick={() => scrollByPage(-1)}
-                    disabled={atStart}
+                    onClick={() => scrollCard(-1)}
+                    disabled={!canGoBack}
                     aria-label="Ver fragrâncias anteriores"
                   >
                     ‹
                   </button>
                 )}
 
-                <div className="dashCollection__grid" ref={trackRef}>
-                  {collection.map((card) => (
+                <div className="dashCollection__grid">
+                  {visibleItems.map((card) => (
                     <CollectionCards
                       key={card._id}
                       name={card.perfumeId.name}
@@ -118,8 +121,8 @@ function DashboardNewCollection() {
                   <button
                     type="button"
                     className="dashCollection__carousel__arrow dashCollection__carousel__arrow--right"
-                    onClick={() => scrollByPage(1)}
-                    disabled={atEnd}
+                    onClick={() => scrollCard(1)}
+                    disabled={!canGoNext}
                     aria-label="Ver mais fragrâncias"
                   >
                     ›
@@ -137,20 +140,6 @@ function DashboardNewCollection() {
                 </div>
               </div>
             </div>
-
-            {isScrollable && (
-              <div className="dashCollection__dots">
-                {Array.from({ length: pages }).map((_, i) => (
-                  <span
-                    key={i}
-                    className={
-                      "dashCollection__dot" +
-                      (i === page ? " dashCollection__dot--active" : "")
-                    }
-                  />
-                ))}
-              </div>
-            )}
           </div>
 
           <div className="dashCollection__footer">

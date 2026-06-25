@@ -26,7 +26,7 @@ function DashboardWishlist({
       <div className="wishlist-gallery">
         {visibleItems.map((card) => (
           <WishlistCard
-            key={card._id}
+            key={card.id}
             name={card.name}
             brand={card.brand}
             image={card.link}
