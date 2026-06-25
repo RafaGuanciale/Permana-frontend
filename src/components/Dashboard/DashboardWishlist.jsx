@@ -1,5 +1,6 @@
 import React from "react";
 import { initialCards } from "../../utils/consts";
+import WishlistCard from "../Cards/WishlistCard";
 
 function DashboardWishlist({
   items = initialCards,
@@ -23,24 +24,15 @@ function DashboardWishlist({
       </div>
 
       <div className="wishlist-gallery">
-        {visibleItems.map((item) => (
-          <div
-            key={item.name}
-            className="wishlist-gallery__item"
-            onClick={null}
-          >
-            <img
-              className="wishlist-card__thumb wishlist-gallery__thumb"
-              src={item.link}
-            />
-            <div>
-              <div className="wishlist-gallery__name">{item.name}</div>
-              <div className="wishlist-gallery__brand">{item.brand}</div>
-            </div>
-            <div className="wishlist-gallery__tag">
-              <span className="wishlist-card__family">{item.family}</span>
-            </div>
-          </div>
+        {visibleItems.map((card) => (
+          <WishlistCard
+            key={card._id}
+            name={card.name}
+            brand={card.brand}
+            image={card.link}
+            family={card.family}
+            card={card}
+          />
         ))}
       </div>
 

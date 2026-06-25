@@ -8,7 +8,7 @@ import DashboardCollectionSkeleton from "../Loading/DashboardCollectionSkeleton"
 function DashboardNewCollection() {
   const { handleOpenPopup } = useContext(PopupContext);
   const { collection, isLoading } = useContext(CollectionContext);
-  
+
   // ---- estado do carrossel ----
   const trackRef = useRef(null);
   const [atStart, setAtStart] = useState(true);
@@ -18,9 +18,9 @@ function DashboardNewCollection() {
 
   const isEmpty = collection.length === 0;
   const isScrollable = pages > 1;
-  
+
   const measure = useCallback(() => {
-      const el = trackRef.current;
+    const el = trackRef.current;
     if (!el) return;
     const max = el.scrollWidth - el.clientWidth;
     const per = el.clientWidth || 1;
@@ -53,7 +53,7 @@ function DashboardNewCollection() {
     el.scrollBy({ left: dir * el.clientWidth * 0.85, behavior: "smooth" });
   };
 
-   if (isLoading) return <DashboardCollectionSkeleton />;
+  if (isLoading) return <DashboardCollectionSkeleton />;
 
   return (
     <div className="dashCollection__content">
@@ -89,7 +89,6 @@ function DashboardNewCollection() {
         <>
           <div className="dashCollection__carousel">
             <div className="dashCollection__row">
-
               <div className="dashCollection__viewport">
                 {isScrollable && (
                   <button

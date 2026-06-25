@@ -1,7 +1,5 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
-import Popup from "../Popups/Popup";
-import CardsPopup from "../Popups/CardsPopup";
 import { CollectionContext } from "../../contexts/CollectionContext";
 
 function CollectionCards(props) {
