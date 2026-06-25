@@ -1,13 +1,26 @@
 import lupa from "../images/icons/lupa.png";
 import CollectionPageCard from "../components/Cards/CollectionPageCards";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CollectionContext } from "../contexts/CollectionContext";
 import { PopupContext } from "../contexts/PopupContext";
+import SearchCollection from "../components/Pages/CollectionPage/SearchCollection";
 
 function CollectionPage() {
   const { collection } = useContext(CollectionContext);
   const { handleOpenPopup } = useContext(PopupContext);
+  const [searchValue, setSearchValue] = useState("");
   const isEmpty = collection.length === 0;
+
+  const handleChangeSearch = (e) => {
+    setSearchValue(e.target.value);
+  };
+
+  const filteredCollection = collection.filter((card) => {
+    return (
+      card.perfumeId.name?.toLowerCase()?.includes(searchValue?.toLowerCase()) ||
+      card.perfumeId.brand?.toLowerCase()?.includes(searchValue?.toLowerCase())
+    );
+  });
 
   return (
     <section className="collectionPage" id="collectionPage">
@@ -78,16 +91,22 @@ function CollectionPage() {
                 alt="lupa de busca"
                 className="collectionPage__lupa"
               />
-              <div className="collectionPage__search__wrap">
+              <SearchCollection
+                value={searchValue}
+                onChange={handleChangeSearch}
+              />
+              {/* <div className="collectionPage__search__wrap">
                 <div className="collectionPage__form">
                   <input
                     name="searchInput"
                     type="text"
                     className="collectionPage__search__input"
                     placeholder="Buscar por nome ou marca..."
+                    value={searchValue}
+                    onChange={handleChangeSearch}
                   />
                 </div>
-              </div>
+              </div> */}
               <button
                 type="button"
                 className="collectionPage__add__btn"
@@ -105,7 +124,7 @@ function CollectionPage() {
               <button className="collectionPage__pill">Floral</button>
             </div>
             <div className="collectionPage__list">
-              {collection.map((card) => (
+              {filteredCollection.map((card) => (
                 <CollectionPageCard
                   key={card._id}
                   name={card.perfumeId.name}
