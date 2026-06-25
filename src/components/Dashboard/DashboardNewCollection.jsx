@@ -50,8 +50,8 @@ function DashboardNewCollection() {
   }, [isLoading]);
 
   useEffect(() => {
-  setStart((current) => Math.min(current, maxStart));
-}, [visible, collection.length]);
+    setStart((current) => Math.max(Math.min(current, maxStart), 0));
+  }, [visible, collection.length]);
 
   if (isLoading) return <DashboardCollectionSkeleton />;
 
