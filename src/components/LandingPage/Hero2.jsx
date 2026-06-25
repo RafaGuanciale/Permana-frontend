@@ -1,13 +1,10 @@
 import { Link } from "react-router-dom";
-import coin from "../../images/brand/favicon.svg";
+import Logo from "../brand/Logo";
 
 function HeroTopbar() {
   return (
     <nav className="hero__topbar">
-      <Link to="/" className="brand">
-        <img className="brand__coin" src={coin} alt="Permana" />
-        <span className="brand__logo">ERMANA</span>
-      </Link>
+      <Logo color={"light"} />
       <div className="hero__actions">
         <Link to="/login" className="hero__btn hero__btn--ghost">
           Entrar

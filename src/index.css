@@ -4,6 +4,7 @@
 @import url("./styles/section.css");
 @import url("./styles/header.css");
 @import url("./styles/footer.css");
+@import url("./styles/Footer2.css");
 
 /* Auth Pages */
 @import url("./styles/login.css");
@@ -37,4 +38,5 @@
 @import url("./styles/LPCallToAction.css");
 @import url("./styles/LPJourney.css");
 @import url("./styles/CategoriesCard.css");
+@import url("./styles/Logo.css");
 

@@ -1,0 +1,27 @@
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  text-decoration: none;
+}
+.brand__coin {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+.brand__logo-light {
+  font-family: "Cinzel";
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  color: var(--color-bistre);
+}
+.brand__logo-dark {
+  font-family: "Cinzel";
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  line-height: 1;
+  color: var(--color-champagne);
+}

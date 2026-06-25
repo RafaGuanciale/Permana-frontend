@@ -14,6 +14,7 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Footer2 from "./components/Footer/Footer2";
 import { AuthProvider, AuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { PopupProvider } from "./contexts/PopupContext";
@@ -149,7 +150,7 @@ function App() {
             }
           />
         </Routes>
-        <Footer />
+        <Footer2 />
       </div>
       <PopupManager />
     </>
