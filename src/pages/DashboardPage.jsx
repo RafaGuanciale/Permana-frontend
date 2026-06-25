@@ -5,8 +5,7 @@ import { useWeather } from "../hooks/useWeather";
 import CollectionCard from "../components/Cards/CollectionCards";
 import DashboardNewCollection from "../components/Dashboard/DashboardNewCollection";
 import DashboardHero from "../components/Dashboard/DashboardHero";
-import DashboardCategories from "../components/Dashboard/DashboardCategories";
-import { CategoriesCard } from "../components/Dashboard/CategoriesCard";
+import { DashboardCategories } from "../components/Dashboard/DashboardCategories";
 import DashboardWishlist from "../components/Dashboard/DashboardWishlist";
 import { categories } from "../utils/consts";
 
@@ -23,7 +22,7 @@ function DashboardPage() {
         <DashboardNewCollection />
       </div>
       <div className="dashboard__wrapper--bottom">
-        <CategoriesCard
+        <DashboardCategories
           items={categories}
           onSeeAll={() => console.log("Ver todas")}
           onSelect={(category) => console.log(category)}
