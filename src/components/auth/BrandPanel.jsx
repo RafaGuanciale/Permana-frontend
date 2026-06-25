@@ -1,11 +1,11 @@
+import Logo from "../brand/Logo"
+
 function BrandPanel() {
   return (
     <div className="registerPage__container__left">
       <div className="registerPage__deco-1"></div>
       <div className="registerPage__deco-2"></div>
-      <div className="registerPage__left__logo">
-        Aromati<span className="registerPage__logo__span">k</span>
-      </div>
+      <Logo color={"dark"}/>
       <div className="registerPage__left__content">
         <p className="registerPage__left__title">
           Sua coleção,
@@ -25,7 +25,7 @@ function BrandPanel() {
         </div>
       </div>
       <div className="registerPage__left__footer">
-        Aromatik · Identidade olfativa
+        Permana · Identidade olfativa
       </div>
     </div>
   );
