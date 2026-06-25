@@ -15,7 +15,7 @@ function Footer2() {
     <footer className="footer" id="footer">
       <div className="footer__inner">
         <div className="footer__columns">
-          <div className="footer__column--main">
+          <div className="footer__column-main">
             <Logo color={"dark"} />
             <p className="footer__tagline">
               Sua identidade olfativa, decifrada.
@@ -25,7 +25,7 @@ function Footer2() {
             </p>
           </div>
 
-          <nav className="footer__column--nav">
+          <nav className="footer__column-nav">
             <h3 className="footer__heading">
               {isLogged ? "Sua coleção" : "Explorar"}
             </h3>
@@ -122,7 +122,7 @@ function Footer2() {
             </div>
           </nav>
 
-          <nav className="footer__column--nav">
+          <nav className="footer__column-nav">
             <h3 className="footer__heading">
               {isLogged ? "Descobrir" : "Comece agora"}
             </h3>
@@ -187,10 +187,10 @@ function Footer2() {
             </div>
           </nav>
 
-          <div className="footer__column_content--social" id="footer-social">
+          <div className="footer__column_content-social" id="footer-social">
             <h3 className="footer__heading">Acompanhe</h3>
             <ul className="footer__list">
-              <li>
+              <li className="footer__list">
                 <a
                   className="footer__social-link"
                   href="https://www.instagram.com/rafagn"
