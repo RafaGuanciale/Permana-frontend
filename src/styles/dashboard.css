@@ -45,54 +45,37 @@
   box-sizing: border-box;
 }
 
-/* ── Tablet (≤ 768px) ── */
+
 @media (max-width: 768px) {
-  /* Wrappers — padding menor, sem max-width rígido */
   .dashboard__wrapper--top,
   .dashboard__wrapper--middle,
   .dashboard__wrapper--bottom,
   .dashboard__wrapper--blog {
     padding: 10px 16px;
   }
-
-  /* Middle: identidade + recomendação — empilha */
   .dashboard__wrapper--middle {
     grid-template-columns: 1fr;
     row-gap: 12px;
   }
-
-  /* Bottom: perfume do dia + categorias + wishlist — 2 colunas */
-  /* perfume do dia ocupa largura total, categorias e wishlist lado a lado */
   .dashboard__wrapper--bottom {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
-    row-gap: 12px;
-  }
-
-  /* Perfume do dia ocupa as 2 colunas */
-  .dashboard__wrapper--bottom > *:first-child {
-    grid-column: 1 / -1;
+    grid-template-columns: 1fr;
+    row-gap: 36px;
   }
 }
 
 /* ── Mobile (≤ 480px) ── */
 @media (max-width: 480px) {
-  /* Wrappers */
   .dashboard__wrapper--top,
   .dashboard__wrapper--middle,
   .dashboard__wrapper--bottom,
   .dashboard__wrapper--blog {
     padding: 8px 12px;
   }
-
-  /* Middle e Bottom: tudo em coluna única */
   .dashboard__wrapper--middle,
   .dashboard__wrapper--bottom {
     grid-template-columns: 1fr;
     row-gap: 10px;
   }
-
-  /* Remove o override de 2 colunas do tablet */
   .dashboard__wrapper--bottom > *:first-child {
     grid-column: auto;
   }
