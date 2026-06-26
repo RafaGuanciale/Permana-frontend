@@ -23,10 +23,10 @@ import PopupManager from "./components/Popups/PopupManager";
 import * as auth from "./utils/auth";
 import * as api from "./utils/api";
 import { setToken, getToken } from "./utils/token";
-import DashboardCollectionSkeleton from "./components/Loading/DashboardCollectionSkeleton";
+import Loader from "./components/Loading/Loader";
 
 function App() {
-  const [loading, setLoading] = useState(!!getToken);
+  const [loading, setLoading] = useState(!!getToken());
   const { isLogged, login } = useContext(AuthContext);
   const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -92,7 +92,7 @@ function App() {
   }, []);
 
     if (loading) {
-    return <DashboardCollectionSkeleton />;
+    return <Loader fullscreen message="Preparando sua identidade olfativa" />
   }
 
   return (

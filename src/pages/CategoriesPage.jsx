@@ -58,6 +58,7 @@ function todaySuggestion() {
 }
 
 function categoriesPage() {
+  const [isLoading, setIsLoading] = useState(true);
   const [openCategory, setOpenCategory] = useState("");
   const [openContainer, setOpenContainer] = useState("");
   const [activeSubcategory, setActiveSubcategory] = useState("");

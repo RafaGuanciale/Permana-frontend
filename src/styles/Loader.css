@@ -1,0 +1,115 @@
+@keyframes loader-halo {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.55;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1.7);
+    opacity: 0;
+  }
+}
+@keyframes loader-soft {
+  0%,
+  100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  text-align: center;
+}
+.loader--screen {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-green);
+}
+.loader__coinwrap {
+  position: relative;
+  display: grid;
+  place-items: center;
+}
+.loader__coin {
+  display: block;
+  position: relative;
+  z-index: 2;
+}
+.loader__halo {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(241, 224, 197, 0.7);
+  opacity: 0;
+  z-index: 1;
+  animation: loader-halo 2.4s ease-out infinite;
+}
+.loader__halo--delayed {
+  animation-delay: 1.2s;
+}
+.loader__text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+.loader__name {
+  font-family: var(--font-logo);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.28em;
+  text-indent: 0.34em;
+  color: var(--color-champagne);
+  margin-bottom: 8px;
+}
+.loader__msg {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 30px;
+  color: rgba(241, 224, 197, 0.72);
+}
+.loader__dots {
+  display: inline-flex;
+  gap: 5px;
+  margin-top: 8px;
+}
+.loader__dots span {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(241, 224, 197, 0.9);
+}
+.loader--light .loader__halo {
+  border-color: rgba(113, 129, 109, 0.55);
+}
+.loader--light .loader__name {
+  color: var(--color-green);
+}
+.loader--light .loader__msg {
+  color: var(--text-muted);
+}
+.loader--light .loader__dots span {
+  background: var(--color-green);
+}
+/* @media (prefers-reduced-motion: reduce) {
+  .loader__halo {
+    animation: none;
+    opacity: 0;
+  }
+  .loader {
+    animation: loader-soft 2s ease-in-out infinite;
+  }
+} */

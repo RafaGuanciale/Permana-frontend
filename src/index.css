@@ -23,6 +23,7 @@
 
 /* Components */
 @import url("./styles/DashCollectionSkeleton.css");
+@import url("./styles/Loader.css");
 @import url("./styles/cards.css");
 @import url("./styles/form.css");
 @import url("./styles/popup.css");
