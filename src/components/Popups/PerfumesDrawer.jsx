@@ -12,7 +12,6 @@ function PerfumesDrawer() {
   useEffect(() => {
     const timer = setTimeout(() => {
       searchPerfumes(getToken(), searchValue).then((data) => {
-        console.log(data);
         setResults(data);
       });
     }, 300);

@@ -1,13 +1,13 @@
 import work from "../images/categorias/work.jpeg";
-import gym from "../images/categorias/gym.jpeg";
-import date from "../images/categorias/date2.jpeg";
-import events from "../images/categorias/events.jpg";
 import casual from "../images/categorias/casual.jpg";
+import gym from "../images/categorias/gym.jpeg";
 import hot from "../images/categorias/hot.jpg";
 import cold from "../images/categorias/cold.jpg";
-import party from "../images/categorias/party.jpg";
-import travel from "../images/categorias/travel.jpg";
+import date from "../images/categorias/date2.jpeg";
 import night from "../images/categorias/night.jpg";
+import party from "../images/categorias/party.jpg";
+import events from "../images/categorias/events.jpg";
+import travel from "../images/categorias/travel.jpg";
 
 export const initialCards = [
   {
@@ -56,55 +56,93 @@ export const initialCards = [
 
 export const categories = [
   {
-    label: "casual",
-    count: 9,
-    image: casual,
-    tint: "#1F2937",
-    featured: true,
-    category: "Casual",
+    name: "Trabalho",
     container: "top",
-  },
-  {
-    label: "Trabalho",
-    count: 7,
-    tint: "#334155",
+    subcats: ["Escritório", "Reunião", "Home office", "Ar livre"],
+    count: 0,
+    perfumes: [],
+    featured: false,
     image: work,
-    category: "Trabalho",
+  },
+  {
+    name: "Casual",
     container: "top",
-  },
-  {
-    label: "Encontros",
-    count: 6,
-    tint: "#7C3AED",
-    image: date,
-    category: "Encontros",
-    container: "bottom",
-  },
-  {
-    label: "Calor",
-    count: 8,
-    tint: "#0284C7",
-    image: hot,
-    category: "Calor",
-    container: "top",
-  },
-  {
-    label: "Noite",
-    count: 11,
-    tint: "#111827",
+    subcats: ["Dia a dia", "Brunch", "Parque"],
+    count: 0,
+    perfumes: [],
     featured: true,
-    image: night,
-    category: "Trabalho",
-    container: "top",
-    category: "Noite",
-    container: "bottom",
+    image: casual,
   },
   {
-    label: "Eventos",
-    count: 4,
-    tint: "#B45309",
-    image: events,
-    category: "Eventos",
+    name: "Academia",
+    container: "top",
+    subcats: ["Treino", "Corrida", "Yoga"],
+    count: 0,
+    perfumes: [],
+    featured: false,
+    image: gym,
+  },
+  {
+    name: "Calor",
+    container: "top",
+    subcats: ["Praia", "Litoral", "Tarde quente"],
+    count: 0,
+    perfumes: [],
+    featured: false,
+    image: hot,
+  },
+  {
+    name: "Frio",
+    container: "top",
+    subcats: ["Inverno", "Serra", "Noite fria"],
+    count: 0,
+    perfumes: [],
+    featured: false,
+    image: cold,
+  },
+  {
+    name: "Encontros",
     container: "bottom",
+    subcats: ["Primeiro encontro", "Jantar", "Noturno"],
+    count: 0,
+    perfumes: [],
+    featured: false,
+    image: date,
+  },
+  {
+    name: "Noite",
+    container: "bottom",
+    subcats: ["Bar", "Drinks", "Balada"],
+    count: 0,
+    perfumes: [],
+    featured: false,
+    image: night,
+  },
+  {
+    name: "Festas",
+    container: "bottom",
+    subcats: ["Show", "Aniversário", "Réveillon"],
+    count: 0,
+    perfumes: [],
+    featured: false,
+    image: party,
+  },
+  {
+    name: "Eventos",
+    container: "bottom",
+    subcats: ["Casamento", "Formatura", "Gala"],
+    count: 0,
+    perfumes: [],
+    featured: false,
+    image: events,
+  },
+  {
+    name: "Viagens",
+    container: "bottom",
+    subcats: ["Avião", "Resort", "Estrada"],
+    count: 0,
+    perfumes: [],
+    featured: false,
+    image: travel,
   },
 ];

@@ -24,8 +24,6 @@ function DashboardPage() {
       <div className="dashboard__wrapper--bottom">
         <DashboardCategories
           items={categories}
-          onSeeAll={() => console.log("Ver todas")}
-          onSelect={(category) => console.log(category)}
         />
         <DashboardWishlist />
       </div>

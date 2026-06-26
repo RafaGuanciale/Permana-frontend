@@ -1,29 +1,28 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-function CategoryTile({ label, count, tint, image, featured, onClick }) {
+function CategoryTile({ name, count, image, featured, onClick }) {
   return (
     <div
       className={`categoriesCard__tile ${
         featured ? "categoriesCard__tile-featured" : ""
       }`}
-      style={{ backgroundColor: tint }}
       onClick={onClick}
     >
       <div className="categoriesCard__tile-imageWrap">
-        <img className="categoriesCard__tile-image" src={image} alt={label} />
+        <img className="categoriesCard__tile-image" src={image} alt={name} />
       </div>
       <div className="categoriesCard__tile-overlay" />
       <span className="categoriesCard__tile-count">
         {count} {count === 1 ? "fragrância" : "fragrâncias"}
       </span>
-      <span className="categoriesCard__tile-label">{label}</span>
+      <span className="categoriesCard__tile-label">{name}</span>
       <span className="categoriesCard__tile-cta">Explorar →</span>
     </div>
   );
 }
 
-export function DashboardCategories({ items, onSelect }) {
+export function DashboardCategories({ items }) {
   const navigate = useNavigate();
 
   function navigateToCategorie(category, container) {
@@ -49,13 +48,12 @@ export function DashboardCategories({ items, onSelect }) {
       <div className="categoriesCard__grid">
         {items.map((item) => (
           <CategoryTile
-            key={item.label}
-            label={item.label}
+            key={item.name}
+            name={item.name}
             count={item.count}
-            tint={item.tint}
             image={item.image}
             featured={item.featured}
-            onClick={() => navigateToCategorie(item.category, item.container)}
+            onClick={() => navigateToCategorie(item.name, item.container)}
           />
         ))}
       </div>

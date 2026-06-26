@@ -6,7 +6,6 @@ function WishlistCard(props) {
   const { handleOpenCardPopup } = useContext(PopupContext);
 
   const handleCard = (card) => {
-    console.log(card);
     handleOpenCardPopup({
       link: card.link,
       name: card.name,

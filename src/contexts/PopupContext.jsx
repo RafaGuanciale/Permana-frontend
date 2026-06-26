@@ -7,7 +7,6 @@ export function PopupProvider({ children }) {
   const [selectedCard, setSelectedCard] = useState(null);
   const handleOpenPopup = (popup) => {
     setActivePopup(popup);
-    console.log("Popup aberto:", popup);
   };
   const handleClosePopup = () => {
     setActivePopup(null);
