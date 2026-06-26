@@ -218,6 +218,9 @@
 .collectionPage__list__item:last-child {
   border-radius: 0 0 14px 14px;
 }
+.collectionPage__list__item:only-child {
+  border-radius: 14px;
+}
 .collectionPage__item__img {
   width: 120px;
   height: 120px;

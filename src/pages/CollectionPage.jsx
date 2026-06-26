@@ -24,12 +24,12 @@ function CollectionPage() {
 
   const filteredCollection = collection.filter((card) => {
     const matchesSearch =
-      card.perfumeId.name
+      card.perfumeId?.name
         ?.toLowerCase()
         ?.includes(searchValue?.toLowerCase()) ||
       card.perfumeId.brand?.toLowerCase()?.includes(searchValue?.toLowerCase());
     const matchesFamily =
-      !selectedPill || card.perfumeId.mainFamily === selectedPill;
+      !selectedPill || card.perfumeId?.mainFamily === selectedPill;
 
     return matchesSearch && matchesFamily;
   });
