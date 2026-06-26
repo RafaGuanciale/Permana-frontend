@@ -9,17 +9,29 @@ function CollectionPage() {
   const { collection } = useContext(CollectionContext);
   const { handleOpenPopup } = useContext(PopupContext);
   const [searchValue, setSearchValue] = useState("");
+  const [selectedPill, setSelectedPill] = useState("");
   const isEmpty = collection.length === 0;
+  const families = collection.map((item) => item.perfumeId?.mainFamily);
+  const totalFamilies = Array.from(new Set(families));
+  const occasions = collection.map((item) => item.perfumeId?.mainOccasion);
+  const totalOccasions = new Set(occasions).size;
+  const climates = collection.map((item) => item.perfumeId?.mainClimate);
+  const totalClimates = new Set(climates).size;
 
   const handleChangeSearch = (e) => {
     setSearchValue(e.target.value);
   };
 
   const filteredCollection = collection.filter((card) => {
-    return (
-      card.perfumeId.name?.toLowerCase()?.includes(searchValue?.toLowerCase()) ||
-      card.perfumeId.brand?.toLowerCase()?.includes(searchValue?.toLowerCase())
-    );
+    const matchesSearch =
+      card.perfumeId.name
+        ?.toLowerCase()
+        ?.includes(searchValue?.toLowerCase()) ||
+      card.perfumeId.brand?.toLowerCase()?.includes(searchValue?.toLowerCase());
+    const matchesFamily =
+      !selectedPill || card.perfumeId.mainFamily === selectedPill;
+
+    return matchesSearch && matchesFamily;
   });
 
   return (
@@ -40,15 +52,17 @@ function CollectionPage() {
             <div className="collectionPage__stat__label">Perfumes</div>
           </div>
           <div className="collectionPage__stat__card">
-            <div className="collectionPage__stat__val">4</div>
+            <div className="collectionPage__stat__val">
+              {totalFamilies.length}
+            </div>
             <div className="collectionPage__stat__label">Famílias</div>
           </div>
           <div className="collectionPage__stat__card">
-            <div className="collectionPage__stat__val">3</div>
+            <div className="collectionPage__stat__val">{totalOccasions}</div>
             <div className="collectionPage__stat__label">Ocasiões</div>
           </div>
           <div className="collectionPage__stat__card">
-            <div className="collectionPage__stat__val">2</div>
+            <div className="collectionPage__stat__val">{totalClimates}</div>
             <div className="collectionPage__stat__label">Climas</div>
           </div>
         </div>
@@ -95,18 +109,6 @@ function CollectionPage() {
                 value={searchValue}
                 onChange={handleChangeSearch}
               />
-              {/* <div className="collectionPage__search__wrap">
-                <div className="collectionPage__form">
-                  <input
-                    name="searchInput"
-                    type="text"
-                    className="collectionPage__search__input"
-                    placeholder="Buscar por nome ou marca..."
-                    value={searchValue}
-                    onChange={handleChangeSearch}
-                  />
-                </div>
-              </div> */}
               <button
                 type="button"
                 className="collectionPage__add__btn"
@@ -116,12 +118,21 @@ function CollectionPage() {
               </button>
             </div>
             <div className="collectionPage__pills">
-              <button className="collectionPage__pill active">Todos</button>
-              <button className="collectionPage__pill">Cítrico</button>
-              <button className="collectionPage__pill">Amadeirado</button>
-              <button className="collectionPage__pill">Almiscarado</button>
-              <button className="collectionPage__pill">Aromático</button>
-              <button className="collectionPage__pill">Floral</button>
+              <button
+                onClick={() => setSelectedPill("")}
+                className={`collectionPage__pill ${selectedPill === "" ? "collectionPage__pill-active" : ""}`}
+              >
+                Todos
+              </button>
+              {totalFamilies.map((pill) => (
+                <button
+                  onClick={() => setSelectedPill(pill)}
+                  className={`collectionPage__pill ${selectedPill === pill ? "collectionPage__pill-active" : ""}`}
+                  key={pill}
+                >
+                  {pill}
+                </button>
+              ))}
             </div>
             <div className="collectionPage__list">
               {filteredCollection.map((card) => (

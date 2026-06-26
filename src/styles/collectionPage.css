@@ -181,6 +181,20 @@
   background: var(--color-green);
   color: var(--color-champagne);
 }
+.collectionPage__pill-active {
+  height: 34px;
+  padding: 0 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--color-khaki);
+  background: var(--color-green);
+  color: var(--color-champagne);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  transition: all 0.15s;
+}
 
 /* Lista dos perfumes */
 .collectionPage__list {
@@ -267,19 +281,19 @@
 }
 
 .collectionPage__empty__title {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-style: italic;
   font-weight: 400;
   font-size: 28px;
-  color: #342A21;
+  color: #342a21;
   margin: 0;
 }
 
 .collectionPage__empty__text {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: 15px;
-  color: #71816D;
+  color: #71816d;
   max-width: 360px;
   line-height: 1.6;
   margin: 0;
@@ -298,11 +312,11 @@
 }
 
 .collectionPage__empty__hint {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   font-weight: 500;
-  color: #71816D;
-  border: 1px solid #C9B79C;
+  color: #71816d;
+  border: 1px solid #c9b79c;
   border-radius: 20px;
   padding: 6px 14px;
 }
