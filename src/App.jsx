@@ -23,6 +23,7 @@ import PopupManager from "./components/Popups/PopupManager";
 import * as auth from "./utils/auth";
 import * as api from "./utils/api";
 import { setToken, getToken } from "./utils/token";
+import DashboardCollectionSkeleton from "./components/Loading/DashboardCollectionSkeleton";
 
 function App() {
   const [loading, setLoading] = useState(!!getToken);
@@ -89,6 +90,10 @@ function App() {
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+    if (loading) {
+    return <DashboardCollectionSkeleton />;
+  }
 
   return (
     <>

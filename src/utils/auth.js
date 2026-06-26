@@ -1,7 +1,5 @@
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-fetch(`${BASE_URL}/signin`)
-
 export const register = (name, username, password, email) => {
   return fetch(`${BASE_URL}/users`, {
     method: "POST",
