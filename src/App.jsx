@@ -27,6 +27,7 @@ import Loader from "./components/Loading/Loader";
 
 function App() {
   const [loading, setLoading] = useState(!!getToken());
+  const [logginIn, setLogginIn] = useState(false);
   const { isLogged, login } = useContext(AuthContext);
   const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -57,17 +58,19 @@ function App() {
       alert("Por favor, preencha todos os campos!");
       return;
     }
+    setLogginIn(true);
     auth
       .authorize(email, password)
       .then((data) => {
-        auth.checkToken(data.token).then((userData) => {
+        return auth.checkToken(data.token).then((userData) => {
           updateUser(userData);
           login(data);
           const redirectPath = location.state?.from?.pathname || "/dashboard";
           navigate(redirectPath);
         });
       })
-      .catch(console.error);
+      .catch(console.error)
+      .finally(() => setLogginIn(false));
   };
 
   useEffect(() => {
@@ -158,6 +161,7 @@ function App() {
         <Footer2 />
       </div>
       <PopupManager />
+      {logginIn && <Loader scrim message="Reativando o servidor — só um instante" />}
     </>
   );
 }

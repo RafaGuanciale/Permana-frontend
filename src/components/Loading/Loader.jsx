@@ -4,11 +4,11 @@ import permanaCoin from "../../images/brand/logo-coin/permana-coin-reverse-264.p
 export function Loader({
   message = "Preparando sua identidade olfativa",
   fullscreen = false,
+  scrim = false,
   light = false,
   size = 140,
   style,
 }) {
-  const tone = light ? "default" : "reverse";
   const body = (
     <div
       className={"loader" + (light ? " loader--light" : "")}
@@ -42,6 +42,14 @@ export function Loader({
       </div>
     </div>
   );
+
+  if (scrim) {
+    return (
+      <div className="loader--scrim" role="presentation" style={style}>
+        <div className="loader__card">{body}</div>
+      </div>
+    );
+  }
 
   if (fullscreen) {
     return (
