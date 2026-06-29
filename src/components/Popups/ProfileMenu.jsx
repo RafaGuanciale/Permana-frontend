@@ -14,15 +14,6 @@ function ProfileMenu() {
   const { updateUser, user } = useContext(UserContext);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    const confirmation = confirm("Tem certeza que deseja sair?");
-    if (!confirmation) return;
-    logout();
-    updateUser(null);
-    handleClosePopup();
-    navigate("/");
-  };
-
   if (!user) return null;
 
   return (
@@ -52,7 +43,7 @@ function ProfileMenu() {
 
         <div className="profile-menu__identity">
           <h2 className="profile-menu__name">{user.name}</h2>
-          <h3 className="profile-menu__username" >@{user.username}</h3>
+          <h3 className="profile-menu__username">@{user.username}</h3>
         </div>
       </div>
 
@@ -93,7 +84,10 @@ function ProfileMenu() {
           type="button"
           className="profile-menu__btn profile-menu__btn--exit"
           role="menuitem"
-          onClick={handleLogout}
+          onClick={() => {
+            handleClosePopup();
+            handleOpenPopup("logout");
+          }}
         >
           <span className="profile-menu__btn-icon-wrap profile-menu__btn-icon-wrap--exit">
             <img className="profile-menu__btn-icon" src={exitIcon} alt="" />
