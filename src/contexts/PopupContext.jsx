@@ -19,7 +19,13 @@ export function PopupProvider({ children }) {
 
   return (
     <PopupContext.Provider
-      value={{ activePopup, selectedCard, handleOpenPopup, handleOpenCardPopup, handleClosePopup }}
+      value={{
+        activePopup,
+        selectedCard,
+        handleOpenPopup,
+        handleOpenCardPopup,
+        handleClosePopup,
+      }}
     >
       {children}
     </PopupContext.Provider>

@@ -25,6 +25,8 @@ import * as api from "./utils/api";
 import { setToken, getToken } from "./utils/token";
 import Loader from "./components/Loading/Loader";
 import CadastroFeedback from "./components/Loading/CadastroFeedback";
+import { ToastContext } from "./contexts/ToastContext";
+import AddPerfumeToast from "./components/Toasts/AddPerfumeToast";
 
 function App() {
   const [loading, setLoading] = useState(!!getToken());
@@ -33,6 +35,7 @@ function App() {
   const [userName, setUserName] = useState("");
   const { isLogged, login } = useContext(AuthContext);
   const { updateUser } = useContext(UserContext);
+  const { toast } = useContext(ToastContext);
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -179,6 +182,7 @@ function App() {
         <Loader scrim message="Reativando o servidor — só um instante" />
       )}
       {registering && <CadastroFeedback status={registering} nome={userName} />}
+      {toast && <AddPerfumeToast perfumeName={toast} />}
     </>
   );
 }

@@ -1,8 +1,10 @@
 import { useContext, useState, useEffect } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
 import { CollectionContext } from "../../contexts/CollectionContext";
+import { ToastContext } from "../../contexts/ToastContext";
 import { searchPerfumes } from "../../utils/api";
 import { getToken } from "../../utils/token";
+import AddPerfumeToast from "../Toasts/AddPerfumeToast";
 
 function PerfumesDrawer() {
   const [results, setResults] = useState([]);
@@ -21,6 +23,7 @@ function PerfumesDrawer() {
 
   const { handleClosePopup } = useContext(PopupContext);
   const { collection, addPerfume } = useContext(CollectionContext);
+  const { showToast } = useContext(ToastContext);
   const search = searchValue.trim().toLowerCase();
   const ownedIds = collection.map((perfume) => perfume._id);
   const selectedPerfume =
@@ -34,8 +37,11 @@ function PerfumesDrawer() {
   };
   const handleAdd = () => {
     if (!selectedPerfume) return;
+    const perfumeName = selectedPerfume.name;
     addPerfume(selectedPerfume._id);
     setSelectedId(null);
+    handleClosePopup();
+    showToast(perfumeName);
   };
 
   return (
