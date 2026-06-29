@@ -18,9 +18,13 @@ function DashboardWishlist({
             {items.length} fragrâncias na sua lista
           </h3>
         </div>
-        <button type="button" className="wishlist-card__add" onClick={onAdd}>
+        {/* <button
+          type="button"
+          className="wishlist-card__add"
+          onClick={onAdd}
+        >
           + Adicionar
-        </button>
+        </button> */}
       </div>
 
       <div className="wishlist-gallery">
@@ -42,7 +46,7 @@ function DashboardWishlist({
           className="wishlist-card__seeall"
           onClick={onSeeAll}
         >
-          Ver wishlist completa →
+          Ver wishlist completa (Em breve) →
         </button>
       </div>
     </div>

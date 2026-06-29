@@ -20,7 +20,7 @@
     opacity: 1;
   }
 }
-@keyframes ak-loader-scrim-in {
+@keyframes loader-scrim-in {
   from {
     opacity: 0;
   }
@@ -28,7 +28,7 @@
     opacity: 1;
   }
 }
-@keyframes ak-loader-card-in {
+@keyframes loader-card-in {
   from {
     opacity: 0;
     transform: translateY(10px) scale(0.985);

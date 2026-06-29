@@ -9,7 +9,7 @@ import { useState, useContext, useEffect } from "react";
 import CategoriesPage from "./pages/CategoriesPage";
 import CollectionPage from "./pages/CollectionPage";
 import DashboardPage from "./pages/DashboardPage";
-import LandingPageNew from "./pages/LandingPageNew"
+import LandingPageNew from "./pages/LandingPageNew";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import Header from "./components/Header/Header";
@@ -24,10 +24,13 @@ import * as auth from "./utils/auth";
 import * as api from "./utils/api";
 import { setToken, getToken } from "./utils/token";
 import Loader from "./components/Loading/Loader";
+import CadastroFeedback from "./components/Loading/CadastroFeedback";
 
 function App() {
   const [loading, setLoading] = useState(!!getToken());
   const [logginIn, setLogginIn] = useState(false);
+  const [registering, setRegistering] = useState(null);
+  const [userName, setUserName] = useState("");
   const { isLogged, login } = useContext(AuthContext);
   const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
@@ -44,13 +47,24 @@ function App() {
       alert("As senhas não coincidem!");
       return;
     }
+    setRegistering("loading");
     auth
       .register(name, username, password, email)
       .then(() => {
-        alert("Registro bem-sucedido!");
-        navigate("/login");
+        setUserName(name);
+        setRegistering("success");
+        setTimeout(() => {
+          setRegistering(null);
+          navigate("/login");
+        }, 3600);
       })
-      .catch(console.error);
+      .catch((err) => {
+        console.error(err);
+        setRegistering("error");
+        setTimeout(() => {
+          setRegistering(null);
+        }, 3000);
+      });
   };
 
   const handleLogin = ({ email, password }) => {
@@ -94,8 +108,8 @@ function App() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-    if (loading) {
-    return <Loader fullscreen message="Preparando sua identidade olfativa" />
+  if (loading) {
+    return <Loader fullscreen message="Preparando sua identidade olfativa" />;
   }
 
   return (
@@ -161,7 +175,10 @@ function App() {
         <Footer2 />
       </div>
       <PopupManager />
-      {logginIn && <Loader scrim message="Reativando o servidor — só um instante" />}
+      {logginIn && (
+        <Loader scrim message="Reativando o servidor — só um instante" />
+      )}
+      {registering && <CadastroFeedback status={registering} nome={userName} />}
     </>
   );
 }

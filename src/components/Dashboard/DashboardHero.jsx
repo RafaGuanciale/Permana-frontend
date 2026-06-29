@@ -76,8 +76,9 @@ function ScentOfTheDay({ weather, perfume, onDetails }) {
           type="button"
           className="scent-of-the-day__link"
           onClick={onDetails}
+          disabled
         >
-          Ver detalhes <span aria-hidden="true">→</span>
+          Ver detalhes (Em breve) <span aria-hidden="true">→</span>
         </button>
       </div>
     </div>
