@@ -313,17 +313,17 @@ function categoriesPage() {
         <div className="categoriesPage__container-bottom">
           <li>
             <div
-              className={`categoriesPage__card ${openCategory === "Encontros" ? "categoriesPage__card--active" : ""}`}
-              data-name="Encontros"
+              className={`categoriesPage__card ${openCategory === "Encontro" ? "categoriesPage__card--active" : ""}`}
+              data-name="Encontro"
               data-container="bottom"
               onClick={expandContainer}
             >
               <img
                 className="categoriesPage__card-image"
                 src={date}
-                alt="Encontros"
+                alt="Encontro"
               />
-              <CardCount name="Encontros" />
+              <CardCount name="Encontro" />
               <div className="categoriesPage__card-overlay categoriesPage__card-overlay--date">
                 <div className="categoriesPage__overlay-main">
                   <p className="categoriesPage__card-overlay-eyebrow">
@@ -452,7 +452,7 @@ function categoriesPage() {
                 src={travel}
                 alt="Viagens"
               />
-              <CardCount name="Viagens" />
+              <CardCount name="Viagem" />
               <div className="categoriesPage__card-overlay categoriesPage__card-overlay--travel">
                 <div className="categoriesPage__overlay-main">
                   <p className="categoriesPage__card-overlay-eyebrow">

@@ -101,7 +101,7 @@ export const categories = [
     image: cold,
   },
   {
-    name: "Encontros",
+    name: "Encontro",
     container: "bottom",
     subcats: ["Primeiro encontro", "Jantar", "Noturno"],
     count: 0,

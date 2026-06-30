@@ -27,7 +27,7 @@ function getLede(weather) {
   return `${period} está ${weather.detail
     .replace("Noite ", "")
     .replace("Dia ", "")
-    .toLowerCase()} e ${weather.condition.toLowerCase()} —`;
+    .toLowerCase()} e ${weather.condition.toLowerCase()}!`;
 }
 
 function ScentOfTheDay({ weather, perfume, onDetails }) {
@@ -91,7 +91,7 @@ function DashboardHero({
   date = getDate(),
   weather,
   lede = getLede(weather),
-  ledeAccent = "pede algo fresco.",
+  ledeAccent = "Pede algo fresco.",
   reanalysis = {
     available: true,
     title: "Nova análise disponível",
@@ -116,7 +116,7 @@ function DashboardHero({
         </h1>
         <p className="dashboard-hero__lede">
           {lede}{" "}
-          <span className="dashboard-hero__lede-accent">{ledeAccent}</span>
+          <span className="dashboard-hero__lede-accent"><br />{ledeAccent}</span>
         </p>
         {/* {reanalysis?.available && (
           <div className="dashboard-hero__reanalyze">
