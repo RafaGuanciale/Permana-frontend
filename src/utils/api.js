@@ -40,6 +40,16 @@ export const updateUserInfo = (token, name) => {
   });
 };
 
+const deleteAccount = (id) => {
+  return fetch(`${BASE_URL}/users/me`, {
+    method: "DELETE",
+    headers: {
+      authorization: `Bearer ${getToken()}`,
+      "Content-Type": "application/json",
+    },
+  }).then((res) => this._handleResponse(res));
+};
+
 export const searchPerfumes = (token, search) => {
   return fetch(`${BASE_URL}/perfumes${search ? `?search=${search}` : ""}`, {
     method: "GET",

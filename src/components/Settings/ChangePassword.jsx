@@ -1,156 +1,125 @@
-import React from "react";
-// import { Button } from "../Button/Button";
-// import { useToast } from "../_kit/contexts/ToastContext";
+import React, { useState } from "react";
 
-const { useState } = React;
+const STRENGTH_LABELS = ["", "Fraca", "Razoável", "Boa", "Forte"];
 
-function getStrength(password) {
+function getStrength(pw) {
   let score = 0;
-  if (password.length >= 8) score++;
-  if (/[A-Z]/.test(password) && /[a-z]/.test(password)) score++;
-  if (/\d/.test(password)) score++;
-  if (/[^A-Za-z0-9]/.test(password)) score++;
+  if (pw.length >= 8) score += 1;
+  if (/[A-Z]/.test(pw) && /[a-z]/.test(pw)) score += 1;
+  if (/\d/.test(pw)) score += 1;
+  if (/[^A-Za-z0-9]/.test(pw)) score += 1;
   return Math.min(score, 4);
 }
 
-const STRENGTH_LABEL = ["", "Fraca", "Razoável", "Boa", "Forte"];
+/**
+ * ChangePassword — painel "Alterar senha" do SettingsPage.
+ * Senha atual + nova (com medidor de força) + confirmação.
+ * @param onSubmit  recebe { current, next } ao salvar com sucesso.
+ */
+function ChangePassword({ onSubmit }) {
+  const [data, setData] = useState({ current: "", next: "", confirm: "" });
 
-export function ChangePassword() {
-//   const { showToast } = useToast();
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setData((prevData) => ({ ...prevData, [name]: value }));
+  };
 
-  const [current, setCurrent] = useState("");
-  const [next, setNext] = useState("");
-  const [confirm, setConfirm] = useState("");
+  const strength = getStrength(data.next);
+  const tooShort = data.next.length > 0 && data.next.length < 8;
+  const mismatch = data.confirm.length > 0 && data.confirm !== data.next;
+  const isValid = data.current && data.next.length >= 8 && data.confirm === data.next;
 
-  const [showCurrent, setShowCurrent] = useState(false);
-  const [showNext, setShowNext] = useState(false);
-  const [showConfirm, setShowConfirm] = useState(false);
-
-  const strength = getStrength(next);
-  const tooShort = next.length > 0 && next.length < 8;
-  const mismatch = confirm.length > 0 && confirm !== next;
-  const isValid = current && next.length >= 8 && confirm === next;
-
-  const barClass = (index) =>
-    `change-password__bar${strength >= index ? " change-password__bar--on" : ""}${
-      strength >= index && strength <= 1 ? " change-password__bar--weak" : ""
-    }`;
-
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     if (!isValid) return;
-    showToast("Senha alterada", {
-      sub: "Sua conta está protegida com a nova senha.",
-    });
-    setCurrent("");
-    setNext("");
-    setConfirm("");
+    onSubmit?.({ current: data.current, next: data.next });
+    setData({ current: "", next: "", confirm: "" });
   };
 
   return (
-    <div className="change-password">
-      <p className="change-password__eyebrow">Segurança</p>
-      <h2 className="change-password__title">Alterar senha</h2>
-      <p className="change-password__sub">
-        Escolha uma senha que só você guarda. Mínimo de 8 caracteres.
-      </p>
-
-      <label className="change-password__field">
-        <span className="change-password__label">Senha atual</span>
-        <span className="change-password__control">
-          <input
-            className="change-password__input"
-            type={showCurrent ? "text" : "password"}
-            value={current}
-            onChange={(e) => setCurrent(e.target.value)}
-            placeholder="Sua senha de hoje"
-          />
-          <button
-            type="button"
-            className="change-password__reveal"
-            onClick={() => setShowCurrent((v) => !v)}
-          >
-            {showCurrent ? "Ocultar" : "Mostrar"}
-          </button>
-        </span>
-      </label>
-
-      <label className="change-password__field">
-        <span className="change-password__label">Nova senha</span>
-        <span className="change-password__control">
-          <input
-            className="change-password__input"
-            type={showNext ? "text" : "password"}
-            value={next}
-            onChange={(e) => setNext(e.target.value)}
-            placeholder="No mínimo 8 caracteres"
-          />
-          <button
-            type="button"
-            className="change-password__reveal"
-            onClick={() => setShowNext((v) => !v)}
-          >
-            {showNext ? "Ocultar" : "Mostrar"}
-          </button>
-        </span>
-
-        {!tooShort && (
-          <p className="change-password__hint">
-            Combine maiúsculas, números e um símbolo para mais força.
-          </p>
-        )}
-
-        {next && (
-          <div className="change-password__strength">
-            <div className="change-password__bars">
-              <span className={barClass(1)} />
-              <span className={barClass(2)} />
-              <span className={barClass(3)} />
-              <span className={barClass(4)} />
-            </div>
-            <span
-              className={`change-password__strength-label${
-                strength <= 1 ? " change-password__strength-label--weak" : ""
-              }`}
-            >
-              {tooShort
-                ? "Curta demais. Use pelo menos 8 caracteres."
-                : `Força: ${STRENGTH_LABEL[strength]}`}
-            </span>
-          </div>
-        )}
-      </label>
-
-      <label className="change-password__field">
-        <span className="change-password__label">Confirmar nova senha</span>
-        <span className="change-password__control">
-          <input
-            className="change-password__input"
-            type={showConfirm ? "text" : "password"}
-            value={confirm}
-            onChange={(e) => setConfirm(e.target.value)}
-            placeholder="Repita a nova senha"
-          />
-          <button
-            type="button"
-            className="change-password__reveal"
-            onClick={() => setShowConfirm((v) => !v)}
-          >
-            {showConfirm ? "Ocultar" : "Mostrar"}
-          </button>
-        </span>
-
-        {mismatch ? (
-          <p className="change-password__error">As senhas não coincidem.</p>
-        ) : (
-          <p className="change-password__hint">Para evitar enganos.</p>
-        )}
-      </label>
-
-      <div className="change-password__actions">
-        {/* <Button variant="primary" onClick={handleSubmit} disabled={!isValid}>
-          Alterar senha
-        </Button> */}
+    <div className="changePassword">
+      <div className="changePassword__head">
+        <p className="changePassword__eyebrow">Segurança</p>
+        <h2 className="changePassword__title">Alterar senha</h2>
+        <p className="changePassword__subtitle">
+          Escolha uma senha que só você guarda. Mínimo de 8 caracteres.
+        </p>
       </div>
+
+      <form className="changePassword__form" onSubmit={handleSubmit}>
+        <div className="changePassword__field">
+          <label htmlFor="current" className="changePassword__label">Senha atual</label>
+          <input
+            id="current"
+            className="changePassword__input"
+            type="password"
+            name="current"
+            placeholder="Sua senha de hoje"
+            value={data.current}
+            onChange={handleChange}
+          />
+        </div>
+
+        <div className="changePassword__field">
+          <label htmlFor="next" className="changePassword__label">Nova senha</label>
+          <input
+            id="next"
+            className="changePassword__input"
+            type="password"
+            name="next"
+            placeholder="No mínimo 8 caracteres"
+            value={data.next}
+            onChange={handleChange}
+          />
+          {data.next && (
+            <div className="changePassword__strength">
+              <div className="changePassword__bars">
+                {[1, 2, 3, 4].map((i) => {
+                  let cls = "changePassword__bar";
+                  if (i <= strength) cls += strength <= 1 ? " changePassword__bar--weak" : " changePassword__bar--on";
+                  return <span key={i} className={cls} />;
+                })}
+              </div>
+              <span className={`changePassword__strength-label${strength <= 1 ? " changePassword__strength-label--weak" : ""}`}>
+                {tooShort ? "Curta demais — pelo menos 8 caracteres." : `Força: ${STRENGTH_LABELS[strength]}`}
+              </span>
+            </div>
+          )}
+          {!data.next && (
+            <span className="changePassword__hint">
+              Combine maiúsculas, números e um símbolo para mais força.
+            </span>
+          )}
+        </div>
+
+        <div className="changePassword__field">
+          <label htmlFor="confirm" className="changePassword__label">Confirmar nova senha</label>
+          <input
+            id="confirm"
+            className="changePassword__input"
+            type="password"
+            name="confirm"
+            placeholder="Repita a nova senha"
+            value={data.confirm}
+            onChange={handleChange}
+          />
+          {mismatch
+            ? <span className="changePassword__error">As senhas não coincidem.</span>
+            : <span className="changePassword__hint">Para evitar enganos.</span>}
+        </div>
+
+        <div className="changePassword__actions">
+          <button
+            type="submit"
+            className="changePassword__submit"
+            disabled={!isValid}
+          >
+            Alterar senha
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
+
+export default ChangePassword;

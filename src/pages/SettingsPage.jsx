@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import ChangePassword from "../components/Settings/ChangePassword";
+import DeleteAccount from "../components/Settings/DeleteAccount"
 
 function SettingsPage({ onDeleted }) {
   const [sectionActive, setSectionActive] = useState("senha");
@@ -39,13 +41,9 @@ function SettingsPage({ onDeleted }) {
         <div className="settings__divider" />
 
         <div className="settings__content">
-          {/* Placeholder temporário — substituir por ChangePassword / DeleteAccount.
               {sectionActive === "senha"
                 ? <ChangePassword />
-                : <DeleteAccount onDeleted={onDeleted} />} */}
-          <div className="settings__placeholder">
-            {sectionActive === "senha" ? "Alterar senha" : "Excluir conta"}
-          </div>
+                : <DeleteAccount onDeleted={onDeleted} />}
         </div>
       </div>
     </section>

@@ -45,4 +45,5 @@
 @import url("./styles/CadastroFeeback.css");
 @import url("./styles/AddPerfumeToast.css");
 @import url("./styles/Logout.css");
-
+@import url("./styles/ChangePassword.css");
+@import url("./styles/DeleteAccount.css");
