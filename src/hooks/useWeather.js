@@ -21,16 +21,23 @@ export function useWeather() {
           .then((data) => {
             setWeather(data);
           })
-          .catch(console.error);
+          .catch(() => {
+            setWeather({
+              temp: "--°",
+              condition: "Clima indisponível",
+              detail: "",
+            });
+          });
       },
-      (error) => {
-        console.error("ERRO GEOLOCATION:", error);
+      () => {
+        setWeather({
+          temp: "--°",
+          condition: "Localização indisponível",
+          detail: "",
+        });
       },
     );
   }, []);
 
-  return {
-    weather,
-    setWeather,
-  };
+  return { weather, setWeather };
 }

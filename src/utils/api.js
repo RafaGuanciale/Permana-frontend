@@ -1,5 +1,8 @@
 const BASE_URL = import.meta.env.VITE_API_URL;
 
+const handleResponse = (res) =>
+  res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
+
 export const getUserInfo = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "GET",
@@ -8,9 +11,7 @@ export const getUserInfo = (token) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(handleResponse);
 };
 
 export const getCollection = (token) => {
@@ -21,9 +22,7 @@ export const getCollection = (token) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(handleResponse);
 };
 
 export const updateUserInfo = (token, name) => {
@@ -35,19 +34,18 @@ export const updateUserInfo = (token, name) => {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ name }),
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(handleResponse);
 };
 
-const deleteAccount = (id) => {
+export const deleteAccount = (token) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "DELETE",
     headers: {
-      authorization: `Bearer ${getToken()}`,
+      Accept: "application/json",
       "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
     },
-  }).then((res) => this._handleResponse(res));
+  }).then(handleResponse);
 };
 
 export const searchPerfumes = (token, search) => {
@@ -58,9 +56,7 @@ export const searchPerfumes = (token, search) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(handleResponse);
 };
 
 export const addPerfumeToCollection = (token, perfumeId) => {
@@ -72,9 +68,7 @@ export const addPerfumeToCollection = (token, perfumeId) => {
       Authorization: `Bearer ${token}`,
     },
     body: JSON.stringify({ perfumeId }),
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(handleResponse);
 };
 
 export const removePerfumeFromCollection = (token, perfumeId) => {
@@ -85,9 +79,7 @@ export const removePerfumeFromCollection = (token, perfumeId) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(handleResponse);
 };
 
 export const getWeather = (lat, lon, token) => {
@@ -98,7 +90,5 @@ export const getWeather = (lat, lon, token) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  }).then((res) => {
-    return res.ok ? res.json() : Promise.reject(`Error: ${res.status}`);
-  });
+  }).then(handleResponse);
 };
