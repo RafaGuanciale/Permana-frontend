@@ -20,6 +20,8 @@
 @import url("./styles/dashBlog.css");
 @import url("./styles/collectionPage.css");
 @import url("./styles/categoriesPage.css");
+@import url("./styles/SettingsPage.css");
+
 
 /* Components */
 @import url("./styles/DashCollectionSkeleton.css");

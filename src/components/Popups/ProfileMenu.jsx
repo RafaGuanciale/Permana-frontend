@@ -71,7 +71,7 @@ function ProfileMenu() {
           role="menuitem"
           onClick={() => {
             handleClosePopup();
-            handleOpenPopup("settings");
+            navigate("/settings")
           }}
         >
           <span className="profile-menu__btn-icon-wrap">

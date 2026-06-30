@@ -24,7 +24,6 @@ export function Logout() {
         role="alertdialog"
         aria-modal="true"
         aria-label="Sair da sua conta?"
-        onClick={(e) => e.stopPropagation()}
       >
         <div className="Logout__panel">
           <p className="Logout__eyebrow">Sua sessão</p>{" "}

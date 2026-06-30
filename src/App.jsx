@@ -12,6 +12,7 @@ import DashboardPage from "./pages/DashboardPage";
 import LandingPageNew from "./pages/LandingPageNew";
 import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
+import SettingsPage from "./pages/SettingsPage";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Footer2 from "./components/Footer/Footer2";
@@ -165,6 +166,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <CategoriesPage />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <ProtectedRoute>
+                <SettingsPage />
               </ProtectedRoute>
             }
           />

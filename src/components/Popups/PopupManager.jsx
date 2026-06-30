@@ -2,7 +2,6 @@ import { useContext } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
 import Popup from "./Popup";
 import LoginPopup from "./LoginPopup";
-import ProfilePopup from "./ProfilePopup";
 import ProfileMenu from "./ProfileMenu";
 import EditProfilePopup from "./EditProfilePopup";
 import CardsPopup from "./CardsPopup";
@@ -45,7 +44,7 @@ function PopupManager() {
       )}
 
       {activePopup === "logout" && (
-        <Popup popupClass="popup__drawer">
+        <Popup popupClass="popup__logout">
           <Logout />
         </Popup>
       )}
