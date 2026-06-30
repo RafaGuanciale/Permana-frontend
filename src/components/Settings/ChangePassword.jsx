@@ -2,20 +2,15 @@ import React, { useState } from "react";
 
 const STRENGTH_LABELS = ["", "Fraca", "Razoável", "Boa", "Forte"];
 
-function getStrength(pw) {
+function getStrength(password) {
   let score = 0;
-  if (pw.length >= 8) score += 1;
-  if (/[A-Z]/.test(pw) && /[a-z]/.test(pw)) score += 1;
-  if (/\d/.test(pw)) score += 1;
-  if (/[^A-Za-z0-9]/.test(pw)) score += 1;
+  if (password.length >= 8) score += 1;
+  if (/[A-Z]/.test(password) && /[a-z]/.test(password)) score += 1;
+  if (/\d/.test(password)) score += 1;
+  if (/[^A-Za-z0-9]/.test(password)) score += 1;
   return Math.min(score, 4);
 }
 
-/**
- * ChangePassword — painel "Alterar senha" do SettingsPage.
- * Senha atual + nova (com medidor de força) + confirmação.
- * @param onSubmit  recebe { current, next } ao salvar com sucesso.
- */
 function ChangePassword({ onSubmit }) {
   const [data, setData] = useState({ current: "", next: "", confirm: "" });
 
@@ -27,7 +22,8 @@ function ChangePassword({ onSubmit }) {
   const strength = getStrength(data.next);
   const tooShort = data.next.length > 0 && data.next.length < 8;
   const mismatch = data.confirm.length > 0 && data.confirm !== data.next;
-  const isValid = data.current && data.next.length >= 8 && data.confirm === data.next;
+  const isValid =
+    data.current && data.next.length >= 8 && data.confirm === data.next;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -48,7 +44,9 @@ function ChangePassword({ onSubmit }) {
 
       <form className="changePassword__form" onSubmit={handleSubmit}>
         <div className="changePassword__field">
-          <label htmlFor="current" className="changePassword__label">Senha atual</label>
+          <label htmlFor="current" className="changePassword__label">
+            Senha atual
+          </label>
           <input
             id="current"
             className="changePassword__input"
@@ -61,7 +59,9 @@ function ChangePassword({ onSubmit }) {
         </div>
 
         <div className="changePassword__field">
-          <label htmlFor="next" className="changePassword__label">Nova senha</label>
+          <label htmlFor="next" className="changePassword__label">
+            Nova senha
+          </label>
           <input
             id="next"
             className="changePassword__input"
@@ -76,12 +76,20 @@ function ChangePassword({ onSubmit }) {
               <div className="changePassword__bars">
                 {[1, 2, 3, 4].map((i) => {
                   let cls = "changePassword__bar";
-                  if (i <= strength) cls += strength <= 1 ? " changePassword__bar--weak" : " changePassword__bar--on";
+                  if (i <= strength)
+                    cls +=
+                      strength <= 1
+                        ? " changePassword__bar--weak"
+                        : " changePassword__bar--on";
                   return <span key={i} className={cls} />;
                 })}
               </div>
-              <span className={`changePassword__strength-label${strength <= 1 ? " changePassword__strength-label--weak" : ""}`}>
-                {tooShort ? "Curta demais — pelo menos 8 caracteres." : `Força: ${STRENGTH_LABELS[strength]}`}
+              <span
+                className={`changePassword__strength-label${strength <= 1 ? " changePassword__strength-label--weak" : ""}`}
+              >
+                {tooShort
+                  ? "Curta demais, pelo menos 8 caracteres."
+                  : `Força: ${STRENGTH_LABELS[strength]}`}
               </span>
             </div>
           )}
@@ -93,7 +101,9 @@ function ChangePassword({ onSubmit }) {
         </div>
 
         <div className="changePassword__field">
-          <label htmlFor="confirm" className="changePassword__label">Confirmar nova senha</label>
+          <label htmlFor="confirm" className="changePassword__label">
+            Confirmar nova senha
+          </label>
           <input
             id="confirm"
             className="changePassword__input"
@@ -103,9 +113,13 @@ function ChangePassword({ onSubmit }) {
             value={data.confirm}
             onChange={handleChange}
           />
-          {mismatch
-            ? <span className="changePassword__error">As senhas não coincidem.</span>
-            : <span className="changePassword__hint">Para evitar enganos.</span>}
+          {mismatch ? (
+            <span className="changePassword__error">
+              As senhas não coincidem.
+            </span>
+          ) : (
+            <span className="changePassword__hint">Para evitar enganos.</span>
+          )}
         </div>
 
         <div className="changePassword__actions">

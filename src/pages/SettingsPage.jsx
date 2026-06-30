@@ -6,11 +6,14 @@ function SettingsPage({ onDeleted }) {
   const [sectionActive, setSectionActive] = useState("senha");
 
   return (
-    <section className="settings">
+    <section className="settings" id="settingsPage">
       <div className="settings__header">
+                <div className="categoriesPage__header__circle-1"></div>
+        <div className="categoriesPage__header__circle-2"></div>
+
         <p className="settings__eyebrow">Sua conta</p>
-        <h1 className="settings__title">Configurações</h1>
-        <p className="settings__intro">
+        <h1 className="section__tittle settings__title">Configurações</h1>
+        <p className="section__subtittle settings__intro">
           Ajuste como o Permana cuida da sua jornada.
         </p>
       </div>
