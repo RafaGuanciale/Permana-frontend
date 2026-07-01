@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import googleIcon from "../../images/icons/social-media/google-logo.jpg";
 
-function LoginForm({ handleLogin }) {
+function LoginForm({ handleLogin, errorMessage }) {
   const [data, setData] = useState({
     email: "",
     password: "",
@@ -28,7 +28,7 @@ function LoginForm({ handleLogin }) {
         Entre na sua conta para continuar
       </p>
       <span className="registerPage__google__label">Acesso rápido</span>
-      <button className="registerPage__google__btn">
+      <button className="registerPage__google__btn" disabled title="Em breve">
         <img
           src={googleIcon}
           alt=""
@@ -75,7 +75,14 @@ function LoginForm({ handleLogin }) {
             />
           </div>
         </div>
-        <Link to={"/forget"} className="registerPage__input__hint">Esqueci minha senha</Link>
+        {errorMessage && (
+          <span className="registerPage__input__error" role="alert">
+            {errorMessage}
+          </span>
+        )}
+        <Link to={"/forget"} className="registerPage__input__hint">
+          Esqueci minha senha
+        </Link>
         <button type="submit" className="registerPage__input__btn">
           Entrar
         </button>

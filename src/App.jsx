@@ -29,8 +29,10 @@ import AddPerfumeToast from "./components/Toasts/AddPerfumeToast";
 function App() {
   const [loading, setLoading] = useState(!!getToken());
   const [logginIn, setLogginIn] = useState(false);
-  const [registering, setRegistering] = useState(null);
+  const [registering, setRegistering] = useState(false);
   const [userName, setUserName] = useState("");
+  const [loginError, setLoginError] = useState("");
+  const [registerError, setRegisterError] = useState("");
   const { isLogged, login } = useContext(AuthContext);
   const { updateUser } = useContext(UserContext);
   const { toast } = useContext(ToastContext);
@@ -44,8 +46,15 @@ function App() {
     password,
     confirmPassword,
   }) => {
+    setRegisterError("");
+    if (!name || !email || !password) {
+      setRegisterError("Por favor, preencha todos os campos.");
+      console.log(`registerError: ${registerError}`);
+      return;
+    }
     if (password !== confirmPassword) {
-      alert("As senhas não coincidem!");
+      setRegisterError("As senhas não coincidem.");
+      console.log(`registerError: ${registerError}`);
       return;
     }
     setRegistering("loading");
@@ -55,22 +64,25 @@ function App() {
         setUserName(name);
         setRegistering("success");
         setTimeout(() => {
-          setRegistering(null);
+          setRegistering(false);
           navigate("/login");
         }, 3600);
       })
       .catch((err) => {
-        console.error(err);
+        setRegisterError("Não foi possível criar a conta. Tente novamente.");
+        console.log(err);
         setRegistering("error");
         setTimeout(() => {
-          setRegistering(null);
+          setRegistering(false);
         }, 3000);
-      });
+      })
+      .finally(() => setRegistering(false));
   };
 
   const handleLogin = ({ email, password }) => {
+    setLoginError("");
     if (!email || !password) {
-      alert("Por favor, preencha todos os campos!");
+      setLoginError("Por favor, preencha todos os campos.");
       return;
     }
     setLogginIn(true);
@@ -84,7 +96,9 @@ function App() {
           navigate(redirectPath);
         });
       })
-      .catch(console.error)
+      .catch(() => {
+        setLoginError("E-mail ou senha incorretos.");
+      })
       .finally(() => setLogginIn(false));
   };
 
@@ -130,7 +144,10 @@ function App() {
             path="/register"
             element={
               <ProtectedRoute anonymous>
-                <RegisterPage handleRegistration={handleRegistration} />
+                <RegisterPage
+                  handleRegistration={handleRegistration}
+                  errorMessage={registerError}
+                />
               </ProtectedRoute>
             }
           />
@@ -138,7 +155,10 @@ function App() {
             path="/login"
             element={
               <ProtectedRoute anonymous>
-                <LoginPage handleLogin={handleLogin} />
+                <LoginPage
+                  handleLogin={handleLogin}
+                  errorMessage={loginError}
+                />
               </ProtectedRoute>
             }
           />

@@ -2,8 +2,7 @@ import { useEffect } from "react";
 import BrandPanel from "../components/auth/BrandPanel";
 import LoginForm from "../components/auth/LoginForm";
 
-function LoginPage({ handleLogin }) {
-
+function LoginPage({ handleLogin, errorMessage }) {
   useEffect(() => {
     document.body.style.backgroundColor = "var(--color-bistre)";
     return () => {
@@ -15,7 +14,7 @@ function LoginPage({ handleLogin }) {
     <section className="registerPage" id="registerPage">
       <div className="registerPage__container">
         <BrandPanel />
-        <LoginForm handleLogin={handleLogin}/>
+        <LoginForm handleLogin={handleLogin} errorMessage={errorMessage} />
       </div>
     </section>
   );

@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import googleIcon from "../../images/icons/social-media/google-logo.jpg";
 
-function RegisterForm({ handleRegistration }) {
+function RegisterForm({ handleRegistration, errorMessage }) {
   const [data, setData] = useState({
     name: "",
     username: "",
@@ -31,7 +31,7 @@ function RegisterForm({ handleRegistration }) {
         Comece a mapear sua identidade olfativa
       </p>
       <span className="registerPage__google__label">Acesso rápido</span>
-      <button className="registerPage__google__btn">
+      <button className="registerPage__google__btn" disabled title="Em breve">
         <img
           src={googleIcon}
           alt=""
@@ -126,17 +126,22 @@ function RegisterForm({ handleRegistration }) {
           </div>
         </div>
         <p className="registerPage__input__hint">Mínimo 8 caracteres</p>
+        {errorMessage && (
+          <span className="registerPage__input__error" role="alert">
+            {errorMessage}
+          </span>
+        )}
         <button type="submit" className="registerPage__input__btn">
           Criar minha conta
         </button>
       </form>
-      <div className="registerPage__onboarding__hint">
+      {/* <div className="registerPage__onboarding__hint">
         <b className="registerPage__onboardin__hint-span">
           Próximo passo (opcional):{" "}
         </b>
         Após o cadastro, um onboarding rápido para montar seu perfil olfativo
         inicial.
-      </div>
+      </div> */}
       <p className="registerPage__right__login">
         Já tem uma conta?{" "}
         <Link to={"/login"} className="registerPage__login__link">

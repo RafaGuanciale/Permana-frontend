@@ -281,3 +281,29 @@
   font-weight: 500;
   text-decoration: none;
 }
+
+/* Error Message */
+.registerPage__input__error {
+  display: block;
+  color: #c0392b;
+  font-size: 0.85rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  text-align: center;
+  animation: errorFadeIn 0.25s ease;
+}
+@keyframes errorFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.registerPage__google__btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
