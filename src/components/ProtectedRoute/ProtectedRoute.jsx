@@ -5,7 +5,6 @@ import { AuthContext } from "../../contexts/AuthContext";
 function ProtectedRoute({ children, anonymous = false }) {
   const { isLogged } = useContext(AuthContext);
   const location = useLocation();
-  const from = location.state?.from || "/";
 
   if (anonymous && isLogged) {
     return <Navigate to="/dashboard" />;

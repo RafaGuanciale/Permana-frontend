@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 function DeleteAccount({ onDelete }) {
   const [password, setPassword] = useState("");

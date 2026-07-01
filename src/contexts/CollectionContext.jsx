@@ -12,7 +12,8 @@ export function CollectionProvider({ children }) {
   const [collection, setCollection] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(() => {
+useEffect(() => {
+  const loadCollection = () => {
     const jwt = getToken();
     if (!jwt) {
       setIsLoading(false);
@@ -24,7 +25,10 @@ export function CollectionProvider({ children }) {
       })
       .catch(console.error)
       .finally(() => setIsLoading(false));
-  }, []);
+  };
+
+  loadCollection();
+}, []);
 
   const addPerfume = (perfumeId) => {
     addPerfumeToCollection(getToken(), perfumeId)
@@ -58,7 +62,6 @@ export function CollectionProvider({ children }) {
         const occasionKey = occasion.toLowerCase();
         if (categories[occasionKey]) {
           categories[occasionKey].push(item);
-          console.log(item)
         }
       });
     });

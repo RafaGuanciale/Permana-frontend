@@ -1,4 +1,3 @@
-import React from "react";
 import permanaCoin from "../../images/brand/logo-coin/permana-coin-reverse-264.png";
 
 export function Loader({

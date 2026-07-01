@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ChangePassword from "../components/Settings/ChangePassword";
 import DeleteAccount from "../components/Settings/DeleteAccount"
 

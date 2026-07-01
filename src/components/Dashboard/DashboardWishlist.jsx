@@ -1,10 +1,9 @@
-import React from "react";
 import { initialCards } from "../../utils/consts";
 import WishlistCard from "../Cards/WishlistCard";
 
 function DashboardWishlist({
   items = initialCards,
-  onAdd = null,
+  // onAdd = null,
   onSeeAll = null,
 }) {
   const visibleItems = items.slice(0, 3);

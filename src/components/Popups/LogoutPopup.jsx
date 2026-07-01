@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useContext } from "react";
+import { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { PopupContext } from "../../contexts/PopupContext";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -7,7 +7,7 @@ import { UserContext } from "../../contexts/UserContext";
 export function Logout() {
   const { handleClosePopup } = useContext(PopupContext);
   const { logout } = useContext(AuthContext);
-  const { updateUser, user } = useContext(UserContext);
+  const { updateUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {

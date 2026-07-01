@@ -1,4 +1,3 @@
-import React from "react";
 import permanaCoin from "../../images/brand/logo-coin/permana-coin-default-264.png";
 
 const MOTES = [

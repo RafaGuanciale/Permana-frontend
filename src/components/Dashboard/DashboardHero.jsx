@@ -1,4 +1,3 @@
-import { React } from "react";
 import defaultBottle from "../../images/perfumes/default.jpg";
 
 function getDate() {
@@ -92,18 +91,18 @@ function DashboardHero({
   weather,
   lede = getLede(weather),
   ledeAccent = "Pede algo fresco.",
-  reanalysis = {
-    available: true,
-    title: "Nova análise disponível",
-    detail: "2 fragrâncias novas desde a última leitura",
-  },
+  // reanalysis = {
+  //   available: true,
+  //   title: "Nova análise disponível",
+  //   detail: "2 fragrâncias novas desde a última leitura",
+  // },
   perfume = {
     name: "Acqua Di Gio EDT",
     brand: "Giorgio Armani",
     notes: ["Fresco", "Aquático", "Versátil"],
     image: undefined,
   },
-  onReanalyze,
+  // onReanalyze,
   onDetails,
   style,
 }) {

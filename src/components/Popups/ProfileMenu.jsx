@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
-import { AuthContext } from "../../contexts/AuthContext";
 import { UserContext } from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import editIcon from "../../images/icons/edit-profile-green.png";
@@ -10,8 +9,7 @@ import closeIcon from "../../images/icons/close__icon.svg";
 
 function ProfileMenu() {
   const { handleOpenPopup, handleClosePopup } = useContext(PopupContext);
-  const { logout } = useContext(AuthContext);
-  const { updateUser, user } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
   if (!user) return null;

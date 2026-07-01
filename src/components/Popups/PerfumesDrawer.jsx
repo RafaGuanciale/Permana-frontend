@@ -4,7 +4,6 @@ import { CollectionContext } from "../../contexts/CollectionContext";
 import { ToastContext } from "../../contexts/ToastContext";
 import { searchPerfumes } from "../../utils/api";
 import { getToken } from "../../utils/token";
-import AddPerfumeToast from "../Toasts/AddPerfumeToast";
 
 function PerfumesDrawer() {
   const [results, setResults] = useState([]);

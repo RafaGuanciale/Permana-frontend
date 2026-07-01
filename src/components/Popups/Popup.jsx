@@ -3,19 +3,18 @@ import { PopupContext } from "../../contexts/PopupContext";
 
 export default function Popup(props) {
   const { popupClass, children } = props;
-  const { handleClosePopup, activePopup } = useContext(PopupContext);
+  const { handleClosePopup } = useContext(PopupContext);
+useEffect(() => {
   const handleEscBtn = (event) => {
     if (event.key === "Escape") {
       handleClosePopup();
     }
   };
-  useEffect(() => {
-    document.addEventListener("keydown", handleEscBtn);
-
-    return () => {
-      document.removeEventListener("keydown", handleEscBtn);
-    };
-  }, [activePopup]);
+  document.addEventListener("keydown", handleEscBtn);
+  return () => {
+    document.removeEventListener("keydown", handleEscBtn);
+  };
+}, [handleClosePopup]);
   return (
     <div
       className={`popup ${popupClass}`}
@@ -29,3 +28,4 @@ export default function Popup(props) {
     </div>
   );
 }
+ 

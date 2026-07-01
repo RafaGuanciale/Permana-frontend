@@ -14,11 +14,12 @@ function DashboardNewCollection() {
   const [visible, setVisible] = useState(5);
 
   const isEmpty = collection.length === 0;
-  const visibleItems = collection.slice(start, start + visible);
-  const maxStart = collection.length - visible;
+  const maxStart = Math.max(collection.length - visible, 0);
+  const safeStart = Math.min(start, maxStart);
+  const visibleItems = collection.slice(safeStart, safeStart + visible);
   const isScrollable = collection.length > visible;
-  const canGoBack = start > 0;
-  const canGoNext = start < maxStart;
+  const canGoBack = safeStart > 0;
+  const canGoNext = safeStart < maxStart;
 
   const scrollCard = (direction) => {
     setStart((current) => {
@@ -48,10 +49,6 @@ function DashboardNewCollection() {
     observer.observe(elements);
     return () => observer.disconnect();
   }, [isLoading]);
-
-  useEffect(() => {
-    setStart((current) => Math.max(Math.min(current, maxStart), 0));
-  }, [visible, collection.length]);
 
   if (isLoading) return <DashboardCollectionSkeleton />;
 

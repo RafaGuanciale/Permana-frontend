@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { categories } from "../../../utils/consts";
 import { CollectionContext } from "../../../contexts/CollectionContext";
 
@@ -9,17 +9,15 @@ function CategoryPanel({
   activeSubcategory,
   setActiveSubcategory,
 }) {
-  const { collection, perfumeByCategory } = useContext(CollectionContext);
+  const { perfumeByCategory } = useContext(CollectionContext);
   const panelRef = useRef(null);
   const [displayedCategory, setDisplayedCategory] = useState(openCategory);
 
-  const isOpen = openContainer === container;
+const isOpen = openContainer === container;
 
-  useEffect(() => {
-    if (isOpen) {
-      setDisplayedCategory(openCategory);
-    }
-  }, [isOpen, openCategory]);
+if (isOpen && openCategory !== displayedCategory) {
+  setDisplayedCategory(openCategory);
+}
 
   const handleTransitionEnd = (event) => {
     if (event.target !== panelRef.current) return;

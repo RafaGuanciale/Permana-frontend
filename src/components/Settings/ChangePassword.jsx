@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const STRENGTH_LABELS = ["", "Fraca", "Razoável", "Boa", "Forte"];
 

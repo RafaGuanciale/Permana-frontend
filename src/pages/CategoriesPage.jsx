@@ -8,10 +8,8 @@ import cold from "../images/categorias/cold.jpg";
 import party from "../images/categorias/party.jpg";
 import travel from "../images/categorias/travel.jpg";
 import night from "../images/categorias/night.jpg";
-import defaultImg from "../images/perfumes/default.jpg";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useLocation } from "react-router-dom";
-import { categories } from "../utils/consts";
 import CategoryPanel from "../components/Pages/CategoriesPage/CategoryPanel";
 import CardCount from "../components/Pages/CategoriesPage/CardCount";
 
@@ -57,14 +55,17 @@ function todaySuggestion() {
   };
 }
 
-function categoriesPage() {
-  const [isLoading, setIsLoading] = useState(true);
+function CategoriesPage() {
   const [openCategory, setOpenCategory] = useState("");
   const [openContainer, setOpenContainer] = useState("");
   const [activeSubcategory, setActiveSubcategory] = useState("");
   const location = useLocation();
   const { category, container } = location.state || {};
   const today = todaySuggestion();
+  if (category && container && category !== openCategory) {
+  setOpenCategory(category);
+  setOpenContainer(container);
+}
   const expandContainer = (e) => {
     const container = e.currentTarget.dataset.container;
     const category = e.currentTarget.dataset.name;
@@ -95,13 +96,6 @@ function categoriesPage() {
       return "bottom";
     }
   };
-  useEffect(() => {
-    if (category && container) {
-      setOpenCategory(category);
-      setOpenContainer(container);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [category, container]);
 
   return (
     <section className="categoriesPage" id="categoriesPage">
@@ -452,7 +446,7 @@ function categoriesPage() {
                 src={travel}
                 alt="Viagens"
               />
-              <CardCount name="Viagem" />
+              <CardCount name="Viagens" />
               <div className="categoriesPage__card-overlay categoriesPage__card-overlay--travel">
                 <div className="categoriesPage__overlay-main">
                   <p className="categoriesPage__card-overlay-eyebrow">
@@ -484,4 +478,4 @@ function categoriesPage() {
   );
 }
 
-export default categoriesPage;
+export default CategoriesPage;

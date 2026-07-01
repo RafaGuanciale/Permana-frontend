@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { PopupContext } from "../../contexts/PopupContext";
 
-function CardsPopup(props) {
+function CardsPopup() {
   const { selectedCard, handleClosePopup } = useContext(PopupContext);
 
   if (!selectedCard) return null;
