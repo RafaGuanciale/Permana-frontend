@@ -290,7 +290,7 @@
   margin-top: 0.5rem;
   margin-bottom: 0.25rem;
   text-align: center;
-  animation: errorFadeIn 0.25s ease;
+  animation: errorFadeIn 0.2s ease;
 }
 @keyframes errorFadeIn {
   from {

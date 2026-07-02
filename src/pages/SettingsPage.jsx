@@ -2,7 +2,7 @@ import { useState } from "react";
 import ChangePassword from "../components/Settings/ChangePassword";
 import DeleteAccount from "../components/Settings/DeleteAccount"
 
-function SettingsPage({ onDeleted }) {
+function SettingsPage({ onDelete, errorMessage }) {
   const [sectionActive, setSectionActive] = useState("senha");
 
   return (
@@ -46,7 +46,7 @@ function SettingsPage({ onDeleted }) {
         <div className="settings__content">
               {sectionActive === "senha"
                 ? <ChangePassword />
-                : <DeleteAccount onDeleted={onDeleted} />}
+                : <DeleteAccount onDelete={onDelete} errorMessage={errorMessage} />}
         </div>
       </div>
     </section>

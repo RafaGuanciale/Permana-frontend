@@ -1,15 +1,11 @@
 import { useState } from "react";
 
-function DeleteAccount({ onDelete }) {
+function DeleteAccount({ onDelete, errorMessage }) {
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!password) return;
-    const confirmed = window.confirm(
-      "Excluir a sua conta? A sua coleção e a sua identidade olfativa serão apagadas para sempre. Não dá para desfazer.",
-    );
-    if (!confirmed) return;
     onDelete?.({ password });
   };
 
@@ -55,7 +51,11 @@ function DeleteAccount({ onDelete }) {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
-
+        {errorMessage && (
+          <span className="registerPage__input__error" role="alert">
+            {errorMessage}
+          </span>
+        )}
         <div className="deleteAccount__actions">
           <button
             type="submit"

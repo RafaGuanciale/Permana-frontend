@@ -6,7 +6,7 @@ import github from "../../images/icons/social-media/github-champagne.png";
 import linkedin from "../../images/icons/social-media/linkedin-champagne.png";
 import { useNavigate } from "react-router-dom";
 
-function Footer2() {
+function Footer() {
   const toTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
   const { isLogged } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -266,4 +266,4 @@ function Footer2() {
   );
 }
 
-export default Footer2;
+export default Footer;

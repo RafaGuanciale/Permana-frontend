@@ -14,11 +14,12 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import SettingsPage from "./pages/SettingsPage";
 import Header from "./components/Header/Header";
-import Footer2 from "./components/Footer/Footer2";
+import Footer from "./components/Footer/Footer2";
 import { AuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { UserContext } from "./contexts/UserContext";
 import PopupManager from "./components/Popups/PopupManager";
+import * as api from "./utils/api";
 import * as auth from "./utils/auth";
 import { getToken } from "./utils/token";
 import Loader from "./components/Loading/Loader";
@@ -33,7 +34,8 @@ function App() {
   const [userName, setUserName] = useState("");
   const [loginError, setLoginError] = useState("");
   const [registerError, setRegisterError] = useState("");
-  const { isLogged, login } = useContext(AuthContext);
+  const [deleteError, setDeleteError] = useState("");
+  const { isLogged, login, logout } = useContext(AuthContext);
   const { updateUser } = useContext(UserContext);
   const { toast } = useContext(ToastContext);
   const navigate = useNavigate();
@@ -100,6 +102,31 @@ function App() {
         setLoginError("E-mail ou senha incorretos.");
       })
       .finally(() => setLogginIn(false));
+  };
+
+  const handleDeleteAccount = ({ password }) => {
+    setDeleteError("");
+    if (!password) {
+      setDeleteError("Por favor, digite sua senha para confirmar.");
+      return;
+    }
+
+    const confirmed = window.confirm(
+      "Excluir a sua conta? A sua coleção e a sua identidade olfativa serão apagadas para sempre. Não dá para desfazer.",
+    );
+    if (!confirmed) return;
+
+    api
+      .deleteAccount(getToken(), password)
+      .then(() => {
+        logout();
+        navigate("/");
+      })
+      .catch((err) => {
+        setDeleteError(
+          "Não foi possível excluir a conta. Verifique sua senha e tente novamente.",
+        );
+      });
   };
 
   useEffect(() => {
@@ -190,7 +217,10 @@ function App() {
             path="/settings"
             element={
               <ProtectedRoute>
-                <SettingsPage />
+                <SettingsPage
+                  onDelete={handleDeleteAccount}
+                  errorMessage={deleteError}
+                />
               </ProtectedRoute>
             }
           />
@@ -201,7 +231,7 @@ function App() {
             }
           />
         </Routes>
-        <Footer2 />
+        <Footer />
       </div>
       <PopupManager />
       {logginIn && (

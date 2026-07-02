@@ -14,9 +14,13 @@ export function AuthProvider({ children }) {
     setIsLogged(false);
     removeToken();
   };
+  const deleteAcc = (password) => {
+    setIsLogged(false);
+    removeToken();
+  };
 
   return (
-    <AuthContext.Provider value={{ isLogged, login, logout }}>
+    <AuthContext.Provider value={{ isLogged, login, logout, deleteAcc }}>
       {children}
     </AuthContext.Provider>
   );

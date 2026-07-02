@@ -37,7 +37,7 @@ export const updateUserInfo = (token, name) => {
   }).then(handleResponse);
 };
 
-export const deleteAccount = (token) => {
+export const deleteAccount = (token, password) => {
   return fetch(`${BASE_URL}/users/me`, {
     method: "DELETE",
     headers: {
@@ -45,6 +45,7 @@ export const deleteAccount = (token) => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
+    body: JSON.stringify({ password }),
   }).then(handleResponse);
 };
 
