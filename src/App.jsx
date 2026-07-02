@@ -14,7 +14,7 @@ import RegisterPage from "./pages/RegisterPage";
 import LoginPage from "./pages/LoginPage";
 import SettingsPage from "./pages/SettingsPage";
 import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer2";
+import Footer from "./components/Footer/Footer";
 import { AuthContext } from "./contexts/AuthContext";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import { UserContext } from "./contexts/UserContext";
