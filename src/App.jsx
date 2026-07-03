@@ -51,12 +51,10 @@ function App() {
     setRegisterError("");
     if (!name || !email || !password) {
       setRegisterError("Por favor, preencha todos os campos.");
-      console.log(`registerError: ${registerError}`);
       return;
     }
     if (password !== confirmPassword) {
       setRegisterError("As senhas não coincidem.");
-      console.log(`registerError: ${registerError}`);
       return;
     }
     setRegistering("loading");
@@ -72,13 +70,11 @@ function App() {
       })
       .catch((err) => {
         setRegisterError("Não foi possível criar a conta. Tente novamente.");
-        console.log(err);
-        setRegistering("error");
+          setRegistering("error");
         setTimeout(() => {
           setRegistering(false);
         }, 3000);
-      })
-      .finally(() => setRegistering(false));
+      });
   };
 
   const handleLogin = ({ email, password }) => {
