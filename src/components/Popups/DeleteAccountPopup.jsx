@@ -1,19 +1,30 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { PopupContext } from "../../contexts/PopupContext";
 import { AuthContext } from "../../contexts/AuthContext";
-import { UserContext } from "../../contexts/UserContext";
+import * as api from "../../utils/api";
+import { getToken } from "../../utils/token";
 
-export function DeleteAccountPopup() {
-  const { handleClosePopup } = useContext(PopupContext);
-  const { deleteAcc } = useContext(AuthContext);
-  const { updateUser } = useContext(UserContext);
+export function DeleteAccountPopup({ onClose, password, setDeleteError }) {
+  const [isDeleting, setIsDeleting] = useState(false);
+  const { logout } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const handleDelete = () => {
-    deleteAcc();
-    handleClosePopup();
-    navigate("/");
+  const handleDeleteAccount = () => {
+    setDeleteError("");
+    setIsDeleting(true);
+    api
+      .deleteAccount(getToken(), password)
+      .then(() => {
+        logout();
+        navigate("/");
+      })
+      .catch(() => {
+        setDeleteError(
+          "Não foi possível excluir a conta. Verifique sua senha e tente novamente.",
+        );
+        setIsDeleting(false);
+        onClose();
+      });
   };
 
   return (
@@ -22,10 +33,10 @@ export function DeleteAccountPopup() {
         className="Logout"
         role="alertdialog"
         aria-modal="true"
-        aria-label="Sair da sua conta?"
+        aria-label="Excluir a sua conta?"
       >
         <div className="Logout__panel">
-          <p className="Logout__eyebrow">Sua sessão</p>{" "}
+          <p className="Logout__eyebrow">Sua conta</p>{" "}
           <h2 className="Logout__title">Excluir a sua conta?</h2>
           <p className="Logout__message">
             A sua coleção e a sua identidade olfativa serão apagadas para
@@ -35,16 +46,17 @@ export function DeleteAccountPopup() {
             <button
               type="button"
               className="Logout__btn Logout__btn--stay"
-              onClick={handleClosePopup}
+              onClick={onClose}
             >
               Ficar
             </button>
             <button
               type="button"
               className="Logout__btn Logout__btn--leave"
-              onClick={handleDelete}
+              onClick={handleDeleteAccount}
+              disabled={isDeleting}
             >
-              Sair
+              Excluir
             </button>
           </div>
         </div>
