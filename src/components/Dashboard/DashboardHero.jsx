@@ -1,4 +1,6 @@
 import defaultBottle from "../../images/perfumes/default.jpg";
+import { useContext } from "react";
+import { UserContext } from "../../contexts/UserContext";
 
 function getDate() {
   const now = new Date();
@@ -32,7 +34,7 @@ function getLede(weather) {
 function ScentOfTheDay({ weather, perfume, onDetails }) {
   const { temp, condition, detail, icon } = weather;
   return (
-    <div className="scent-of-the-day" >
+    <div className="scent-of-the-day">
       <p className="scent-of-the-day__label">Perfume do dia</p>
       <div className="scent-of-the-day__weather">
         <img
@@ -85,39 +87,44 @@ function ScentOfTheDay({ weather, perfume, onDetails }) {
 }
 
 function DashboardHero({
-  name = "Rafael",
   greeting = getGreeting(),
   date = getDate(),
   weather,
   lede = getLede(weather),
   ledeAccent = "Pede algo fresco.",
-  // reanalysis = {
-  //   available: true,
-  //   title: "Nova análise disponível",
-  //   detail: "2 fragrâncias novas desde a última leitura",
-  // },
+  reanalysis = {
+    available: true,
+    title: "Nova análise disponível",
+    detail: "2 fragrâncias novas desde a última leitura",
+  },
   perfume = {
     name: "Acqua Di Gio EDT",
     brand: "Giorgio Armani",
     notes: ["Fresco", "Aquático", "Versátil"],
     image: undefined,
   },
-  // onReanalyze,
+  onReanalyze,
   onDetails,
   style,
 }) {
+  const { user } = useContext(UserContext);
+  const name = user?.name.charAt(0).toUpperCase() + user.name.slice(1) || "Usuário";
+  const firstName = name.split(" ")[0];
   return (
     <div className="dashboard-hero" style={style}>
       <div className="dashboard-hero__welcome">
         <p className="dashboard-hero__date">{date}</p>
         <h1 className="dashboard-hero__greeting">
-          {greeting}, {name}.
+          {greeting}, {firstName}.
         </h1>
         <p className="dashboard-hero__lede">
           {lede}{" "}
-          <span className="dashboard-hero__lede-accent"><br />{ledeAccent}</span>
+          <span className="dashboard-hero__lede-accent">
+            <br />
+            {ledeAccent}
+          </span>
         </p>
-        {/* {reanalysis?.available && (
+        {reanalysis?.available && (
           <div className="dashboard-hero__reanalyze">
             <button
               type="button"
@@ -137,7 +144,7 @@ function DashboardHero({
               </span>
             </div>
           </div>
-        )} */}
+        )}
       </div>
 
       <ScentOfTheDay
